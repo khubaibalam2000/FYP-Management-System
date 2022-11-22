@@ -1,0 +1,4 @@
+body temperature
+pulse
+respiration rate
+BP
