@@ -2,3 +2,4 @@ body temperature
 pulse
 respiration rate
 BP
+SpO2
