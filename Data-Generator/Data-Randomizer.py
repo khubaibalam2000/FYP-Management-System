@@ -46,7 +46,27 @@ def getRandomDate(dateList):
     for i in range(1000):
         temp = (random_date(d1, d2))
         dateList.append(temp)
-        
+
+def sendDataToCSV(path, data):
+    df = pd.DataFrame(data)
+    df.to_csv(path)
+
+def generateHabits():
+    alcoholic = []
+    smoker = []
+    veg = []
+    beverages = []
+    exercise = []
+    for i in range(1000):
+        alcoholic.append(rn.randint(0,1))
+        smoker.append(rn.randint(0,1))
+        veg.append(rn.randint(0,1))
+        beverages.append(rn.randint(0,1))
+        exercise.append(rn.randint(0,1))
+    dictForHabits = {'Alcoholic': alcoholic, 'Smoker': smoker, 'Veg': veg, 'Soft Drinks': beverages, 'Exercise': exercise}
+    df = pd.DataFrame(dictForHabits)
+    df.to_csv('./Data-Files/Habits.csv')
+
 # def randomVitalSigns():
 #     for i in range(1000):
 
@@ -86,3 +106,11 @@ getRandomDate(dateForTreatments)
 getRandomDate(dateForMedicines)
 getRandomDate(dateForImmunizations)
 
+sendDataToCSV('./Data-Files/Allergens.csv', {'Diagnosis': csvAllergens})
+sendDataToCSV('./Data-Files/Diagnosis.csv', {'Diagnosis': csvDiagnosis, 'Date of Diagnosis': dateForDiagnosis})
+# sendDataToCSV('./Data-Files/Diagnosis.csv', {'Diagnosis': csvDiagnosis, 'Date of Diagnosis': dateForDiagnosis})
+sendDataToCSV('./Data-Files/Surgeries.csv', {'Diagnosis': csvSurgeries, 'Date of Diagnosis': dateForSurgeries})
+sendDataToCSV('./Data-Files/Treatments.csv', {'Diagnosis': csvTreatments, 'Date of Diagnosis': dateForTreatments})
+sendDataToCSV('./Data-Files/Medicines.csv', {'Diagnosis': csvMedicines, 'Date of Diagnosis': dateForMedicines})
+sendDataToCSV('./Data-Files/Immunizations.csv', {'Diagnosis': csvImmunizations, 'Date of Diagnosis': dateForImmunizations})
+generateHabits()

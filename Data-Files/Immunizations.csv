@@ -1,0 +1,1001 @@
+,Diagnosis,Date of Diagnosis
+0,[],2020-06-29 12:38:50
+1,[],2012-05-03 19:38:32
+2,['Influenza'],2009-12-08 14:05:44
+3,"['Tetanus', 'Paratyphoid fever']",2008-03-18 19:38:41
+4,"['Haemophilus influenzae type b (Hib)', 'COVID-19 (corona virus)']",2015-12-25 10:36:59
+5,['Respiratory Syncytial Virus (RSV)'],2009-03-16 18:51:50
+6,"['Paratyphoid fever', 'Poliomyelitis']",2008-07-19 17:48:49
+7,['Meningococcal meningitis'],2014-01-18 06:36:20
+8,[],2013-05-10 22:04:25
+9,[],2015-04-23 17:07:29
+10,['Yellow Fever'],2017-02-26 05:30:45
+11,[],2008-03-29 14:31:02
+12,[],2019-02-25 00:11:46
+13,[],2014-04-07 13:46:26
+14,['Malaria'],2016-02-09 19:26:09
+15,"['Tick-borne encephalitis', 'Cholera']",2020-04-11 06:06:47
+16,"['Paratyphoid fever', 'Dengue']",2018-11-26 19:53:26
+17,[],2018-05-09 02:18:19
+18,"['Measles', 'Varicella']",2014-03-19 06:38:16
+19,[],2019-08-12 04:37:07
+20,"['Rabies', 'Haemophilus influenzae type b (Hib)']",2013-02-14 12:28:54
+21,['Enterotoxigenic Escherichia coli'],2018-06-08 13:15:13
+22,[],2017-10-12 07:52:55
+23,[],2019-11-09 16:32:30
+24,"['Poliomyelitis', 'Human papillomavirus (HPV)']",2019-01-20 05:21:32
+25,"['Nontyphoidal Salmonella Disease', 'Typhoid']",2016-07-30 03:36:00
+26,[],2012-03-04 23:38:26
+27,[],2019-12-29 18:31:40
+28,"['Meningococcal meningitis', 'Yellow Fever']",2016-10-12 21:57:18
+29,[],2015-02-04 18:49:54
+30,[],2012-07-13 21:08:23
+31,['Diphtheria'],2021-12-07 14:37:04
+32,[],2017-01-16 00:07:16
+33,"['Human papillomavirus (HPV)', 'Shigella']",2009-11-17 01:42:36
+34,[],2021-07-06 07:10:53
+35,[],2013-05-05 19:12:59
+36,['Varicella'],2011-10-03 21:14:58
+37,['Japanese encephalitis'],2015-06-07 01:29:49
+38,"['Shigella', 'Respiratory Syncytial Virus (RSV)']",2020-04-13 02:20:54
+39,[],2009-11-26 00:06:39
+40,"['Tetanus', 'Mumps']",2010-11-27 23:51:17
+41,[],2016-10-17 16:32:43
+42,[],2013-11-04 14:25:14
+43,['Norovirus'],2016-03-29 10:29:14
+44,[],2009-02-08 05:00:16
+45,[],2013-10-06 17:41:51
+46,[],2014-02-13 22:24:51
+47,[],2011-07-23 01:59:30
+48,['Poliomyelitis'],2020-05-05 05:20:59
+49,['Typhoid'],2009-03-14 11:24:28
+50,['Malaria'],2017-02-14 04:38:29
+51,[],2008-05-01 09:24:22
+52,['Japanese encephalitis'],2016-11-28 14:21:38
+53,[],2009-11-14 17:22:55
+54,['Diphtheria'],2021-11-03 22:24:54
+55,['Varicella'],2017-03-07 03:04:05
+56,['Hepatitis'],2008-08-14 22:23:43
+57,['COVID-19 (corona virus)'],2020-09-22 09:27:47
+58,['Neisseria gonorrhoeae'],2015-01-20 02:05:16
+59,[],2020-07-13 12:57:22
+60,[],2014-08-26 06:51:42
+61,[],2016-08-16 01:30:46
+62,['Hepatitis'],2015-03-12 05:24:04
+63,"['Respiratory Syncytial Virus (RSV)', 'Diphtheria']",2015-06-25 06:50:33
+64,[],2017-03-25 20:35:15
+65,['Rabies'],2013-06-14 13:21:48
+66,[],2020-07-12 15:43:25
+67,"['Herpes Simplex Virus', 'Japanese encephalitis']",2013-11-26 07:16:11
+68,[],2010-11-19 03:04:09
+69,[],2014-04-12 02:34:16
+70,"['Rubella', 'Diphtheria']",2021-03-26 00:46:52
+71,['Typhoid'],2011-05-16 19:35:18
+72,[],2016-12-09 00:43:32
+73,[],2017-01-09 09:09:20
+74,"['Japanese encephalitis', 'Group B Streptococcus (GBS)']",2013-12-28 11:48:38
+75,['Respiratory Syncytial Virus (RSV)'],2015-05-11 04:44:12
+76,[],2016-05-11 16:05:25
+77,[],2012-03-06 15:57:24
+78,['COVID-19 (corona virus)'],2019-09-04 08:38:33
+79,[],2017-05-06 12:38:41
+80,['Cholera'],2018-02-02 20:23:35
+81,[],2019-02-02 20:18:54
+82,['Measles'],2019-01-16 21:36:54
+83,[],2009-09-16 13:59:34
+84,"['Norovirus', 'Typhoid']",2009-03-14 05:59:26
+85,[],2008-08-16 16:19:23
+86,['Schistosomiasis Disease'],2013-10-20 17:40:45
+87,"['Influenza', 'Pertussis']",2018-05-27 19:11:54
+88,"['Tuberculosis', 'Norovirus']",2017-11-01 07:51:56
+89,['Dengue'],2018-02-14 21:14:51
+90,"['Improved Influenza Vaccines', 'Group B Streptococcus (GBS)']",2019-03-27 09:12:27
+91,"['Japanese encephalitis', 'Influenza']",2010-03-30 17:33:44
+92,"['Paratyphoid fever', 'Typhoid']",2015-02-11 16:05:33
+93,['Norovirus'],2009-08-13 12:16:49
+94,['Shigella'],2017-11-14 08:58:54
+95,"['Influenza', 'Nontyphoidal Salmonella Disease']",2010-07-22 03:39:58
+96,"['Pneumococcal disease', 'Measles']",2011-06-05 17:25:03
+97,['HIV-1Malaria'],2016-01-08 09:36:34
+98,['Cholera'],2015-09-23 20:06:12
+99,['Yellow Fever'],2018-11-13 00:14:47
+100,['Group A Streptococcus (GAS)'],2010-08-08 06:20:20
+101,['Human papillomavirus (HPV)'],2019-11-05 02:41:25
+102,['Hepatitis'],2021-06-27 13:21:27
+103,['Neisseria gonorrhoeae'],2016-06-25 02:27:16
+104,['Tuberculosis'],2016-10-23 17:45:59
+105,[],2017-03-15 03:12:46
+106,"['Nontyphoidal Salmonella Disease', 'Diphtheria']",2011-01-09 06:01:05
+107,['Dengue'],2019-05-18 21:24:35
+108,['Pertussis'],2021-04-23 04:11:40
+109,['Rotavirus'],2021-02-06 03:58:53
+110,"['Norovirus', 'Herpes Simplex Virus']",2008-12-28 10:17:36
+111,['Enterotoxigenic Escherichia coli'],2014-05-21 20:15:16
+112,"['Improved Influenza Vaccines', 'Paratyphoid fever']",2014-08-26 13:37:00
+113,['Mumps'],2009-05-27 20:36:00
+114,['Cholera'],2018-03-10 22:25:11
+115,['Tuberculosis'],2009-08-17 06:18:52
+116,['Malaria'],2016-06-04 20:57:31
+117,"['Malaria', 'Human papillomavirus (HPV)']",2014-06-06 04:23:26
+118,['Japanese encephalitis'],2020-08-20 19:48:26
+119,"['Respiratory Syncytial Virus (RSV)', 'HIV-1Malaria']",2015-01-14 00:54:10
+120,['Shigella'],2016-01-15 08:18:47
+121,"['Diphtheria', 'Pneumococcal disease']",2015-02-08 11:42:30
+122,[],2013-08-07 15:36:30
+123,"['Haemophilus influenzae type b (Hib)', 'Improved Influenza Vaccines']",2013-05-02 13:49:39
+124,['Group B Streptococcus (GBS)'],2008-05-07 20:23:12
+125,"['Tick-borne encephalitis', 'Hepatitis']",2018-11-23 02:08:36
+126,[],2011-06-14 00:20:45
+127,"['Tetanus', 'Neisseria gonorrhoeae']",2016-11-29 23:03:09
+128,"['Measles', 'Influenza']",2017-08-04 07:23:35
+129,"['Neisseria gonorrhoeae', 'Tuberculosis']",2015-11-16 14:26:21
+130,"['HIV-1Malaria', 'Nontyphoidal Salmonella Disease']",2021-12-27 13:41:56
+131,"['Pneumococcal disease', 'Hepatitis']",2014-10-13 17:35:20
+132,['Neisseria gonorrhoeae'],2009-03-03 06:49:34
+133,[],2019-03-14 04:45:00
+134,"['Neisseria gonorrhoeae', 'Rubella']",2019-09-15 03:16:26
+135,"['Measles', 'Meningococcal meningitis']",2021-02-12 18:35:20
+136,[],2012-07-20 14:23:42
+137,['Nontyphoidal Salmonella Disease'],2016-01-03 01:58:18
+138,[],2014-05-28 22:34:25
+139,['Meningococcal meningitis'],2015-04-10 13:28:56
+140,"['Mumps', 'Typhoid']",2014-03-01 01:07:31
+141,"['Hepatitis', 'Tick-borne encephalitis']",2015-12-25 10:59:25
+142,['Mumps'],2019-08-11 11:03:46
+143,['Tuberculosis'],2011-09-19 18:12:49
+144,['Japanese encephalitis'],2015-06-01 21:45:40
+145,[],2008-10-22 06:30:07
+146,['Tuberculosis'],2016-06-01 01:50:22
+147,[],2014-05-25 00:12:34
+148,[],2012-08-29 09:21:10
+149,"['Improved Influenza Vaccines', 'Pneumococcal disease']",2010-02-19 10:13:06
+150,['Malaria'],2016-08-15 09:51:44
+151,['Enterotoxigenic Escherichia coli'],2015-08-15 22:41:22
+152,['HIV-1Malaria'],2012-12-03 01:13:08
+153,"['Norovirus', 'Pertussis']",2020-04-01 18:03:53
+154,[],2020-09-04 10:31:56
+155,"['HIV-1Malaria', 'Neisseria gonorrhoeae']",2012-12-27 03:31:59
+156,['Enterotoxigenic Escherichia coli'],2021-09-05 21:17:35
+157,['Tuberculosis'],2016-01-16 14:36:52
+158,"['Diphtheria', 'Tuberculosis']",2017-05-27 21:43:07
+159,"['Group B Streptococcus (GBS)', 'Shigella']",2012-06-08 19:09:32
+160,"['Varicella', 'Group A Streptococcus (GAS)']",2010-06-18 21:08:40
+161,"['Poliomyelitis', 'Tetanus']",2019-12-14 18:55:24
+162,"['Diphtheria', 'Schistosomiasis Disease']",2011-11-09 10:49:52
+163,[],2009-07-02 01:08:57
+164,"['Herpes Simplex Virus', 'Pertussis']",2021-02-20 19:57:13
+165,['Influenza'],2016-07-22 06:47:21
+166,"['Norovirus', 'Rotavirus']",2014-04-13 22:18:20
+167,"['Pneumococcal disease', 'Tuberculosis']",2009-05-24 21:23:55
+168,"['Rotavirus', 'Pertussis']",2015-08-07 05:31:31
+169,['Cholera'],2018-08-30 09:56:58
+170,"['Rotavirus', 'Rubella']",2010-10-19 17:39:30
+171,['Japanese encephalitis'],2010-12-22 07:43:56
+172,"['Diphtheria', 'Tick-borne encephalitis']",2021-08-07 01:56:45
+173,[],2017-06-30 06:59:22
+174,"['Rabies', 'Poliomyelitis']",2014-06-07 08:51:12
+175,"['Hepatitis', 'Respiratory Syncytial Virus (RSV)']",2008-12-31 11:59:14
+176,"['Measles', 'COVID-19 (corona virus)']",2011-12-01 18:43:13
+177,[],2010-08-08 00:51:17
+178,"['Paratyphoid fever', 'Mumps']",2021-03-12 11:55:35
+179,['Pneumococcal disease'],2016-02-02 02:50:45
+180,[],2014-08-30 07:06:50
+181,[],2008-08-01 16:53:26
+182,[],2016-08-20 16:04:37
+183,[],2019-08-03 17:08:23
+184,[],2021-09-27 08:20:46
+185,"['Haemophilus influenzae type b (Hib)', 'Neisseria gonorrhoeae']",2017-11-27 09:48:56
+186,"['Group A Streptococcus (GAS)', 'Yellow Fever']",2017-11-17 11:37:12
+187,[],2018-10-19 08:41:47
+188,['COVID-19 (corona virus)'],2018-04-10 18:53:34
+189,['Japanese encephalitis'],2009-08-13 00:41:07
+190,"['Varicella', 'Influenza']",2010-02-19 16:58:50
+191,"['HIV-1Malaria', 'Diphtheria']",2015-11-23 18:26:49
+192,['Haemophilus influenzae type b (Hib)'],2009-09-24 10:41:41
+193,"['Mumps', 'Diphtheria']",2021-06-25 11:31:53
+194,"['Malaria', 'Norovirus']",2009-08-19 19:56:55
+195,[],2019-01-14 23:37:11
+196,"['Enterotoxigenic Escherichia coli', 'Shigella']",2009-07-23 23:33:49
+197,[],2011-06-07 16:40:18
+198,[],2014-08-01 18:49:36
+199,['Tetanus'],2017-05-27 03:30:50
+200,['Yellow Fever'],2015-01-15 17:37:11
+201,"['Group A Streptococcus (GAS)', 'Diphtheria']",2014-11-22 07:52:06
+202,['Diphtheria'],2020-12-31 19:46:21
+203,[],2019-10-06 06:21:07
+204,[],2011-05-06 22:49:16
+205,['Schistosomiasis Disease'],2021-08-13 22:56:49
+206,"['Japanese encephalitis', 'Schistosomiasis Disease']",2018-12-15 03:18:56
+207,"['Tuberculosis', 'COVID-19 (corona virus)']",2019-06-21 22:41:50
+208,[],2018-09-12 05:59:38
+209,"['Typhoid', 'Tick-borne encephalitis']",2012-05-23 00:48:46
+210,[],2021-07-23 17:14:19
+211,[],2013-06-03 12:53:00
+212,[],2017-06-08 15:01:28
+213,"['Human papillomavirus (HPV)', 'COVID-19 (corona virus)']",2016-07-07 19:33:45
+214,"['Tetanus', 'Enterotoxigenic Escherichia coli']",2020-01-23 21:45:22
+215,"['Norovirus', 'Japanese encephalitis']",2015-02-02 22:42:11
+216,[],2021-09-13 08:19:18
+217,['Improved Influenza Vaccines'],2017-12-14 22:38:19
+218,"['Group A Streptococcus (GAS)', 'Diphtheria']",2021-01-14 12:32:13
+219,[],2013-01-06 21:52:19
+220,['Mumps'],2017-05-12 18:39:22
+221,"['Respiratory Syncytial Virus (RSV)', 'Varicella']",2012-11-12 13:29:08
+222,[],2019-02-02 04:18:58
+223,"['Herpes Simplex Virus', 'Respiratory Syncytial Virus (RSV)']",2021-11-29 21:14:52
+224,[],2021-12-02 22:49:28
+225,[],2014-03-19 21:53:56
+226,"['COVID-19 (corona virus)', 'Nontyphoidal Salmonella Disease']",2018-12-20 10:51:01
+227,['COVID-19 (corona virus)'],2014-09-19 02:07:52
+228,[],2012-07-05 16:57:40
+229,[],2013-12-13 04:30:06
+230,['Rotavirus'],2016-09-09 17:01:33
+231,[],2008-04-26 19:04:52
+232,['Cholera'],2017-03-30 14:23:15
+233,"['Yellow Fever', 'Malaria']",2014-04-27 21:36:56
+234,['Tuberculosis'],2015-06-15 20:09:14
+235,[],2020-08-27 17:33:36
+236,[],2011-07-17 07:28:44
+237,['COVID-19 (corona virus)'],2014-01-03 20:44:13
+238,"['Poliomyelitis', 'Malaria']",2011-07-04 23:19:12
+239,['HIV-1Malaria'],2014-04-30 07:09:41
+240,[],2019-01-16 04:14:24
+241,['Haemophilus influenzae type b (Hib)'],2011-06-15 14:48:31
+242,['COVID-19 (corona virus)'],2014-10-17 15:13:33
+243,['Hepatitis'],2013-08-12 19:51:08
+244,"['Nontyphoidal Salmonella Disease', 'Yellow Fever']",2015-01-30 19:34:35
+245,['COVID-19 (corona virus)'],2008-04-26 07:51:34
+246,['Malaria'],2017-02-04 11:35:52
+247,[],2020-07-08 23:38:14
+248,"['Influenza', 'Rotavirus']",2018-08-02 01:48:44
+249,['Tetanus'],2008-06-09 14:34:10
+250,"['Typhoid', 'Japanese encephalitis']",2021-02-23 06:43:34
+251,"['Shigella', 'Improved Influenza Vaccines']",2009-11-17 20:59:53
+252,['Dengue'],2019-03-16 14:34:59
+253,[],2012-02-12 15:12:57
+254,[],2016-02-27 09:58:40
+255,[],2021-06-11 18:54:37
+256,[],2017-08-19 22:09:12
+257,"['Respiratory Syncytial Virus (RSV)', 'Nontyphoidal Salmonella Disease']",2016-06-14 21:33:23
+258,['Pertussis'],2019-03-23 16:16:39
+259,[],2010-08-11 14:07:46
+260,"['Improved Influenza Vaccines', 'Human papillomavirus (HPV)']",2019-12-19 04:19:08
+261,['Schistosomiasis Disease'],2015-01-10 05:18:15
+262,[],2013-01-17 20:03:41
+263,['Dengue'],2019-11-24 23:41:23
+264,"['Pertussis', 'Meningococcal meningitis']",2020-12-17 06:04:33
+265,[],2016-09-01 12:29:57
+266,[],2014-09-05 06:47:10
+267,"['Human papillomavirus (HPV)', 'Tuberculosis']",2018-10-23 22:18:36
+268,"['Pneumococcal disease', 'Human papillomavirus (HPV)']",2011-04-26 01:12:30
+269,['Rotavirus'],2008-03-26 00:42:08
+270,['Tuberculosis'],2019-04-23 20:51:46
+271,['Respiratory Syncytial Virus (RSV)'],2012-02-26 13:34:17
+272,[],2019-03-01 03:02:15
+273,[],2018-01-03 02:32:26
+274,[],2012-05-15 07:17:24
+275,[],2010-05-13 15:08:00
+276,[],2020-02-12 05:39:49
+277,[],2008-07-31 04:04:01
+278,[],2011-10-25 12:44:01
+279,[],2018-10-15 11:01:40
+280,['Enterotoxigenic Escherichia coli'],2020-04-02 00:05:22
+281,"['Pneumococcal disease', 'Pertussis']",2016-06-01 02:20:43
+282,"['Schistosomiasis Disease', 'Measles']",2018-12-28 16:59:46
+283,[],2010-05-01 22:24:27
+284,"['COVID-19 (corona virus)', 'Pneumococcal disease']",2017-12-03 06:33:36
+285,['Nontyphoidal Salmonella Disease'],2010-11-09 06:43:59
+286,"['Varicella', 'Tick-borne encephalitis']",2021-10-31 05:25:11
+287,['Varicella'],2020-07-22 05:42:20
+288,"['Human papillomavirus (HPV)', 'Norovirus']",2014-08-09 02:15:52
+289,"['Japanese encephalitis', 'Tick-borne encephalitis']",2008-11-19 21:08:10
+290,['Rotavirus'],2015-09-23 11:48:53
+291,"['Diphtheria', 'Cholera']",2018-09-21 14:41:20
+292,['Herpes Simplex Virus'],2012-10-27 00:17:36
+293,[],2008-10-23 19:52:35
+294,[],2010-04-15 02:08:49
+295,['Rotavirus'],2008-05-31 00:12:11
+296,"['Dengue', 'Rubella']",2008-01-09 09:18:27
+297,['Group B Streptococcus (GBS)'],2018-01-21 03:48:44
+298,"['Diphtheria', 'Rabies']",2017-01-12 01:16:49
+299,"['Cholera', 'Hepatitis']",2016-07-24 10:27:56
+300,['Meningococcal meningitis'],2021-06-11 21:24:15
+301,['Group B Streptococcus (GBS)'],2012-05-10 07:22:44
+302,['Norovirus'],2015-12-27 17:07:02
+303,"['Enterotoxigenic Escherichia coli', 'Hepatitis']",2015-05-29 09:44:48
+304,"['Meningococcal meningitis', 'Poliomyelitis']",2019-01-25 12:50:17
+305,"['Cholera', 'Diphtheria']",2019-08-08 17:29:51
+306,"['Improved Influenza Vaccines', 'Pertussis']",2009-01-16 19:55:42
+307,['Yellow Fever'],2015-09-12 05:39:27
+308,"['Enterotoxigenic Escherichia coli', 'Shigella']",2016-12-05 10:47:51
+309,['Rubella'],2013-03-15 18:00:21
+310,['Diphtheria'],2012-08-23 00:48:10
+311,"['Poliomyelitis', 'Shigella']",2012-12-15 10:04:31
+312,"['Group B Streptococcus (GBS)', 'Measles']",2017-02-24 17:09:44
+313,['Typhoid'],2012-03-23 06:22:37
+314,['Schistosomiasis Disease'],2021-02-13 15:47:45
+315,"['HIV-1Malaria', 'Varicella']",2016-12-24 05:13:59
+316,"['Cholera', 'Diphtheria']",2012-02-23 05:06:55
+317,"['Malaria', 'Rubella']",2010-08-08 20:27:05
+318,"['COVID-19 (corona virus)', 'Rubella']",2015-12-08 00:23:29
+319,"['Poliomyelitis', 'COVID-19 (corona virus)']",2019-10-26 06:54:09
+320,['Influenza'],2009-09-23 18:37:38
+321,['Tetanus'],2009-12-22 09:25:11
+322,"['Malaria', 'Enterotoxigenic Escherichia coli']",2009-05-24 16:53:48
+323,"['Group A Streptococcus (GAS)', 'Paratyphoid fever']",2009-12-05 23:05:45
+324,[],2017-03-04 03:55:43
+325,['Neisseria gonorrhoeae'],2016-03-31 04:51:34
+326,['Nontyphoidal Salmonella Disease'],2013-05-20 03:32:22
+327,"['Tuberculosis', 'Pertussis']",2009-01-11 14:10:13
+328,"['Haemophilus influenzae type b (Hib)', 'Schistosomiasis Disease']",2021-03-09 14:15:57
+329,[],2008-03-07 01:58:43
+330,"['Typhoid', 'Shigella']",2015-12-09 15:46:45
+331,['Yellow Fever'],2018-10-28 22:51:05
+332,['Mumps'],2008-02-28 16:51:56
+333,[],2021-11-21 21:55:25
+334,['Yellow Fever'],2010-02-02 00:04:15
+335,"['Influenza', 'Norovirus']",2009-12-17 09:48:21
+336,[],2020-01-23 21:34:04
+337,[],2016-01-27 23:39:53
+338,['Diphtheria'],2017-06-13 03:11:25
+339,['Malaria'],2020-03-25 00:28:22
+340,"['Enterotoxigenic Escherichia coli', 'Influenza']",2016-12-24 01:36:03
+341,[],2015-01-23 17:34:15
+342,['Japanese encephalitis'],2014-06-16 09:58:47
+343,"['Influenza', 'Group B Streptococcus (GBS)']",2013-06-21 15:55:36
+344,"['Cholera', 'Group A Streptococcus (GAS)']",2013-04-20 07:38:29
+345,"['Enterotoxigenic Escherichia coli', 'Shigella']",2015-11-01 21:02:05
+346,[],2013-03-29 23:04:20
+347,['Rotavirus'],2013-04-05 17:18:29
+348,"['Tuberculosis', 'Malaria']",2018-12-30 20:39:56
+349,"['Tick-borne encephalitis', 'Group B Streptococcus (GBS)']",2015-02-23 15:52:51
+350,[],2014-02-21 14:45:14
+351,[],2019-08-15 09:41:52
+352,['Dengue'],2012-10-13 14:10:31
+353,"['Neisseria gonorrhoeae', 'Rotavirus']",2012-12-14 03:23:15
+354,[],2012-11-03 07:34:52
+355,[],2008-06-14 13:10:20
+356,"['Rabies', 'Diphtheria']",2020-06-13 16:40:20
+357,[],2020-04-03 23:53:03
+358,[],2017-03-18 04:47:16
+359,['Rubella'],2012-08-22 17:13:31
+360,['Cholera'],2011-01-30 02:57:31
+361,"['Shigella', 'Dengue']",2014-12-18 13:25:39
+362,"['Group A Streptococcus (GAS)', 'Rubella']",2020-10-23 03:56:46
+363,['Haemophilus influenzae type b (Hib)'],2010-08-02 09:32:13
+364,['Rubella'],2017-07-25 02:04:01
+365,"['Yellow Fever', 'Nontyphoidal Salmonella Disease']",2010-10-08 08:53:46
+366,"['Japanese encephalitis', 'Influenza']",2020-11-13 18:03:04
+367,[],2017-08-18 05:24:13
+368,"['Typhoid', 'Rotavirus']",2017-07-16 06:15:33
+369,['Malaria'],2014-06-22 23:02:24
+370,"['Haemophilus influenzae type b (Hib)', 'Rabies']",2020-10-14 17:11:11
+371,[],2013-04-03 13:34:48
+372,[],2008-11-20 20:07:33
+373,['Schistosomiasis Disease'],2012-06-08 04:55:50
+374,[],2011-05-21 00:36:12
+375,['Typhoid'],2019-06-18 22:45:06
+376,['Neisseria gonorrhoeae'],2010-11-03 17:01:40
+377,[],2009-08-25 16:56:26
+378,[],2021-07-22 16:36:41
+379,['Yellow Fever'],2021-09-13 08:10:02
+380,"['Paratyphoid fever', 'Pertussis']",2015-09-28 08:09:15
+381,"['Dengue', 'Rabies']",2013-09-29 23:28:55
+382,['Malaria'],2014-10-12 14:38:08
+383,"['Neisseria gonorrhoeae', 'Tuberculosis']",2018-06-27 18:38:05
+384,[],2008-02-22 08:19:42
+385,"['Yellow Fever', 'Group B Streptococcus (GBS)']",2019-04-14 12:48:04
+386,"['COVID-19 (corona virus)', 'Cholera']",2019-06-12 22:29:55
+387,['Mumps'],2013-11-19 06:18:04
+388,[],2016-02-12 09:56:48
+389,"['Cholera', 'Shigella']",2015-09-02 01:37:11
+390,[],2015-03-04 16:27:49
+391,['Tick-borne encephalitis'],2011-01-17 05:29:49
+392,[],2021-05-01 10:46:49
+393,[],2010-11-01 19:54:35
+394,"['Japanese encephalitis', 'Influenza']",2010-09-20 10:59:13
+395,['Group A Streptococcus (GAS)'],2011-09-19 22:28:25
+396,[],2016-09-18 04:36:17
+397,['Respiratory Syncytial Virus (RSV)'],2015-12-12 09:33:00
+398,"['Enterotoxigenic Escherichia coli', 'Nontyphoidal Salmonella Disease']",2021-01-09 04:58:14
+399,['Varicella'],2014-03-06 21:04:00
+400,[],2017-03-14 09:01:26
+401,[],2009-04-10 11:12:20
+402,"['Enterotoxigenic Escherichia coli', 'Group B Streptococcus (GBS)']",2015-09-11 21:45:34
+403,['Malaria'],2011-10-20 01:21:14
+404,[],2019-07-09 04:59:49
+405,['Pneumococcal disease'],2013-04-27 17:36:45
+406,['Mumps'],2008-05-15 02:18:24
+407,[],2016-11-23 16:16:27
+408,[],2012-03-22 23:28:36
+409,"['Typhoid', 'Tuberculosis']",2008-09-11 23:33:53
+410,"['Tuberculosis', 'Pneumococcal disease']",2009-03-10 02:12:28
+411,[],2011-11-21 00:08:52
+412,[],2019-08-09 11:48:00
+413,"['Mumps', 'Diphtheria']",2018-10-15 16:22:41
+414,[],2008-07-20 18:04:20
+415,"['Japanese encephalitis', 'Measles']",2014-05-10 20:09:34
+416,"['Meningococcal meningitis', 'Group A Streptococcus (GAS)']",2018-06-27 17:43:13
+417,"['Pertussis', 'Tuberculosis']",2020-08-06 06:03:27
+418,['Tuberculosis'],2018-12-02 20:34:13
+419,['HIV-1Malaria'],2021-06-15 06:46:26
+420,"['Haemophilus influenzae type b (Hib)', 'Tetanus']",2018-10-26 22:08:08
+421,"['Neisseria gonorrhoeae', 'Varicella']",2017-07-16 17:23:02
+422,"['Respiratory Syncytial Virus (RSV)', 'Pneumococcal disease']",2012-03-13 01:55:42
+423,['Varicella'],2020-05-14 06:29:12
+424,[],2009-07-29 20:59:09
+425,[],2021-01-09 23:43:24
+426,['Pertussis'],2018-09-06 14:21:51
+427,['Shigella'],2015-03-25 17:40:39
+428,"['Cholera', 'Respiratory Syncytial Virus (RSV)']",2014-01-10 00:07:13
+429,"['Pertussis', 'Varicella']",2016-08-19 07:49:29
+430,[],2011-04-06 21:57:25
+431,[],2010-02-22 00:36:00
+432,[],2011-05-08 07:27:40
+433,[],2010-10-28 20:43:18
+434,"['Haemophilus influenzae type b (Hib)', 'Improved Influenza Vaccines']",2011-03-03 17:24:13
+435,"['Measles', 'Schistosomiasis Disease']",2008-09-19 22:13:02
+436,['Measles'],2016-12-07 10:21:26
+437,[],2008-01-27 11:03:41
+438,"['Yellow Fever', 'Rotavirus']",2020-11-25 01:50:34
+439,"['Neisseria gonorrhoeae', 'Yellow Fever']",2009-02-10 06:37:21
+440,['Tuberculosis'],2011-01-04 18:09:35
+441,[],2014-01-27 15:27:35
+442,[],2016-05-21 19:57:56
+443,[],2014-05-12 03:40:57
+444,['Tuberculosis'],2012-08-29 02:08:29
+445,"['Herpes Simplex Virus', 'Tick-borne encephalitis']",2020-09-16 12:23:43
+446,[],2016-02-18 04:10:48
+447,[],2020-12-29 03:44:33
+448,[],2020-05-17 20:31:21
+449,"['Tick-borne encephalitis', 'Herpes Simplex Virus']",2009-10-11 07:33:04
+450,"['Pertussis', 'Tuberculosis']",2019-02-05 15:30:57
+451,"['Yellow Fever', 'Measles']",2014-11-15 05:40:21
+452,"['Neisseria gonorrhoeae', 'Diphtheria']",2009-05-04 19:05:53
+453,['Typhoid'],2018-09-05 07:17:23
+454,['Tuberculosis'],2015-10-04 08:15:58
+455,['Meningococcal meningitis'],2018-07-01 13:37:47
+456,[],2012-07-11 15:31:20
+457,"['Human papillomavirus (HPV)', 'COVID-19 (corona virus)']",2012-01-13 10:03:54
+458,"['Nontyphoidal Salmonella Disease', 'Neisseria gonorrhoeae']",2015-09-12 12:45:14
+459,[],2014-11-02 04:33:45
+460,[],2019-10-10 07:49:38
+461,[],2009-02-22 06:40:07
+462,[],2015-12-30 20:56:59
+463,[],2008-01-29 22:01:01
+464,"['Human papillomavirus (HPV)', 'Poliomyelitis']",2015-09-19 21:15:18
+465,"['Measles', 'Nontyphoidal Salmonella Disease']",2011-09-19 13:08:17
+466,"['Measles', 'Norovirus']",2009-04-08 13:19:27
+467,[],2012-10-16 15:14:56
+468,['Enterotoxigenic Escherichia coli'],2016-10-04 11:22:14
+469,[],2019-02-22 19:45:16
+470,['Rubella'],2018-09-30 10:29:44
+471,[],2014-08-14 14:28:42
+472,[],2009-04-23 13:29:30
+473,"['Yellow Fever', 'Pertussis']",2015-02-20 14:58:03
+474,"['Varicella', 'Nontyphoidal Salmonella Disease']",2015-05-24 06:49:14
+475,"['Human papillomavirus (HPV)', 'Poliomyelitis']",2014-07-24 00:40:09
+476,['Cholera'],2008-07-13 14:34:49
+477,"['Tuberculosis', 'Group B Streptococcus (GBS)']",2017-10-29 05:51:45
+478,[],2021-11-03 13:08:15
+479,[],2011-03-03 23:57:15
+480,"['Schistosomiasis Disease', 'Nontyphoidal Salmonella Disease']",2019-01-03 11:08:55
+481,[],2013-01-09 11:19:17
+482,[],2010-11-25 00:23:10
+483,['Neisseria gonorrhoeae'],2014-07-01 04:00:31
+484,[],2014-01-15 01:16:29
+485,"['Hepatitis', 'Yellow Fever']",2016-10-01 00:48:51
+486,['Pertussis'],2010-01-13 15:21:50
+487,"['Human papillomavirus (HPV)', 'Tuberculosis']",2012-06-18 19:57:22
+488,[],2016-02-25 17:11:49
+489,"['Tuberculosis', 'Human papillomavirus (HPV)']",2021-05-10 03:09:49
+490,['Tetanus'],2015-09-03 15:47:49
+491,['Typhoid'],2008-08-12 12:03:23
+492,"['Influenza', 'Rubella']",2014-04-11 11:26:45
+493,['Pertussis'],2018-07-05 20:45:50
+494,"['Paratyphoid fever', 'Malaria']",2016-09-08 10:07:28
+495,"['Paratyphoid fever', 'Influenza']",2015-01-03 17:59:34
+496,"['Influenza', 'Malaria']",2013-01-26 01:15:20
+497,[],2009-04-09 04:00:12
+498,"['Diphtheria', 'Typhoid']",2020-07-04 21:38:55
+499,['Malaria'],2012-07-14 02:56:29
+500,['Improved Influenza Vaccines'],2017-12-09 02:33:33
+501,['Diphtheria'],2020-10-12 19:32:40
+502,[],2008-02-03 03:42:50
+503,[],2019-04-28 13:48:27
+504,['Yellow Fever'],2021-09-25 14:47:56
+505,"['Varicella', 'Norovirus']",2021-03-29 12:17:48
+506,['Poliomyelitis'],2008-03-07 10:06:54
+507,[],2011-01-21 00:24:50
+508,[],2013-04-23 00:48:24
+509,[],2021-07-11 23:04:44
+510,"['Rabies', 'Rotavirus']",2010-11-28 17:32:35
+511,[],2009-06-07 17:20:55
+512,"['Tetanus', 'Dengue']",2018-06-21 02:33:55
+513,['Malaria'],2011-10-11 22:32:25
+514,"['Respiratory Syncytial Virus (RSV)', 'Enterotoxigenic Escherichia coli']",2013-02-15 21:26:51
+515,['Mumps'],2013-03-21 07:26:33
+516,['Tuberculosis'],2019-11-14 16:43:54
+517,[],2018-01-10 07:49:09
+518,"['Varicella', 'Mumps']",2012-03-09 22:37:05
+519,"['Haemophilus influenzae type b (Hib)', 'Paratyphoid fever']",2020-03-05 00:32:53
+520,[],2014-08-12 04:36:51
+521,"['Paratyphoid fever', 'Malaria']",2009-05-14 15:11:05
+522,['Enterotoxigenic Escherichia coli'],2010-04-13 07:32:36
+523,"['Influenza', 'Respiratory Syncytial Virus (RSV)']",2018-03-08 04:53:11
+524,[],2009-05-06 09:03:51
+525,['Tick-borne encephalitis'],2010-11-22 13:43:15
+526,['Respiratory Syncytial Virus (RSV)'],2019-02-08 01:57:49
+527,"['Rubella', 'Human papillomavirus (HPV)']",2018-02-20 14:03:31
+528,[],2008-08-21 06:16:00
+529,['Diphtheria'],2014-12-30 18:48:20
+530,"['Tuberculosis', 'Respiratory Syncytial Virus (RSV)']",2009-02-22 08:33:31
+531,['Varicella'],2013-07-06 05:47:08
+532,"['Rubella', 'Enterotoxigenic Escherichia coli']",2011-01-08 10:32:00
+533,"['Respiratory Syncytial Virus (RSV)', 'Hepatitis']",2009-09-27 18:30:01
+534,['Improved Influenza Vaccines'],2021-08-05 19:38:13
+535,[],2008-02-29 10:54:46
+536,[],2008-12-22 06:12:31
+537,"['Hepatitis', 'HIV-1Malaria']",2010-12-31 06:15:19
+538,['Group B Streptococcus (GBS)'],2011-02-27 08:42:07
+539,[],2013-11-01 12:19:47
+540,[],2011-12-24 21:45:50
+541,['Influenza'],2010-12-22 18:39:38
+542,"['Pneumococcal disease', 'Malaria']",2008-02-13 16:57:06
+543,"['Nontyphoidal Salmonella Disease', 'Enterotoxigenic Escherichia coli']",2017-11-03 09:26:40
+544,['Poliomyelitis'],2021-11-05 01:51:50
+545,[],2010-03-27 07:53:53
+546,[],2021-11-04 21:58:16
+547,"['Schistosomiasis Disease', 'Tuberculosis']",2013-01-10 05:39:04
+548,[],2020-07-29 02:07:30
+549,[],2019-08-10 17:48:07
+550,['Hepatitis'],2018-11-16 13:41:00
+551,"['Tetanus', 'Tuberculosis']",2017-12-11 20:52:34
+552,['Paratyphoid fever'],2013-10-17 12:29:31
+553,[],2008-05-04 19:21:49
+554,"['Japanese encephalitis', 'Varicella']",2015-01-14 23:28:47
+555,['Enterotoxigenic Escherichia coli'],2019-02-09 10:08:48
+556,['Malaria'],2015-10-22 20:18:26
+557,[],2009-10-29 14:19:05
+558,[],2017-07-30 13:16:43
+559,"['Neisseria gonorrhoeae', 'Nontyphoidal Salmonella Disease']",2017-09-25 00:01:29
+560,['HIV-1Malaria'],2012-06-10 05:52:53
+561,[],2016-06-29 21:37:31
+562,[],2009-06-19 16:31:15
+563,[],2018-05-11 09:50:02
+564,['Tuberculosis'],2021-05-14 09:24:24
+565,[],2019-11-09 09:15:23
+566,['Shigella'],2016-12-16 10:31:02
+567,"['Group A Streptococcus (GAS)', 'Group B Streptococcus (GBS)']",2015-03-26 18:43:04
+568,[],2021-12-25 20:25:41
+569,"['Haemophilus influenzae type b (Hib)', 'Tick-borne encephalitis']",2014-12-18 10:17:49
+570,"['Hepatitis', 'Malaria']",2009-01-02 06:50:45
+571,[],2020-01-19 16:12:37
+572,['Pneumococcal disease'],2020-10-08 17:20:27
+573,"['Herpes Simplex Virus', 'Rotavirus']",2016-07-18 22:27:07
+574,"['Mumps', 'Rabies']",2010-02-15 13:47:21
+575,"['Group B Streptococcus (GBS)', 'Norovirus']",2021-08-29 06:46:17
+576,"['Shigella', 'Poliomyelitis']",2010-04-29 01:14:20
+577,['COVID-19 (corona virus)'],2016-07-14 18:06:24
+578,"['Poliomyelitis', 'Herpes Simplex Virus']",2016-09-12 13:24:51
+579,[],2019-09-12 23:46:56
+580,"['Poliomyelitis', 'Shigella']",2016-05-17 02:28:28
+581,['Hepatitis'],2021-07-10 07:56:47
+582,"['Group B Streptococcus (GBS)', 'Shigella']",2021-07-06 15:50:16
+583,"['COVID-19 (corona virus)', 'Poliomyelitis']",2012-03-09 18:08:52
+584,"['Respiratory Syncytial Virus (RSV)', 'Improved Influenza Vaccines']",2019-11-16 12:34:03
+585,['Tuberculosis'],2020-06-24 07:02:38
+586,"['HIV-1Malaria', 'Tuberculosis']",2015-04-29 16:12:21
+587,['Mumps'],2021-09-27 02:48:33
+588,"['Measles', 'Varicella']",2011-03-25 10:35:00
+589,"['Human papillomavirus (HPV)', 'Measles']",2012-08-04 06:41:29
+590,['Mumps'],2020-11-20 09:02:08
+591,['Tuberculosis'],2015-11-15 22:46:12
+592,"['Yellow Fever', 'Schistosomiasis Disease']",2008-09-30 19:19:33
+593,"['Varicella', 'Dengue']",2016-02-04 05:58:06
+594,"['Diphtheria', 'Improved Influenza Vaccines']",2015-03-25 21:51:38
+595,['Rabies'],2020-05-31 10:19:35
+596,"['Schistosomiasis Disease', 'Varicella']",2018-03-03 21:02:42
+597,"['Pneumococcal disease', 'Schistosomiasis Disease']",2019-10-31 19:02:59
+598,['Influenza'],2008-02-22 04:30:44
+599,[],2014-08-26 18:58:30
+600,"['Pneumococcal disease', 'Tuberculosis']",2017-11-30 22:29:37
+601,[],2021-12-19 00:01:53
+602,"['Respiratory Syncytial Virus (RSV)', 'Malaria']",2015-07-28 14:50:04
+603,['Influenza'],2018-02-19 02:19:40
+604,"['Norovirus', 'Dengue']",2015-08-06 11:26:15
+605,[],2015-03-26 23:14:24
+606,"['Improved Influenza Vaccines', 'Measles']",2013-05-16 04:23:38
+607,"['Respiratory Syncytial Virus (RSV)', 'Meningococcal meningitis']",2011-02-17 18:56:16
+608,[],2014-01-11 15:13:37
+609,[],2009-08-29 03:31:54
+610,[],2019-06-01 07:38:50
+611,[],2020-02-18 19:32:53
+612,"['COVID-19 (corona virus)', 'Human papillomavirus (HPV)']",2019-09-06 22:42:07
+613,[],2012-09-08 13:14:58
+614,"['Herpes Simplex Virus', 'Tuberculosis']",2021-03-19 21:29:24
+615,['Varicella'],2018-10-15 03:05:39
+616,['Schistosomiasis Disease'],2017-02-21 19:42:44
+617,[],2011-10-16 13:47:09
+618,"['Paratyphoid fever', 'Varicella']",2010-04-05 19:36:57
+619,['Schistosomiasis Disease'],2012-08-28 00:40:58
+620,['Shigella'],2020-11-22 05:18:12
+621,[],2009-04-14 18:37:26
+622,"['HIV-1Malaria', 'Norovirus']",2011-01-15 20:08:43
+623,"['Malaria', 'Pertussis']",2016-01-16 06:38:30
+624,['Tuberculosis'],2014-11-11 16:14:25
+625,['Norovirus'],2009-06-04 00:28:14
+626,[],2017-09-13 21:37:53
+627,['Tick-borne encephalitis'],2016-07-14 02:27:38
+628,"['Rubella', 'Tuberculosis']",2016-08-27 15:38:46
+629,"['Tick-borne encephalitis', 'Group B Streptococcus (GBS)']",2014-07-17 06:22:27
+630,"['Influenza', 'Diphtheria']",2015-02-22 23:41:36
+631,[],2012-03-01 23:35:17
+632,[],2010-02-04 11:06:56
+633,['Shigella'],2011-01-18 03:53:38
+634,[],2008-07-08 15:50:16
+635,[],2012-01-04 22:07:41
+636,[],2011-08-26 01:00:01
+637,['Improved Influenza Vaccines'],2020-05-26 02:14:34
+638,['Poliomyelitis'],2015-12-04 22:40:33
+639,[],2008-03-23 03:55:33
+640,['Rubella'],2011-04-06 08:20:54
+641,[],2016-12-17 20:51:08
+642,"['Cholera', 'Paratyphoid fever']",2014-03-14 22:07:33
+643,[],2020-06-08 05:31:44
+644,[],2014-04-10 22:07:17
+645,[],2009-05-08 19:47:51
+646,[],2011-06-20 14:32:35
+647,['Group B Streptococcus (GBS)'],2020-12-16 05:27:23
+648,[],2015-01-27 09:31:38
+649,[],2014-08-02 03:15:49
+650,"['Norovirus', 'Nontyphoidal Salmonella Disease']",2018-09-22 21:55:01
+651,"['Cholera', 'Tuberculosis']",2011-03-15 16:13:50
+652,['HIV-1Malaria'],2009-04-25 12:20:32
+653,[],2021-11-10 05:14:17
+654,['Improved Influenza Vaccines'],2015-03-11 01:34:01
+655,"['Rubella', 'Paratyphoid fever']",2008-08-05 09:14:16
+656,[],2010-12-23 10:24:35
+657,"['Pneumococcal disease', 'Rotavirus']",2009-12-13 17:42:12
+658,[],2013-10-31 01:38:29
+659,[],2012-03-17 01:22:51
+660,"['Varicella', 'Japanese encephalitis']",2019-01-17 17:29:12
+661,[],2016-11-01 03:56:36
+662,"['Tick-borne encephalitis', 'Human papillomavirus (HPV)']",2021-07-09 20:33:04
+663,['Meningococcal meningitis'],2013-09-27 06:29:31
+664,[],2011-02-02 09:46:49
+665,[],2019-03-09 21:22:02
+666,[],2017-05-20 01:49:13
+667,"['Group B Streptococcus (GBS)', 'Diphtheria']",2016-10-05 18:39:21
+668,[],2013-01-09 07:56:40
+669,"['Pneumococcal disease', 'Dengue']",2012-01-01 01:38:34
+670,['Pertussis'],2016-08-07 22:52:50
+671,"['Rabies', 'Dengue']",2011-03-08 22:28:43
+672,[],2015-10-05 10:54:05
+673,[],2020-10-01 01:27:43
+674,['Tuberculosis'],2008-05-03 15:50:11
+675,"['Hepatitis', 'Neisseria gonorrhoeae']",2017-06-26 11:09:11
+676,[],2021-01-14 20:36:07
+677,[],2021-06-15 19:22:46
+678,"['Norovirus', 'Varicella']",2021-06-28 11:59:49
+679,[],2008-09-01 21:34:53
+680,"['Rubella', 'Tetanus']",2017-03-23 01:46:40
+681,['Herpes Simplex Virus'],2011-08-06 07:43:55
+682,['COVID-19 (corona virus)'],2021-07-30 08:45:18
+683,[],2014-02-27 09:42:28
+684,"['Schistosomiasis Disease', 'Human papillomavirus (HPV)']",2015-04-01 03:58:30
+685,"['Norovirus', 'Pneumococcal disease']",2021-04-30 21:16:40
+686,[],2019-12-23 12:02:53
+687,"['Norovirus', 'Malaria']",2015-12-04 03:00:36
+688,['Tetanus'],2011-04-05 03:20:48
+689,[],2008-10-15 02:47:33
+690,['Norovirus'],2015-05-23 12:54:00
+691,"['Enterotoxigenic Escherichia coli', 'Poliomyelitis']",2021-07-11 00:52:45
+692,[],2016-07-03 19:52:54
+693,['Haemophilus influenzae type b (Hib)'],2019-12-29 15:37:37
+694,[],2008-06-19 05:08:54
+695,['Tuberculosis'],2009-10-09 14:11:44
+696,['Cholera'],2019-05-01 22:49:17
+697,[],2017-01-26 16:42:23
+698,['Norovirus'],2008-12-05 09:07:08
+699,"['Group A Streptococcus (GAS)', 'COVID-19 (corona virus)']",2020-06-30 17:18:38
+700,[],2013-11-27 12:22:32
+701,"['Typhoid', 'Group A Streptococcus (GAS)']",2019-01-19 11:04:05
+702,[],2015-10-07 04:50:52
+703,[],2012-07-03 09:25:52
+704,"['COVID-19 (corona virus)', 'Tuberculosis']",2014-06-05 17:38:49
+705,[],2013-04-21 23:07:25
+706,[],2011-09-12 08:00:19
+707,"['Varicella', 'Dengue']",2011-07-26 21:15:09
+708,[],2021-01-05 21:34:50
+709,[],2017-04-24 18:55:41
+710,['Pneumococcal disease'],2015-05-24 10:46:03
+711,[],2012-10-24 15:43:04
+712,[],2009-06-11 19:21:10
+713,"['Schistosomiasis Disease', 'Paratyphoid fever']",2019-01-27 04:38:27
+714,"['Japanese encephalitis', 'Influenza']",2017-05-02 16:46:47
+715,"['Diphtheria', 'Tetanus']",2016-05-16 12:55:53
+716,"['Malaria', 'Measles']",2018-10-22 03:40:36
+717,['Schistosomiasis Disease'],2013-04-24 01:50:48
+718,['Norovirus'],2021-09-28 02:39:18
+719,[],2014-01-22 08:49:33
+720,[],2020-02-15 21:04:10
+721,['Influenza'],2008-11-14 12:49:06
+722,[],2013-05-13 21:17:34
+723,['Measles'],2021-11-22 10:29:32
+724,['Japanese encephalitis'],2012-09-03 16:15:37
+725,['Paratyphoid fever'],2020-09-16 16:49:51
+726,[],2015-04-10 05:54:24
+727,[],2014-06-09 13:18:26
+728,['Norovirus'],2014-01-01 10:35:14
+729,['Norovirus'],2012-08-22 09:39:24
+730,[],2012-03-24 18:32:02
+731,['Pneumococcal disease'],2017-10-20 15:23:04
+732,"['Improved Influenza Vaccines', 'Diphtheria']",2010-05-10 05:43:55
+733,[],2012-07-14 23:22:02
+734,"['Tetanus', 'Schistosomiasis Disease']",2012-11-24 20:29:46
+735,"['Measles', 'Haemophilus influenzae type b (Hib)']",2020-02-06 18:41:09
+736,['Tuberculosis'],2016-04-22 19:14:15
+737,[],2010-03-01 11:55:25
+738,['Herpes Simplex Virus'],2017-12-04 08:58:57
+739,"['Japanese encephalitis', 'HIV-1Malaria']",2011-09-16 07:36:55
+740,"['Improved Influenza Vaccines', 'Haemophilus influenzae type b (Hib)']",2021-08-25 01:19:01
+741,['Schistosomiasis Disease'],2010-05-14 08:09:13
+742,['Dengue'],2015-07-08 10:53:07
+743,[],2018-12-21 06:54:07
+744,[],2011-06-29 15:10:02
+745,[],2015-10-21 12:04:10
+746,['Pertussis'],2021-01-31 17:41:52
+747,"['Rabies', 'Rubella']",2012-09-14 12:36:44
+748,[],2017-04-11 03:25:54
+749,"['Cholera', 'Improved Influenza Vaccines']",2010-09-10 10:29:25
+750,['Norovirus'],2008-01-23 18:31:30
+751,['Schistosomiasis Disease'],2017-06-04 11:03:54
+752,['Tuberculosis'],2009-02-14 01:56:14
+753,['Poliomyelitis'],2020-04-25 01:05:26
+754,['Pneumococcal disease'],2017-01-01 08:34:21
+755,['Human papillomavirus (HPV)'],2011-06-25 10:06:25
+756,['Cholera'],2016-09-06 05:20:04
+757,"['Pertussis', 'Yellow Fever']",2012-01-17 18:01:03
+758,[],2017-09-24 14:28:58
+759,[],2021-12-29 02:07:43
+760,[],2015-12-03 16:56:51
+761,[],2009-12-03 13:59:08
+762,[],2013-04-29 21:43:24
+763,[],2011-10-18 16:34:51
+764,"['HIV-1Malaria', 'Malaria']",2009-03-11 12:16:12
+765,"['Group A Streptococcus (GAS)', 'Respiratory Syncytial Virus (RSV)']",2015-08-16 13:20:18
+766,"['Herpes Simplex Virus', 'Rotavirus']",2010-09-11 21:47:51
+767,[],2009-05-22 16:32:16
+768,"['Typhoid', 'Measles']",2010-07-13 22:13:28
+769,[],2010-06-10 13:00:55
+770,[],2012-10-13 08:13:19
+771,"['Dengue', 'Group B Streptococcus (GBS)']",2015-02-18 00:33:48
+772,[],2020-07-03 07:31:01
+773,['Japanese encephalitis'],2019-12-16 15:10:27
+774,"['Group A Streptococcus (GAS)', 'Japanese encephalitis']",2011-07-16 08:50:38
+775,"['Human papillomavirus (HPV)', 'Pertussis']",2017-12-16 10:27:05
+776,"['COVID-19 (corona virus)', 'Cholera']",2011-09-14 14:22:21
+777,"['Pertussis', 'Cholera']",2009-01-10 01:04:08
+778,['Hepatitis'],2008-12-06 07:00:27
+779,"['Influenza', 'Mumps']",2014-11-06 08:26:49
+780,[],2013-07-18 18:17:14
+781,['Human papillomavirus (HPV)'],2015-07-02 21:32:16
+782,"['Varicella', 'Rabies']",2016-11-20 03:45:35
+783,['Respiratory Syncytial Virus (RSV)'],2013-07-04 21:30:42
+784,[],2020-06-22 20:31:17
+785,['Rotavirus'],2015-05-27 21:47:22
+786,"['Japanese encephalitis', 'Diphtheria']",2013-02-17 15:30:39
+787,[],2009-08-23 14:03:23
+788,['Japanese encephalitis'],2017-11-17 14:13:59
+789,[],2011-10-17 17:01:12
+790,[],2019-05-23 15:26:19
+791,"['Influenza', 'Human papillomavirus (HPV)']",2010-06-20 02:23:16
+792,[],2016-04-27 13:58:18
+793,"['Schistosomiasis Disease', 'Typhoid']",2015-01-11 18:40:18
+794,[],2015-04-05 17:59:38
+795,"['Tuberculosis', 'Haemophilus influenzae type b (Hib)']",2021-05-17 06:36:26
+796,['Respiratory Syncytial Virus (RSV)'],2008-04-27 00:41:43
+797,"['Enterotoxigenic Escherichia coli', 'Tetanus']",2013-09-09 18:03:35
+798,"['Mumps', 'Yellow Fever']",2021-02-14 09:24:51
+799,[],2010-08-06 01:10:58
+800,"['Meningococcal meningitis', 'Cholera']",2018-08-31 05:20:28
+801,"['Group B Streptococcus (GBS)', 'Norovirus']",2013-08-16 21:30:25
+802,[],2021-04-19 05:38:02
+803,"['Paratyphoid fever', 'Tuberculosis']",2015-07-25 10:00:15
+804,[],2021-12-27 16:59:05
+805,['Varicella'],2020-09-18 19:07:09
+806,"['Paratyphoid fever', 'Dengue']",2009-05-25 12:33:37
+807,[],2009-07-18 11:59:50
+808,"['Dengue', 'Tuberculosis']",2020-10-28 14:49:15
+809,"['Diphtheria', 'Tuberculosis']",2021-02-14 20:15:34
+810,[],2013-04-02 12:07:57
+811,[],2019-05-28 21:37:22
+812,[],2019-07-06 17:56:55
+813,['Haemophilus influenzae type b (Hib)'],2016-01-25 04:26:53
+814,['Enterotoxigenic Escherichia coli'],2016-05-26 06:14:36
+815,"['Schistosomiasis Disease', 'Neisseria gonorrhoeae']",2009-06-23 03:54:46
+816,['Group B Streptococcus (GBS)'],2013-06-28 00:54:14
+817,[],2012-03-10 12:39:32
+818,"['Poliomyelitis', 'Group A Streptococcus (GAS)']",2009-06-24 16:01:58
+819,['Tuberculosis'],2020-05-31 04:59:36
+820,"['Typhoid', 'Haemophilus influenzae type b (Hib)']",2011-10-11 15:28:17
+821,"['Neisseria gonorrhoeae', 'Schistosomiasis Disease']",2015-01-23 04:12:18
+822,[],2018-07-24 14:36:26
+823,['Rubella'],2009-08-17 20:02:34
+824,[],2021-06-11 22:28:05
+825,[],2010-05-06 02:12:53
+826,['Yellow Fever'],2021-12-20 10:31:37
+827,['Malaria'],2018-11-27 20:49:00
+828,['Malaria'],2009-07-28 22:19:43
+829,[],2020-04-26 15:40:23
+830,['Typhoid'],2009-04-25 23:08:53
+831,"['Mumps', 'Schistosomiasis Disease']",2015-05-15 00:39:03
+832,[],2019-08-25 01:14:30
+833,['Shigella'],2014-11-21 09:15:46
+834,"['COVID-19 (corona virus)', 'Herpes Simplex Virus']",2012-04-18 11:15:51
+835,[],2021-08-11 09:45:03
+836,[],2019-02-28 20:43:13
+837,"['Malaria', 'Respiratory Syncytial Virus (RSV)']",2010-08-02 20:04:40
+838,[],2017-01-25 21:13:35
+839,"['Group A Streptococcus (GAS)', 'Dengue']",2008-07-23 21:32:42
+840,"['Poliomyelitis', 'Improved Influenza Vaccines']",2012-07-31 00:32:03
+841,['Paratyphoid fever'],2018-06-03 05:45:56
+842,[],2021-03-04 00:32:40
+843,['Tick-borne encephalitis'],2014-05-14 12:58:51
+844,['Schistosomiasis Disease'],2021-05-20 14:04:53
+845,['Hepatitis'],2012-03-14 07:48:50
+846,"['Norovirus', 'Japanese encephalitis']",2018-06-02 11:16:18
+847,['Norovirus'],2012-09-30 23:18:00
+848,"['Poliomyelitis', 'Diphtheria']",2017-11-01 14:20:42
+849,[],2010-10-08 06:07:39
+850,"['Tick-borne encephalitis', 'Group B Streptococcus (GBS)']",2009-07-02 23:58:38
+851,"['Tuberculosis', 'Tuberculosis']",2017-10-10 10:49:44
+852,[],2012-11-23 07:10:39
+853,['Human papillomavirus (HPV)'],2017-07-12 19:10:45
+854,['Hepatitis'],2016-07-07 04:49:33
+855,['Yellow Fever'],2019-06-11 07:08:03
+856,['Mumps'],2013-04-18 05:42:07
+857,['Measles'],2008-12-28 19:15:12
+858,[],2017-08-09 00:21:04
+859,[],2015-05-21 09:20:34
+860,[],2014-12-19 06:10:38
+861,[],2009-03-01 17:39:53
+862,"['Diphtheria', 'Schistosomiasis Disease']",2009-09-15 14:39:36
+863,[],2013-06-04 18:16:17
+864,['Poliomyelitis'],2018-08-20 05:33:35
+865,[],2011-12-07 21:14:03
+866,"['Haemophilus influenzae type b (Hib)', 'Neisseria gonorrhoeae']",2019-10-21 19:25:45
+867,[],2021-01-06 10:43:20
+868,[],2014-10-03 10:06:40
+869,['Improved Influenza Vaccines'],2020-10-02 21:46:09
+870,[],2015-05-26 08:41:59
+871,['Poliomyelitis'],2021-02-26 11:30:07
+872,"['Meningococcal meningitis', 'Japanese encephalitis']",2018-03-02 10:47:03
+873,['Japanese encephalitis'],2020-09-27 03:58:15
+874,['Pneumococcal disease'],2016-04-11 09:10:41
+875,"['Norovirus', 'Rabies']",2013-12-18 17:53:34
+876,[],2021-12-18 02:22:28
+877,['Mumps'],2021-07-20 02:37:50
+878,"['Hepatitis', 'Group B Streptococcus (GBS)']",2014-09-25 18:32:49
+879,"['Typhoid', 'Human papillomavirus (HPV)']",2014-06-21 11:25:19
+880,"['Enterotoxigenic Escherichia coli', 'Varicella']",2018-09-24 12:33:41
+881,"['Meningococcal meningitis', 'Pneumococcal disease']",2014-04-20 16:11:27
+882,"['Pertussis', 'Measles']",2014-02-27 12:34:00
+883,['Nontyphoidal Salmonella Disease'],2015-04-01 15:20:31
+884,"['Group B Streptococcus (GBS)', 'Varicella']",2012-07-19 03:56:50
+885,['Measles'],2015-11-18 20:08:35
+886,['Japanese encephalitis'],2020-12-20 15:15:08
+887,['Group A Streptococcus (GAS)'],2011-10-24 04:17:56
+888,[],2008-09-13 15:27:53
+889,"['Diphtheria', 'Tick-borne encephalitis']",2017-10-27 02:54:29
+890,[],2015-05-19 03:00:54
+891,[],2019-10-18 22:22:07
+892,[],2010-08-29 17:47:44
+893,[],2009-01-02 20:26:20
+894,"['Tetanus', 'Diphtheria']",2019-07-03 04:39:03
+895,['Haemophilus influenzae type b (Hib)'],2016-03-14 07:49:14
+896,['Schistosomiasis Disease'],2019-02-21 13:02:35
+897,[],2016-11-11 03:38:31
+898,['Malaria'],2018-04-07 18:38:37
+899,"['Tetanus', 'Typhoid']",2020-07-11 08:53:10
+900,"['HIV-1Malaria', 'Improved Influenza Vaccines']",2018-06-14 19:13:50
+901,[],2015-12-20 09:54:51
+902,"['Group A Streptococcus (GAS)', 'Schistosomiasis Disease']",2013-04-10 22:08:54
+903,['Hepatitis'],2010-08-31 00:54:23
+904,"['Varicella', 'Measles']",2016-01-27 03:58:01
+905,"['Haemophilus influenzae type b (Hib)', 'Neisseria gonorrhoeae']",2013-06-10 15:54:57
+906,[],2011-11-18 04:53:00
+907,[],2012-11-29 16:56:34
+908,"['Dengue', 'Mumps']",2010-04-09 07:38:14
+909,['Rotavirus'],2017-05-13 02:44:10
+910,[],2016-11-23 09:37:12
+911,['Tuberculosis'],2010-03-19 00:45:22
+912,"['Human papillomavirus (HPV)', 'Haemophilus influenzae type b (Hib)']",2021-04-15 10:06:20
+913,"['Tuberculosis', 'Haemophilus influenzae type b (Hib)']",2010-01-02 11:55:12
+914,['Schistosomiasis Disease'],2018-06-08 17:11:06
+915,[],2016-09-14 09:24:19
+916,['Mumps'],2019-05-26 16:24:16
+917,"['Malaria', 'Pertussis']",2011-11-01 03:20:06
+918,"['Diphtheria', 'Cholera']",2021-05-13 16:52:03
+919,[],2009-03-30 13:24:30
+920,"['HIV-1Malaria', 'Herpes Simplex Virus']",2012-04-28 13:24:33
+921,[],2016-04-06 23:25:20
+922,[],2020-05-20 07:57:28
+923,[],2015-02-11 13:34:52
+924,['Yellow Fever'],2013-12-21 16:10:18
+925,"['Tick-borne encephalitis', 'Diphtheria']",2017-10-12 04:49:53
+926,['COVID-19 (corona virus)'],2009-06-13 03:08:58
+927,"['Paratyphoid fever', 'Haemophilus influenzae type b (Hib)']",2010-08-19 17:09:22
+928,[],2019-09-18 14:40:53
+929,[],2011-03-23 19:32:33
+930,"['Cholera', 'Schistosomiasis Disease']",2017-03-10 17:28:48
+931,"['Haemophilus influenzae type b (Hib)', 'Enterotoxigenic Escherichia coli']",2010-06-15 22:16:59
+932,['Hepatitis'],2013-11-19 03:40:22
+933,['Improved Influenza Vaccines'],2011-06-06 12:07:33
+934,[],2011-05-12 04:47:37
+935,['Rubella'],2021-03-15 13:12:24
+936,[],2019-12-14 04:01:41
+937,"['Tuberculosis', 'Respiratory Syncytial Virus (RSV)']",2019-05-14 11:44:01
+938,"['Tuberculosis', 'Human papillomavirus (HPV)']",2015-07-06 14:14:46
+939,['Group B Streptococcus (GBS)'],2018-02-08 01:49:08
+940,"['Respiratory Syncytial Virus (RSV)', 'Typhoid']",2019-02-08 17:10:52
+941,[],2016-12-31 07:49:46
+942,['Yellow Fever'],2016-03-23 20:51:11
+943,['Typhoid'],2016-08-12 14:34:38
+944,['Respiratory Syncytial Virus (RSV)'],2011-12-13 00:37:28
+945,"['Haemophilus influenzae type b (Hib)', 'Dengue']",2008-06-26 22:03:42
+946,['Malaria'],2008-11-16 05:16:46
+947,[],2010-08-11 11:58:44
+948,[],2017-09-26 14:43:40
+949,"['COVID-19 (corona virus)', 'Shigella']",2012-06-30 20:53:06
+950,['Rabies'],2019-01-13 11:22:25
+951,"['HIV-1Malaria', 'Schistosomiasis Disease']",2020-02-23 07:02:39
+952,"['Tick-borne encephalitis', 'Pneumococcal disease']",2013-10-14 15:56:03
+953,"['Rotavirus', 'Influenza']",2015-03-25 04:28:54
+954,"['Dengue', 'Yellow Fever']",2020-06-25 16:10:54
+955,['Rotavirus'],2018-01-24 19:49:13
+956,"['Yellow Fever', 'Influenza']",2019-04-18 11:11:27
+957,['Dengue'],2018-07-27 11:10:40
+958,"['Varicella', 'Hepatitis']",2016-10-01 23:30:18
+959,"['Influenza', 'Enterotoxigenic Escherichia coli']",2017-06-24 05:35:48
+960,['Typhoid'],2013-05-13 17:26:05
+961,"['Japanese encephalitis', 'Diphtheria']",2009-11-28 18:01:27
+962,['Group B Streptococcus (GBS)'],2020-06-02 02:02:59
+963,[],2010-06-16 09:53:48
+964,"['Malaria', 'Yellow Fever']",2019-07-24 09:01:04
+965,"['Schistosomiasis Disease', 'Meningococcal meningitis']",2020-09-04 23:09:50
+966,[],2020-05-31 16:26:16
+967,"['Group B Streptococcus (GBS)', 'Shigella']",2021-09-14 21:48:48
+968,"['Varicella', 'Poliomyelitis']",2020-08-07 00:22:32
+969,['Tetanus'],2014-12-12 11:08:17
+970,['Tick-borne encephalitis'],2009-11-15 04:17:18
+971,['COVID-19 (corona virus)'],2008-06-08 09:36:09
+972,['Shigella'],2015-08-31 16:30:30
+973,[],2019-11-30 23:04:17
+974,"['Nontyphoidal Salmonella Disease', 'Pertussis']",2015-04-11 22:59:01
+975,['Pneumococcal disease'],2020-07-08 10:45:20
+976,[],2009-08-16 01:18:30
+977,[],2017-07-22 08:41:56
+978,"['Group A Streptococcus (GAS)', 'Tick-borne encephalitis']",2013-03-26 08:45:43
+979,"['Pertussis', 'Group B Streptococcus (GBS)']",2015-03-10 02:16:19
+980,['HIV-1Malaria'],2015-09-11 16:27:43
+981,['Neisseria gonorrhoeae'],2018-01-10 02:20:05
+982,[],2019-06-23 13:16:58
+983,['Shigella'],2013-01-15 02:09:15
+984,"['Respiratory Syncytial Virus (RSV)', 'Enterotoxigenic Escherichia coli']",2010-03-14 15:36:49
+985,"['Measles', 'Norovirus']",2015-06-23 13:00:22
+986,['Mumps'],2017-04-14 23:56:36
+987,[],2008-05-31 21:32:06
+988,['Typhoid'],2010-12-20 07:55:07
+989,"['Nontyphoidal Salmonella Disease', 'Herpes Simplex Virus']",2017-06-29 08:13:06
+990,"['Herpes Simplex Virus', 'Schistosomiasis Disease']",2008-09-26 01:57:31
+991,['Schistosomiasis Disease'],2015-01-07 01:57:14
+992,"['Schistosomiasis Disease', 'Group A Streptococcus (GAS)']",2020-10-17 03:01:54
+993,['Improved Influenza Vaccines'],2016-04-03 02:14:41
+994,"['HIV-1Malaria', 'Norovirus']",2020-06-06 01:56:56
+995,[],2020-11-25 22:08:10
+996,['Paratyphoid fever'],2015-04-29 04:27:24
+997,[],2017-02-14 10:52:09
+998,[],2015-05-26 16:55:36
+999,['Japanese encephalitis'],2021-01-12 16:17:48

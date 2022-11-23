@@ -1,0 +1,1001 @@
+,Diagnosis
+0,"['Penicillin', 'Chromium']"
+1,"['Balsam of Peru', 'Cobalt', 'Water', 'Sesame']"
+2,"['Fish', 'Local anesthetics', 'Latex']"
+3,"['Pollen', 'Cephalosporins']"
+4,[]
+5,[]
+6,"['Balsam of Peru', 'Cosmetics', 'Rice', 'Wheat']"
+7,['Buckwheat']
+8,"['Rice', 'Wheat']"
+9,['Fish']
+10,"['Cat', 'Sulfites']"
+11,[]
+12,"['Balsam of Peru', 'Photographic developers', 'Balsam of Peru']"
+13,['Oats']
+14,['Cold stimuli']
+15,"['Tetracycline', 'Balsam of Peru']"
+16,['Wheat']
+17,[]
+18,"['Latex', 'Non-steroidal anti-inflammatories', 'Chromium', 'Soy']"
+19,"['Nickel', 'Intravenous contrast dye', 'Sesame', 'Balsam of Peru']"
+20,"['Cat', 'Dog', 'Balsam of Peru']"
+21,['Peanut']
+22,"['Pollen', 'Sulfonamides', 'Nickel', 'Milk']"
+23,[]
+24,['Maize']
+25,['Cold stimuli']
+26,"['Gold', 'Tree nut', 'Shellfish']"
+27,"['House dust mite', 'Sulfites']"
+28,"['Mustard', 'Local anesthetics']"
+29,"['Cold stimuli', 'Fish', 'Insect sting', 'Perfume']"
+30,[]
+31,['Sesame']
+32,"['Milk', 'Intravenous contrast dye']"
+33,['Sulfonamides']
+34,"['Sesame', 'Tegretol', 'Cat', 'Photographic developers']"
+35,[]
+36,"['Poultry Meat', 'Garlic', 'Insect sting', 'Dog']"
+37,"['Cold stimuli', 'Tartrazine', 'Dog', 'Mold']"
+38,"['Sulfonamides', 'Garlic']"
+39,['Peanut']
+40,['Nickel']
+41,"['Water', 'Fungicide']"
+42,"['Sulfites', 'Fruit', 'Photographic developers']"
+43,"['Mustard', 'Buckwheat']"
+44,['Balsam of Peru']
+45,[]
+46,"['House dust mite', 'Buckwheat', 'Fungicide', 'Tetracycline']"
+47,"['Pollen', 'Fruit', 'Milk']"
+48,[]
+49,[]
+50,['Fish']
+51,"['Balsam of Peru', 'Egg']"
+52,"['Tartrazine', 'Rice']"
+53,"['Balsam of Peru', 'Cobalt', 'Tetracycline']"
+54,"['Tegretol', 'Balsam of Peru', 'Fungicide']"
+55,"['Soy', 'Cephalosporins', 'Dilantin']"
+56,"['Penicillin', 'Latex', 'Tegretol']"
+57,[]
+58,"['Photographic developers', 'Tartrazine', 'Latex']"
+59,[]
+60,"['Pollen', 'Fish', 'Water', 'Tartrazine']"
+61,"['Cephalosporins', 'Penicillin']"
+62,"['Maize', 'Chromium', 'Tartrazine']"
+63,['Chromium']
+64,"['Intravenous contrast dye', 'Sulfonamides', 'Tegretol']"
+65,[]
+66,[]
+67,[]
+68,"['Milk', 'Water', 'Tegretol', 'Mold']"
+69,"['Fungicide', 'Mold', 'Garlic', 'Cobalt']"
+70,"['Mold', 'Sulfites', 'Pollen']"
+71,"['Garlic', 'Balsam of Peru', 'Gold', 'Cobalt']"
+72,"['Balsam of Peru', 'Balsam of Peru']"
+73,"['Water', 'Mustard']"
+74,"['Fungicide', 'Perfume', 'Oats']"
+75,['House dust mite']
+76,"['Cobalt', 'Local anesthetics', 'Tetracycline']"
+77,"['Photographic developers', 'Gold', 'Sulfites', 'Sesame']"
+78,"['Penicillin', 'Gold']"
+79,[]
+80,"['Balsam of Peru', 'Poultry Meat', 'Insect sting']"
+81,['Penicillin']
+82,"['Non-steroidal anti-inflammatories', 'Chromium', 'Sesame']"
+83,"['Cold stimuli', 'Local anesthetics']"
+84,"['Maize', 'Local anesthetics', 'Peanut', 'Tartrazine']"
+85,[]
+86,"['Cosmetics', 'Chromium']"
+87,"['Gold', 'Nickel']"
+88,"['House dust mite', 'Dilantin', 'Sesame']"
+89,"['Rice', 'Gold']"
+90,[]
+91,['Milk']
+92,"['Formaldehyde', 'Cephalosporins', 'Fungicide', 'Water']"
+93,[]
+94,"['Garlic', 'Cobalt', 'Tree nut', 'Dilantin']"
+95,[]
+96,['Cat']
+97,['Shellfish']
+98,['Water']
+99,"['Local anesthetics', 'Tegretol', 'Peanut', 'Cephalosporins']"
+100,[]
+101,['Sulfonamides']
+102,"['Soy', 'Dilantin', 'Egg']"
+103,['Chromium']
+104,[]
+105,['Oats']
+106,"['Dog', 'Fungicide', 'Sulfonamides']"
+107,"['Chromium', 'Balsam of Peru', 'House dust mite']"
+108,"['Dog', 'Local anesthetics', 'Soy']"
+109,['Peanut']
+110,[]
+111,"['Chromium', 'Sesame', 'Non-steroidal anti-inflammatories']"
+112,['Tree nut']
+113,"['Nickel', 'Local anesthetics']"
+114,['Local anesthetics']
+115,"['Nickel', 'Insect sting']"
+116,['Sesame']
+117,"['Balsam of Peru', 'Dog', 'Tegretol', 'Chromium']"
+118,['Poultry Meat']
+119,[]
+120,"['Soy', 'Water', 'Egg']"
+121,"['Tree nut', 'Tartrazine']"
+122,[]
+123,"['Maize', 'Cold stimuli', 'Tartrazine']"
+124,"['Balsam of Peru', 'Balsam of Peru']"
+125,"['Tetracycline', 'Tree nut', 'Sesame']"
+126,[]
+127,[]
+128,"['Balsam of Peru', 'Water']"
+129,['Perfume']
+130,['Maize']
+131,"['Cobalt', 'Cat']"
+132,['Balsam of Peru']
+133,"['Garlic', 'Cat', 'Photographic developers']"
+134,"['Tegretol', 'Tree nut', 'Soy']"
+135,"['Cosmetics', 'Sulfites']"
+136,[]
+137,[]
+138,[]
+139,[]
+140,"['Fish', 'Intravenous contrast dye', 'Poultry Meat', 'Photographic developers']"
+141,"['Gold', 'Rice', 'Cat']"
+142,"['Sesame', 'Poultry Meat']"
+143,['Formaldehyde']
+144,"['Rice', 'Balsam of Peru']"
+145,['Balsam of Peru']
+146,['Cephalosporins']
+147,"['Buckwheat', 'Insect sting']"
+148,"['Cold stimuli', 'Mustard', 'Sesame', 'Dog']"
+149,"['Cephalosporins', 'Cold stimuli']"
+150,['Milk']
+151,[]
+152,"['Shellfish', 'Celery', 'Maize', 'Soy']"
+153,"['Chromium', 'House dust mite']"
+154,['Latex']
+155,"['Milk', 'Oats']"
+156,"['Dilantin', 'Fungicide']"
+157,[]
+158,"['Buckwheat', 'Shellfish']"
+159,[]
+160,"['Formaldehyde', 'Dog', 'Tegretol']"
+161,"['Pollen', 'Chromium', 'Maize', 'Perfume']"
+162,[]
+163,[]
+164,[]
+165,[]
+166,[]
+167,"['Wheat', 'Dog', 'Balsam of Peru']"
+168,"['Celery', 'Maize', 'Sesame', 'Fruit']"
+169,"['Cobalt', 'Peanut', 'Pollen']"
+170,"['Poultry Meat', 'Dog', 'Local anesthetics', 'Rice']"
+171,"['Maize', 'Balsam of Peru', 'Fungicide']"
+172,"['Soy', 'Mold']"
+173,['Nickel']
+174,['Buckwheat']
+175,"['Peanut', 'Rice', 'Sulfites']"
+176,"['Fish', 'Dog']"
+177,[]
+178,"['Pollen', 'Sulfites', 'Photographic developers', 'Chromium']"
+179,[]
+180,"['Pollen', 'Balsam of Peru', 'Cold stimuli']"
+181,"['Egg', 'Dilantin', 'Garlic', 'Wheat']"
+182,"['Garlic', 'Maize', 'Fruit']"
+183,['Milk']
+184,['Local anesthetics']
+185,"['Cosmetics', 'Intravenous contrast dye', 'Shellfish', 'Fungicide']"
+186,"['Perfume', 'Non-steroidal anti-inflammatories', 'Tetracycline']"
+187,"['Cephalosporins', 'Intravenous contrast dye']"
+188,"['Tegretol', 'Wheat', 'Intravenous contrast dye']"
+189,[]
+190,['Balsam of Peru']
+191,"['Water', 'Sulfites']"
+192,"['House dust mite', 'Penicillin', 'Mold']"
+193,"['Non-steroidal anti-inflammatories', 'Formaldehyde', 'Fungicide']"
+194,[]
+195,[]
+196,"['Soy', 'Pollen', 'Local anesthetics', 'Mustard']"
+197,[]
+198,"['Poultry Meat', 'Buckwheat', 'Tegretol']"
+199,['Tetracycline']
+200,['Maize']
+201,['Perfume']
+202,"['Fruit', 'Cold stimuli', 'Balsam of Peru', 'Cat']"
+203,[]
+204,"['Milk', 'Mustard']"
+205,"['Tegretol', 'Poultry Meat', 'Insect sting']"
+206,"['Garlic', 'Sesame', 'Sulfonamides', 'Tree nut']"
+207,"['Insect sting', 'Buckwheat', 'Milk']"
+208,"['Nickel', 'Tegretol', 'Cephalosporins', 'Egg']"
+209,"['Sulfites', 'Poultry Meat', 'Local anesthetics', 'Rice']"
+210,"['Milk', 'Mold']"
+211,"['Photographic developers', 'Penicillin', 'Water']"
+212,"['Shellfish', 'House dust mite', 'Garlic', 'Tartrazine']"
+213,"['Mustard', 'Poultry Meat']"
+214,[]
+215,"['Wheat', 'Cosmetics']"
+216,['Cosmetics']
+217,"['Dog', 'Cobalt']"
+218,"['Chromium', 'Mold']"
+219,"['Mustard', 'Maize', 'Tartrazine', 'Sesame']"
+220,"['Dog', 'Perfume', 'Fruit']"
+221,['Cephalosporins']
+222,"['Tegretol', 'Wheat', 'Fungicide']"
+223,"['Buckwheat', 'Nickel']"
+224,['Mold']
+225,[]
+226,['Penicillin']
+227,['House dust mite']
+228,['Cat']
+229,[]
+230,[]
+231,"['Balsam of Peru', 'Shellfish', 'Cosmetics']"
+232,[]
+233,"['Non-steroidal anti-inflammatories', 'Fish']"
+234,"['Balsam of Peru', 'House dust mite', 'Mold']"
+235,"['Soy', 'Non-steroidal anti-inflammatories']"
+236,"['Insect sting', 'Cosmetics', 'Sulfites', 'Local anesthetics']"
+237,[]
+238,"['Chromium', 'Gold', 'Mold', 'Pollen']"
+239,"['Insect sting', 'Dog']"
+240,['Penicillin']
+241,"['Sulfonamides', 'Cobalt', 'Latex']"
+242,['Perfume']
+243,['Egg']
+244,['Latex']
+245,[]
+246,['Nickel']
+247,[]
+248,"['Gold', 'Maize']"
+249,[]
+250,[]
+251,"['Pollen', 'Tartrazine']"
+252,[]
+253,['Mustard']
+254,['Mustard']
+255,"['Balsam of Peru', 'House dust mite', 'Cobalt']"
+256,"['Insect sting', 'Balsam of Peru', 'Milk', 'Tartrazine']"
+257,"['Tegretol', 'Cosmetics', 'Local anesthetics', 'Nickel']"
+258,"['Buckwheat', 'Balsam of Peru']"
+259,"['Intravenous contrast dye', 'Sulfites']"
+260,[]
+261,['Non-steroidal anti-inflammatories']
+262,['Balsam of Peru']
+263,[]
+264,[]
+265,['Cobalt']
+266,['Rice']
+267,"['Egg', 'Rice', 'Fungicide']"
+268,"['Wheat', 'Tree nut']"
+269,['Dilantin']
+270,"['Cosmetics', 'Fish']"
+271,[]
+272,"['Perfume', 'Non-steroidal anti-inflammatories']"
+273,"['Chromium', 'Celery', 'Sesame']"
+274,"['Fish', 'Mustard', 'Penicillin']"
+275,"['Dog', 'Formaldehyde', 'Milk']"
+276,"['Non-steroidal anti-inflammatories', 'Tree nut']"
+277,"['Fruit', 'Peanut', 'Cat']"
+278,"['Maize', 'Balsam of Peru', 'Dog', 'Dilantin']"
+279,"['Cephalosporins', 'Peanut']"
+280,"['Dog', 'Pollen', 'Soy']"
+281,"['Oats', 'Non-steroidal anti-inflammatories']"
+282,['Buckwheat']
+283,[]
+284,"['Local anesthetics', 'Perfume', 'Cat', 'Cephalosporins']"
+285,['Non-steroidal anti-inflammatories']
+286,"['Maize', 'House dust mite']"
+287,"['Intravenous contrast dye', 'Perfume', 'Oats', 'Sulfites']"
+288,"['Formaldehyde', 'Fish']"
+289,"['Tetracycline', 'Cosmetics', 'Wheat', 'Dog']"
+290,"['Oats', 'Cephalosporins']"
+291,"['Soy', 'Balsam of Peru', 'Cosmetics']"
+292,"['Insect sting', 'Sulfonamides', 'Nickel']"
+293,"['Sulfites', 'Maize']"
+294,['Cat']
+295,"['Water', 'Mold', 'Insect sting', 'Nickel']"
+296,['Cosmetics']
+297,"['Perfume', 'Tetracycline', 'Tree nut', 'Local anesthetics']"
+298,"['Intravenous contrast dye', 'Tartrazine', 'Formaldehyde']"
+299,['Balsam of Peru']
+300,['Peanut']
+301,"['Cosmetics', 'Dog', 'Celery', 'Tetracycline']"
+302,"['Nickel', 'Formaldehyde']"
+303,"['Gold', 'Maize', 'Poultry Meat']"
+304,"['Mold', 'Fish', 'Tree nut', 'Fungicide']"
+305,"['Celery', 'House dust mite', 'Dog']"
+306,['Penicillin']
+307,"['Celery', 'Local anesthetics']"
+308,['House dust mite']
+309,"['Shellfish', 'Dilantin', 'Wheat', 'Egg']"
+310,"['Buckwheat', 'Fungicide', 'Balsam of Peru', 'Balsam of Peru']"
+311,"['Pollen', 'Sesame', 'Water', 'Cephalosporins']"
+312,['House dust mite']
+313,"['Soy', 'Local anesthetics']"
+314,['Buckwheat']
+315,['Water']
+316,"['Mold', 'Insect sting']"
+317,"['Shellfish', 'Egg', 'Mustard', 'Sesame']"
+318,"['Mold', 'Nickel', 'Dog', 'Cold stimuli']"
+319,[]
+320,"['Celery', 'Oats', 'Milk', 'Peanut']"
+321,"['Maize', 'Tetracycline']"
+322,"['Water', 'Buckwheat', 'Tartrazine', 'Perfume']"
+323,['Sulfonamides']
+324,"['Tartrazine', 'Shellfish', 'Fruit']"
+325,"['Perfume', 'Balsam of Peru', 'Garlic']"
+326,"['Wheat', 'Mustard']"
+327,"['Milk', 'Formaldehyde', 'Photographic developers', 'Dilantin']"
+328,['Gold']
+329,"['Cat', 'Wheat', 'Chromium', 'Dilantin']"
+330,"['Sulfites', 'Egg', 'Cobalt', 'Dilantin']"
+331,['Poultry Meat']
+332,"['Gold', 'Milk', 'Chromium', 'Non-steroidal anti-inflammatories']"
+333,"['Celery', 'Buckwheat', 'Water']"
+334,"['Sulfites', 'Sesame', 'Photographic developers']"
+335,"['Peanut', 'Tetracycline']"
+336,['Nickel']
+337,"['Sulfites', 'Fish']"
+338,[]
+339,"['Rice', 'Tree nut', 'Buckwheat', 'Egg']"
+340,"['Tegretol', 'Tartrazine', 'Garlic']"
+341,[]
+342,"['Insect sting', 'Balsam of Peru', 'Formaldehyde', 'Cat']"
+343,['Oats']
+344,"['Non-steroidal anti-inflammatories', 'Perfume', 'Water', 'Dilantin']"
+345,[]
+346,"['Nickel', 'Shellfish', 'Tetracycline']"
+347,"['Gold', 'Local anesthetics', 'Cephalosporins', 'Fungicide']"
+348,"['Fish', 'Balsam of Peru', 'Non-steroidal anti-inflammatories']"
+349,[]
+350,"['Peanut', 'Fish', 'Buckwheat']"
+351,"['Tree nut', 'Cat', 'Cosmetics']"
+352,[]
+353,"['Cobalt', 'Tree nut', 'Penicillin', 'Nickel']"
+354,"['Dog', 'Sesame', 'House dust mite', 'Buckwheat']"
+355,[]
+356,"['Peanut', 'Pollen', 'Celery', 'Cosmetics']"
+357,"['Garlic', 'Cosmetics', 'Fruit', 'Cobalt']"
+358,"['Balsam of Peru', 'House dust mite', 'Local anesthetics']"
+359,['Cold stimuli']
+360,[]
+361,['Fungicide']
+362,"['Tegretol', 'Dog', 'Mustard', 'Fish']"
+363,[]
+364,['Local anesthetics']
+365,['Perfume']
+366,"['Perfume', 'Tree nut']"
+367,"['Cobalt', 'Balsam of Peru']"
+368,"['Chromium', 'Water']"
+369,"['Tree nut', 'Latex', 'Egg', 'Fruit']"
+370,[]
+371,"['Gold', 'Tegretol', 'Fungicide', 'Intravenous contrast dye']"
+372,"['Shellfish', 'Dilantin']"
+373,['Latex']
+374,['Tree nut']
+375,"['Gold', 'Garlic', 'Sulfonamides']"
+376,"['Water', 'Rice']"
+377,[]
+378,[]
+379,"['Insect sting', 'Milk', 'Mustard', 'Cobalt']"
+380,[]
+381,"['Maize', 'Dog', 'Milk', 'Tartrazine']"
+382,"['Water', 'Insect sting', 'Sulfites', 'Mold']"
+383,"['Insect sting', 'Tartrazine', 'Intravenous contrast dye']"
+384,"['Mustard', 'Soy', 'Chromium']"
+385,[]
+386,"['Oats', 'Egg', 'Balsam of Peru']"
+387,['Buckwheat']
+388,"['Tree nut', 'Peanut', 'Balsam of Peru']"
+389,"['Pollen', 'Intravenous contrast dye']"
+390,['Maize']
+391,"['Pollen', 'Dilantin']"
+392,['Fish']
+393,"['Local anesthetics', 'Dog']"
+394,[]
+395,['Pollen']
+396,"['Perfume', 'Cobalt', 'Tree nut', 'Shellfish']"
+397,"['Celery', 'Balsam of Peru', 'Local anesthetics', 'Chromium']"
+398,"['Perfume', 'Peanut', 'Oats']"
+399,"['Balsam of Peru', 'Cobalt']"
+400,"['Tegretol', 'Fish']"
+401,[]
+402,[]
+403,"['Cat', 'House dust mite']"
+404,"['Nickel', 'Soy']"
+405,[]
+406,"['Buckwheat', 'Shellfish']"
+407,"['Milk', 'Cobalt', 'Soy', 'Cephalosporins']"
+408,"['Tetracycline', 'Rice', 'Shellfish', 'Mustard']"
+409,"['Nickel', 'Chromium', 'Fish', 'Gold']"
+410,"['Cold stimuli', 'Cosmetics']"
+411,"['Fungicide', 'Maize']"
+412,[]
+413,"['Sulfites', 'Nickel', 'Peanut']"
+414,"['Wheat', 'Intravenous contrast dye', 'Shellfish']"
+415,"['Insect sting', 'Soy', 'Egg', 'Pollen']"
+416,['Local anesthetics']
+417,[]
+418,['Tartrazine']
+419,"['Tree nut', 'Tegretol', 'Local anesthetics', 'Celery']"
+420,"['Nickel', 'Balsam of Peru']"
+421,['Cephalosporins']
+422,"['Cat', 'Sulfites', 'Balsam of Peru']"
+423,['Latex']
+424,"['Water', 'Garlic', 'Wheat']"
+425,['Wheat']
+426,"['Fruit', 'Mold', 'Tetracycline', 'Cosmetics']"
+427,"['Chromium', 'Cobalt', 'Balsam of Peru']"
+428,"['Tetracycline', 'Egg', 'Formaldehyde', 'Wheat']"
+429,"['Water', 'Formaldehyde']"
+430,"['Gold', 'Soy']"
+431,"['Cobalt', 'Perfume']"
+432,['Dilantin']
+433,['Mustard']
+434,"['Insect sting', 'Wheat']"
+435,"['Intravenous contrast dye', 'Maize']"
+436,[]
+437,['Chromium']
+438,[]
+439,"['Shellfish', 'Fish', 'Peanut']"
+440,"['Maize', 'Photographic developers']"
+441,"['Chromium', 'Sulfonamides']"
+442,"['Cobalt', 'Mustard']"
+443,"['Insect sting', 'Soy', 'Cobalt']"
+444,[]
+445,"['Fungicide', 'Balsam of Peru', 'Sulfonamides']"
+446,['Balsam of Peru']
+447,['Gold']
+448,['Shellfish']
+449,"['Soy', 'Cold stimuli', 'Rice']"
+450,['Peanut']
+451,"['Nickel', 'Formaldehyde', 'Mold', 'Penicillin']"
+452,"['Tartrazine', 'Local anesthetics', 'Tegretol']"
+453,[]
+454,"['Latex', 'Poultry Meat']"
+455,"['Photographic developers', 'Buckwheat']"
+456,['Dog']
+457,['Nickel']
+458,['Cat']
+459,"['Balsam of Peru', 'Balsam of Peru', 'Latex']"
+460,['Perfume']
+461,"['Formaldehyde', 'Garlic']"
+462,"['Maize', 'Gold', 'Pollen', 'Sulfites']"
+463,"['Perfume', 'Pollen', 'Penicillin']"
+464,[]
+465,"['Tree nut', 'Cosmetics', 'Dilantin']"
+466,"['Cobalt', 'Mold']"
+467,"['Tartrazine', 'Milk', 'Fruit', 'Sesame']"
+468,['Chromium']
+469,['Nickel']
+470,"['Tegretol', 'Cephalosporins']"
+471,['Nickel']
+472,"['Tree nut', 'Sesame']"
+473,['Cold stimuli']
+474,"['Nickel', 'Rice', 'Fungicide']"
+475,"['Buckwheat', 'Rice', 'Soy', 'Local anesthetics']"
+476,['Garlic']
+477,"['Mustard', 'Tegretol', 'Shellfish']"
+478,[]
+479,"['Wheat', 'Latex', 'Pollen']"
+480,['Dog']
+481,['Cat']
+482,['Milk']
+483,"['Egg', 'Shellfish', 'Balsam of Peru']"
+484,"['Tartrazine', 'Pollen', 'Dog']"
+485,"['Peanut', 'Nickel', 'House dust mite']"
+486,"['Wheat', 'Formaldehyde']"
+487,"['Maize', 'Tetracycline', 'Fruit', 'Cold stimuli']"
+488,[]
+489,"['Wheat', 'Balsam of Peru', 'Latex', 'Tartrazine']"
+490,"['Balsam of Peru', 'Sulfonamides']"
+491,"['Celery', 'Egg', 'Nickel']"
+492,['Fungicide']
+493,[]
+494,[]
+495,"['House dust mite', 'Photographic developers']"
+496,[]
+497,['Wheat']
+498,['Maize']
+499,[]
+500,"['Formaldehyde', 'Oats', 'Peanut']"
+501,"['Cephalosporins', 'Peanut', 'Mustard', 'Celery']"
+502,[]
+503,['Sulfites']
+504,['Wheat']
+505,['Sesame']
+506,[]
+507,['Mold']
+508,[]
+509,['Soy']
+510,"['Wheat', 'Milk']"
+511,"['Non-steroidal anti-inflammatories', 'Shellfish', 'Chromium']"
+512,[]
+513,"['House dust mite', 'Penicillin', 'Local anesthetics']"
+514,"['Sulfonamides', 'Intravenous contrast dye', 'Soy']"
+515,['Milk']
+516,[]
+517,"['Rice', 'Wheat', 'Formaldehyde']"
+518,"['House dust mite', 'Penicillin', 'Local anesthetics', 'Sesame']"
+519,"['Cephalosporins', 'Local anesthetics', 'Tartrazine', 'Shellfish']"
+520,[]
+521,"['Tegretol', 'Local anesthetics']"
+522,[]
+523,['Sulfites']
+524,"['Peanut', 'Dilantin', 'Cat', 'Poultry Meat']"
+525,['Rice']
+526,[]
+527,"['House dust mite', 'Cephalosporins', 'Sesame']"
+528,"['Tegretol', 'Fungicide']"
+529,"['Tegretol', 'Insect sting', 'Balsam of Peru', 'Cold stimuli']"
+530,['Poultry Meat']
+531,"['Nickel', 'Shellfish', 'Photographic developers']"
+532,"['Local anesthetics', 'Fruit', 'Poultry Meat']"
+533,['Balsam of Peru']
+534,"['House dust mite', 'Mold']"
+535,"['Sulfonamides', 'Cephalosporins', 'Non-steroidal anti-inflammatories', 'Fish']"
+536,"['Dog', 'Balsam of Peru', 'Local anesthetics']"
+537,"['Local anesthetics', 'Dog', 'Celery', 'Balsam of Peru']"
+538,"['Cobalt', 'Celery', 'Maize', 'Milk']"
+539,['Garlic']
+540,"['Insect sting', 'Sulfonamides', 'Dilantin']"
+541,"['Balsam of Peru', 'Nickel']"
+542,"['Cat', 'Formaldehyde', 'Latex']"
+543,"['Intravenous contrast dye', 'Formaldehyde', 'Nickel', 'Cobalt']"
+544,['Balsam of Peru']
+545,['Shellfish']
+546,"['Non-steroidal anti-inflammatories', 'Nickel', 'Sulfonamides', 'Garlic']"
+547,"['Buckwheat', 'Balsam of Peru']"
+548,['Cold stimuli']
+549,['Dog']
+550,[]
+551,[]
+552,['Cat']
+553,[]
+554,[]
+555,"['Cobalt', 'Milk']"
+556,['Oats']
+557,"['Tetracycline', 'Latex', 'Cold stimuli']"
+558,['Sulfonamides']
+559,"['Insect sting', 'Chromium', 'Peanut', 'Buckwheat']"
+560,['Balsam of Peru']
+561,"['Shellfish', 'Rice', 'Cold stimuli']"
+562,"['Gold', 'Formaldehyde', 'Balsam of Peru']"
+563,"['Celery', 'Mold']"
+564,"['Tree nut', 'Nickel', 'Balsam of Peru', 'Mold']"
+565,['Sulfites']
+566,"['Dog', 'Sulfonamides', 'Dilantin', 'Latex']"
+567,[]
+568,"['Poultry Meat', 'Mold', 'Insect sting']"
+569,[]
+570,[]
+571,[]
+572,['Sulfites']
+573,"['Maize', 'Formaldehyde', 'Garlic', 'Milk']"
+574,"['Wheat', 'House dust mite', 'Shellfish']"
+575,"['Chromium', 'Cat', 'Fruit', 'Sulfites']"
+576,"['Non-steroidal anti-inflammatories', 'Sulfonamides']"
+577,"['Perfume', 'Insect sting', 'Cold stimuli', 'Shellfish']"
+578,"['Insect sting', 'Balsam of Peru']"
+579,"['Perfume', 'Fruit']"
+580,['Rice']
+581,"['Cephalosporins', 'Tartrazine', 'Poultry Meat']"
+582,"['Tetracycline', 'Fungicide', 'Formaldehyde', 'Insect sting']"
+583,"['Tetracycline', 'Shellfish', 'Cold stimuli']"
+584,"['Chromium', 'Egg', 'Cobalt']"
+585,"['Buckwheat', 'Dilantin', 'Egg', 'Cephalosporins']"
+586,"['Tartrazine', 'Rice']"
+587,"['Fruit', 'Poultry Meat', 'Mold']"
+588,['Wheat']
+589,['Perfume']
+590,"['House dust mite', 'Water', 'Dog']"
+591,['Tree nut']
+592,"['Tetracycline', 'Tartrazine', 'Water', 'Latex']"
+593,['Fish']
+594,['Peanut']
+595,['Balsam of Peru']
+596,"['Insect sting', 'Cold stimuli', 'Perfume']"
+597,"['Shellfish', 'House dust mite', 'Tartrazine', 'Gold']"
+598,"['Cat', 'Fish', 'Non-steroidal anti-inflammatories', 'Fruit']"
+599,[]
+600,[]
+601,[]
+602,"['Dog', 'Poultry Meat']"
+603,[]
+604,"['Cat', 'Tree nut']"
+605,"['Egg', 'Cold stimuli', 'Wheat']"
+606,"['Gold', 'Latex', 'Tetracycline', 'Balsam of Peru']"
+607,"['Mustard', 'Poultry Meat', 'Balsam of Peru', 'Balsam of Peru']"
+608,"['House dust mite', 'Fruit', 'Tegretol']"
+609,"['Local anesthetics', 'Penicillin']"
+610,[]
+611,['Poultry Meat']
+612,"['Sulfites', 'Shellfish', 'Maize', 'Non-steroidal anti-inflammatories']"
+613,[]
+614,"['Non-steroidal anti-inflammatories', 'Cosmetics']"
+615,[]
+616,[]
+617,[]
+618,"['Shellfish', 'Mustard', 'Fungicide']"
+619,"['Tartrazine', 'Gold']"
+620,"['Penicillin', 'Photographic developers']"
+621,"['Balsam of Peru', 'Non-steroidal anti-inflammatories', 'Water']"
+622,"['Egg', 'Pollen']"
+623,"['Buckwheat', 'Sesame', 'Photographic developers']"
+624,"['Sesame', 'Balsam of Peru']"
+625,[]
+626,"['Pollen', 'Intravenous contrast dye', 'Egg', 'Sesame']"
+627,['Fruit']
+628,['Dog']
+629,[]
+630,"['Fruit', 'Buckwheat', 'Fish', 'Egg']"
+631,"['Rice', 'Cold stimuli']"
+632,"['Balsam of Peru', 'Shellfish', 'Garlic']"
+633,"['Cephalosporins', 'Chromium', 'Nickel']"
+634,"['Sulfites', 'Mold', 'Insect sting', 'Maize']"
+635,['Balsam of Peru']
+636,"['Fungicide', 'Balsam of Peru']"
+637,"['Tree nut', 'Nickel']"
+638,[]
+639,"['Mold', 'Celery']"
+640,['Mold']
+641,"['Insect sting', 'Wheat', 'Intravenous contrast dye', 'Balsam of Peru']"
+642,"['Intravenous contrast dye', 'Buckwheat', 'Shellfish', 'Soy']"
+643,"['Dilantin', 'Penicillin', 'Formaldehyde', 'Gold']"
+644,"['Oats', 'Mold']"
+645,"['Local anesthetics', 'Tegretol']"
+646,"['Milk', 'Sulfonamides']"
+647,[]
+648,"['Balsam of Peru', 'Nickel', 'Celery']"
+649,"['Peanut', 'House dust mite']"
+650,"['Balsam of Peru', 'Peanut']"
+651,['Insect sting']
+652,"['Sulfonamides', 'Insect sting', 'Rice']"
+653,"['Intravenous contrast dye', 'Tree nut', 'Oats']"
+654,['Non-steroidal anti-inflammatories']
+655,['Peanut']
+656,"['Cosmetics', 'Celery', 'Tegretol', 'Chromium']"
+657,['Balsam of Peru']
+658,[]
+659,"['Insect sting', 'Pollen']"
+660,"['Sesame', 'Tegretol']"
+661,"['Penicillin', 'Non-steroidal anti-inflammatories', 'Soy']"
+662,['Cat']
+663,[]
+664,['Tegretol']
+665,"['Non-steroidal anti-inflammatories', 'Buckwheat', 'Soy', 'Milk']"
+666,"['Wheat', 'Latex', 'Nickel', 'House dust mite']"
+667,['Tartrazine']
+668,['Penicillin']
+669,"['Sulfonamides', 'Sesame', 'Cat', 'Rice']"
+670,"['Cosmetics', 'Soy', 'Penicillin']"
+671,"['Balsam of Peru', 'Mustard', 'Tegretol', 'Penicillin']"
+672,['Gold']
+673,"['Insect sting', 'Oats']"
+674,[]
+675,['Water']
+676,"['Balsam of Peru', 'Cold stimuli', 'Maize', 'Tree nut']"
+677,[]
+678,"['Tetracycline', 'Cold stimuli', 'Cephalosporins']"
+679,"['Dilantin', 'Tetracycline', 'Non-steroidal anti-inflammatories']"
+680,['Nickel']
+681,"['Cosmetics', 'Local anesthetics', 'Cat', 'Soy']"
+682,"['Chromium', 'Pollen']"
+683,"['Perfume', 'Wheat', 'Cosmetics', 'Fish']"
+684,"['Insect sting', 'Sulfonamides', 'Shellfish']"
+685,"['Cosmetics', 'House dust mite', 'Shellfish', 'Balsam of Peru']"
+686,"['Local anesthetics', 'Mustard', 'Buckwheat']"
+687,['Wheat']
+688,['Mold']
+689,"['Water', 'Sulfonamides', 'Nickel', 'Perfume']"
+690,"['Pollen', 'Sesame', 'Rice', 'Tetracycline']"
+691,"['Milk', 'Cat']"
+692,[]
+693,"['Celery', 'Sesame']"
+694,"['Cephalosporins', 'Cosmetics', 'Dilantin']"
+695,"['Cosmetics', 'Balsam of Peru', 'Celery', 'Tartrazine']"
+696,"['Non-steroidal anti-inflammatories', 'Photographic developers', 'Cat', 'Celery']"
+697,"['Fungicide', 'Balsam of Peru', 'Penicillin']"
+698,"['Cobalt', 'Balsam of Peru', 'Peanut', 'Perfume']"
+699,[]
+700,[]
+701,[]
+702,"['Rice', 'Soy']"
+703,['Cosmetics']
+704,"['Perfume', 'Poultry Meat', 'Cephalosporins', 'Chromium']"
+705,"['Cobalt', 'Sulfites', 'Photographic developers', 'Insect sting']"
+706,"['Celery', 'Balsam of Peru', 'Balsam of Peru', 'Fungicide']"
+707,"['Photographic developers', 'Oats']"
+708,"['Mustard', 'Gold', 'Soy', 'Chromium']"
+709,"['Dilantin', 'Dog', 'Mold', 'Photographic developers']"
+710,"['Buckwheat', 'Fungicide', 'Cephalosporins']"
+711,"['Sulfonamides', 'Latex', 'Water']"
+712,"['Cephalosporins', 'Cat', 'Perfume', 'Local anesthetics']"
+713,['Local anesthetics']
+714,"['Poultry Meat', 'Tartrazine']"
+715,"['Egg', 'Tree nut']"
+716,[]
+717,['Formaldehyde']
+718,"['Chromium', 'Shellfish', 'Mustard', 'Fish']"
+719,"['Dog', 'Sesame']"
+720,[]
+721,[]
+722,"['Mold', 'Insect sting']"
+723,[]
+724,"['Perfume', 'Fish', 'Sulfites']"
+725,"['Water', 'Egg', 'Garlic', 'Pollen']"
+726,"['Tetracycline', 'Fish']"
+727,"['Peanut', 'Soy', 'Tree nut', 'Gold']"
+728,"['Tegretol', 'Soy', 'Dilantin', 'Chromium']"
+729,['Fruit']
+730,"['Oats', 'Insect sting', 'Penicillin']"
+731,['Fungicide']
+732,"['Non-steroidal anti-inflammatories', 'Gold', 'Wheat']"
+733,"['Cosmetics', 'Nickel', 'Pollen']"
+734,"['Chromium', 'Photographic developers']"
+735,[]
+736,"['Balsam of Peru', 'Tetracycline', 'Sulfites']"
+737,"['Latex', 'Balsam of Peru', 'Perfume', 'Tetracycline']"
+738,[]
+739,"['Non-steroidal anti-inflammatories', 'Peanut', 'Chromium']"
+740,"['Formaldehyde', 'Tree nut']"
+741,['Cosmetics']
+742,['Maize']
+743,['Egg']
+744,"['Balsam of Peru', 'Tartrazine']"
+745,"['Mustard', 'Poultry Meat']"
+746,"['Balsam of Peru', 'Mustard']"
+747,['Insect sting']
+748,"['Fish', 'Buckwheat']"
+749,[]
+750,"['Local anesthetics', 'Oats', 'Maize', 'Balsam of Peru']"
+751,"['Balsam of Peru', 'Wheat', 'House dust mite', 'Maize']"
+752,"['Intravenous contrast dye', 'Rice', 'Cosmetics', 'Insect sting']"
+753,"['Tegretol', 'Cobalt']"
+754,"['Maize', 'Latex', 'Gold', 'Mustard']"
+755,"['Rice', 'Fungicide', 'Nickel']"
+756,[]
+757,"['Cephalosporins', 'Non-steroidal anti-inflammatories']"
+758,[]
+759,[]
+760,"['Perfume', 'Cat', 'Wheat', 'Dilantin']"
+761,['Tartrazine']
+762,['Wheat']
+763,"['Peanut', 'Tetracycline', 'Gold']"
+764,"['House dust mite', 'Sulfonamides']"
+765,[]
+766,"['Mustard', 'Peanut', 'Insect sting']"
+767,['Wheat']
+768,"['Fungicide', 'Balsam of Peru', 'Photographic developers', 'Insect sting']"
+769,['Cold stimuli']
+770,"['House dust mite', 'Non-steroidal anti-inflammatories', 'Cobalt']"
+771,[]
+772,['Dog']
+773,"['Intravenous contrast dye', 'Cephalosporins']"
+774,[]
+775,[]
+776,"['Dog', 'Insect sting']"
+777,"['Milk', 'Dog', 'Fish', 'Water']"
+778,"['House dust mite', 'Cosmetics', 'Dilantin', 'Tree nut']"
+779,"['Celery', 'Cobalt', 'Latex']"
+780,"['Cobalt', 'Fungicide', 'Perfume']"
+781,['Rice']
+782,['Cobalt']
+783,"['Penicillin', 'Peanut']"
+784,"['Water', 'Fungicide', 'Cat']"
+785,"['Nickel', 'Cold stimuli', 'Shellfish']"
+786,"['Local anesthetics', 'Dog']"
+787,[]
+788,['Poultry Meat']
+789,"['Fungicide', 'Maize']"
+790,['Milk']
+791,"['Peanut', 'Milk']"
+792,['Egg']
+793,[]
+794,"['Cat', 'Mustard']"
+795,"['Balsam of Peru', 'Intravenous contrast dye', 'Cobalt', 'Dilantin']"
+796,"['Intravenous contrast dye', 'Tegretol', 'Dog']"
+797,"['Sulfonamides', 'Wheat', 'Balsam of Peru']"
+798,"['Chromium', 'Maize']"
+799,"['Formaldehyde', 'Non-steroidal anti-inflammatories', 'Insect sting']"
+800,"['Latex', 'Milk', 'Peanut', 'Cephalosporins']"
+801,"['Tetracycline', 'Tree nut']"
+802,"['Cat', 'Garlic', 'Local anesthetics']"
+803,"['Latex', 'Gold']"
+804,"['Photographic developers', 'Chromium', 'Wheat']"
+805,"['Formaldehyde', 'Oats']"
+806,[]
+807,"['Tetracycline', 'Wheat', 'Dog', 'Water']"
+808,[]
+809,"['Fish', 'Cephalosporins', 'Pollen', 'Maize']"
+810,"['Cosmetics', 'Fish', 'Mold']"
+811,[]
+812,"['Buckwheat', 'Celery']"
+813,"['Nickel', 'Celery']"
+814,"['Cephalosporins', 'Tree nut', 'Cat', 'Tartrazine']"
+815,['Balsam of Peru']
+816,"['Poultry Meat', 'Cobalt', 'Dog', 'Mold']"
+817,"['Gold', 'Wheat']"
+818,['Fungicide']
+819,"['Rice', 'Balsam of Peru']"
+820,['Cephalosporins']
+821,[]
+822,[]
+823,"['Sesame', 'Egg']"
+824,"['Rice', 'Dog', 'Mustard', 'Tree nut']"
+825,[]
+826,[]
+827,"['Cephalosporins', 'Formaldehyde']"
+828,"['Maize', 'Tartrazine', 'Latex']"
+829,[]
+830,"['Rice', 'Balsam of Peru', 'Tetracycline']"
+831,"['Non-steroidal anti-inflammatories', 'Egg', 'Pollen', 'Garlic']"
+832,"['Shellfish', 'Formaldehyde', 'Celery', 'Egg']"
+833,"['Tartrazine', 'Shellfish', 'Garlic']"
+834,[]
+835,"['Cold stimuli', 'Non-steroidal anti-inflammatories', 'Milk', 'House dust mite']"
+836,"['Maize', 'Fungicide']"
+837,"['Dog', 'Fruit']"
+838,[]
+839,['Latex']
+840,['Balsam of Peru']
+841,[]
+842,[]
+843,['Dog']
+844,['Soy']
+845,"['Sesame', 'Water', 'Soy', 'Local anesthetics']"
+846,"['Cosmetics', 'Garlic', 'Buckwheat', 'Poultry Meat']"
+847,"['Cobalt', 'Poultry Meat', 'Fruit', 'Non-steroidal anti-inflammatories']"
+848,['Sesame']
+849,"['Celery', 'Peanut', 'Cobalt', 'Insect sting']"
+850,"['Cosmetics', 'Cold stimuli']"
+851,[]
+852,"['Water', 'Rice', 'Dilantin', 'Latex']"
+853,"['Egg', 'Maize']"
+854,['Oats']
+855,['Sulfites']
+856,['Shellfish']
+857,['Shellfish']
+858,"['Garlic', 'Intravenous contrast dye']"
+859,"['Mustard', 'Tartrazine', 'Cephalosporins']"
+860,['Dog']
+861,"['Cephalosporins', 'Celery', 'Pollen']"
+862,"['Fruit', 'Balsam of Peru', 'Tree nut']"
+863,['Fish']
+864,"['Gold', 'Soy', 'Oats']"
+865,"['Nickel', 'Buckwheat', 'Tegretol', 'Tetracycline']"
+866,"['Balsam of Peru', 'Sulfites', 'Chromium', 'Local anesthetics']"
+867,"['Dilantin', 'Balsam of Peru', 'Fungicide', 'Balsam of Peru']"
+868,[]
+869,"['Cosmetics', 'Tartrazine']"
+870,"['Dilantin', 'Shellfish']"
+871,"['Dog', 'Insect sting', 'Tegretol', 'Rice']"
+872,[]
+873,[]
+874,"['Soy', 'Cold stimuli', 'Buckwheat', 'Cobalt']"
+875,"['Tegretol', 'Tartrazine', 'House dust mite']"
+876,"['Local anesthetics', 'Tartrazine']"
+877,"['Pollen', 'Dog', 'Shellfish', 'Sulfites']"
+878,['Fish']
+879,"['Celery', 'Fungicide']"
+880,[]
+881,"['Cephalosporins', 'Dog']"
+882,"['Cold stimuli', 'Pollen', 'Garlic']"
+883,"['Cobalt', 'Milk', 'Egg', 'Water']"
+884,"['Fungicide', 'Sesame']"
+885,"['Soy', 'Garlic', 'Egg']"
+886,"['Milk', 'Fungicide', 'Fish', 'Local anesthetics']"
+887,[]
+888,[]
+889,"['Gold', 'Fruit', 'Poultry Meat', 'Peanut']"
+890,[]
+891,"['Mustard', 'Celery', 'Garlic']"
+892,"['Mold', 'Chromium', 'Insect sting']"
+893,"['Fungicide', 'Balsam of Peru', 'Mustard']"
+894,['Cat']
+895,[]
+896,"['Milk', 'Insect sting', 'Cold stimuli']"
+897,"['Formaldehyde', 'Mold']"
+898,"['Local anesthetics', 'Garlic', 'Cobalt']"
+899,"['Peanut', 'Sulfonamides', 'Balsam of Peru', 'Cobalt']"
+900,"['Photographic developers', 'Mold', 'Sulfonamides', 'Shellfish']"
+901,"['Cat', 'Soy']"
+902,"['Tartrazine', 'Wheat', 'Chromium', 'Poultry Meat']"
+903,"['Mold', 'Balsam of Peru', 'Gold']"
+904,[]
+905,['Cat']
+906,"['Balsam of Peru', 'Tegretol', 'Chromium']"
+907,"['Wheat', 'Gold', 'Fruit', 'Cobalt']"
+908,"['Celery', 'Buckwheat', 'Penicillin', 'Cosmetics']"
+909,"['Sulfites', 'Non-steroidal anti-inflammatories']"
+910,['Mustard']
+911,['Intravenous contrast dye']
+912,[]
+913,[]
+914,"['Nickel', 'Cephalosporins']"
+915,[]
+916,"['House dust mite', 'Tartrazine']"
+917,['Dilantin']
+918,"['Tetracycline', 'Intravenous contrast dye']"
+919,[]
+920,"['Maize', 'Egg', 'Pollen', 'Peanut']"
+921,"['Non-steroidal anti-inflammatories', 'Tree nut']"
+922,"['Fungicide', 'Tree nut']"
+923,[]
+924,"['Formaldehyde', 'Nickel', 'Intravenous contrast dye', 'Balsam of Peru']"
+925,"['Dog', 'Garlic', 'Nickel']"
+926,"['Tartrazine', 'Cat', 'Rice', 'Shellfish']"
+927,"['House dust mite', 'Non-steroidal anti-inflammatories', 'Chromium', 'Cold stimuli']"
+928,[]
+929,"['Sulfonamides', 'Water', 'Pollen']"
+930,"['Penicillin', 'Fungicide']"
+931,"['Water', 'Cephalosporins', 'Fruit', 'Celery']"
+932,['Fungicide']
+933,"['Celery', 'Fish', 'Chromium', 'Local anesthetics']"
+934,"['Sulfonamides', 'Cat', 'Cold stimuli']"
+935,[]
+936,"['Garlic', 'Latex', 'Fish', 'Balsam of Peru']"
+937,[]
+938,[]
+939,"['Balsam of Peru', 'Wheat', 'Cold stimuli']"
+940,"['Mustard', 'Tartrazine']"
+941,"['House dust mite', 'Tetracycline', 'Pollen', 'Chromium']"
+942,[]
+943,"['Formaldehyde', 'Tartrazine']"
+944,[]
+945,"['Fruit', 'Balsam of Peru', 'Formaldehyde', 'Tegretol']"
+946,"['Balsam of Peru', 'Tartrazine', 'Wheat']"
+947,"['Photographic developers', 'Non-steroidal anti-inflammatories']"
+948,[]
+949,['Mold']
+950,[]
+951,"['Garlic', 'Soy', 'Local anesthetics']"
+952,['Sulfonamides']
+953,['Cosmetics']
+954,"['Tegretol', 'Balsam of Peru']"
+955,"['Fungicide', 'Cobalt', 'Insect sting']"
+956,"['Tree nut', 'Latex', 'Non-steroidal anti-inflammatories', 'Intravenous contrast dye']"
+957,['Garlic']
+958,"['Nickel', 'Mold']"
+959,"['Garlic', 'Balsam of Peru', 'Perfume']"
+960,[]
+961,"['Cold stimuli', 'Mold', 'Mustard']"
+962,['Sulfonamides']
+963,"['Poultry Meat', 'Sulfites']"
+964,"['Egg', 'Chromium', 'Mold', 'Tegretol']"
+965,"['Cobalt', 'Photographic developers']"
+966,"['Pollen', 'Sesame']"
+967,"['Buckwheat', 'Tetracycline', 'Pollen']"
+968,['Oats']
+969,['Shellfish']
+970,[]
+971,"['Fungicide', 'Soy', 'Latex', 'Egg']"
+972,[]
+973,['Gold']
+974,['Rice']
+975,[]
+976,"['Water', 'Photographic developers', 'Latex']"
+977,[]
+978,[]
+979,"['Cat', 'Formaldehyde', 'Penicillin']"
+980,[]
+981,"['Chromium', 'Pollen', 'Wheat']"
+982,[]
+983,[]
+984,"['Celery', 'Cat', 'Water']"
+985,[]
+986,"['House dust mite', 'Photographic developers', 'Tegretol']"
+987,['Rice']
+988,['Wheat']
+989,[]
+990,"['Fungicide', 'Poultry Meat', 'Oats', 'Tree nut']"
+991,"['Formaldehyde', 'Fish', 'House dust mite', 'Nickel']"
+992,"['Mustard', 'Egg']"
+993,"['Water', 'Wheat', 'Sulfonamides', 'Garlic']"
+994,"['Wheat', 'Poultry Meat', 'Shellfish']"
+995,"['Soy', 'Tree nut', 'Dilantin']"
+996,[]
+997,"['Milk', 'Wheat', 'Local anesthetics', 'Dilantin']"
+998,"['Latex', 'Fish', 'Perfume']"
+999,"['Penicillin', 'Formaldehyde']"

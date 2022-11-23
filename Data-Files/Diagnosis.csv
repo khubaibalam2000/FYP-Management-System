@@ -1,0 +1,1001 @@
+,Diagnosis,Date of Diagnosis
+0,"['Hantaviruses', 'Cancer - Cervical (Spanish)']",2016-11-16 00:08:25
+1,[],2017-09-06 21:22:40
+2,"['Naegleria Fowleri', 'Group A Streptococcus']",2014-09-09 20:16:13
+3,[],2016-04-22 06:48:48
+4,"['Rabies', ""Legionnaires' Disease""]",2021-07-29 07:59:24
+5,['Cardiovascular Disease'],2021-02-22 15:24:04
+6,[],2015-12-14 18:50:01
+7,"['Flu', 'Cancer - Stomach']",2014-12-21 22:35:47
+8,[],2008-12-09 23:25:29
+9,[],2014-03-31 03:17:28
+10,"['Cancer - Testicular', 'Lead Poisoning']",2016-02-08 20:11:55
+11,"['Rocky Mountain Spotted Fever', 'Sarcoidosis']",2009-01-15 15:24:49
+12,[],2016-09-19 00:05:42
+13,"['Cancer - Stomach', 'Carbapenem-Resistant Enterobacteriaceae (CRE) Infections']",2009-02-26 07:10:28
+14,"['Chronic Obstructive Pulmonary Disease (COPD)', 'MRSA']",2011-05-01 10:02:31
+15,"['West Nile Virus', 'Cancer']",2021-01-13 16:47:28
+16,"['Human Papillomavirus', 'Molluscum Contagiosum']",2010-10-24 01:24:12
+17,"['Cyclospora', 'Cancer - Lung']",2019-08-04 05:07:09
+18,"['Clostridium Difficile', 'Depression', 'Carbon Monoxide Poisoning']",2020-11-11 10:37:33
+19,['Head Lice'],2010-03-17 16:17:45
+20,"['Cancer - Thyroid', 'Methyl Parathion', 'Pneumococcal Disease']",2019-08-05 00:41:21
+21,[],2013-07-13 22:48:59
+22,[],2010-12-30 13:15:13
+23,"['Noroviruses', 'Arthritis', 'AIDS (HIV/AIDS)']",2020-04-07 03:38:54
+24,"['Human Papillomavirus', 'Helicobacter Pylori']",2019-11-10 00:09:22
+25,"['Rabies', 'Lupus', ""Alzheimer's Diseases (Spanish)""]",2020-04-06 14:44:24
+26,"['Shigellosis', 'Cancer - Colorectal', 'Cancer - Cervical']",2017-08-30 20:48:57
+27,"['Yellow Fever', 'Chickenpox', 'Naegleria Fowleri']",2014-09-07 06:21:24
+28,"['Cancer - Multiple Myeloma', 'Diabetes', 'Zika Virus']",2011-09-15 07:01:15
+29,"['Genital Herpes', 'Leptospirosis']",2021-07-27 06:36:42
+30,['Chagas Disease'],2010-07-13 13:25:27
+31,"['Cancer - Colorectal', 'Cancer - Ovarian', 'Cancer - Uterus']",2010-11-06 15:30:56
+32,[],2014-09-09 06:57:08
+33,[],2013-06-13 18:35:05
+34,"['Heat-related Illnesses', 'Chickenpox', 'Diphtheria']",2021-09-15 16:19:38
+35,[],2013-11-16 16:44:49
+36,[],2009-05-21 19:07:50
+37,['Primary Amebic Meningoencephalitis'],2020-11-21 05:29:53
+38,['Influenza'],2020-10-06 21:06:16
+39,"['Zika Virus', 'Pneumococcal Disease']",2016-04-28 02:54:57
+40,['Diabetes'],2015-04-05 21:20:45
+41,['Fibroids'],2015-10-14 17:57:26
+42,"['Cancer - Colon', 'Group A Streptococcus', 'Monkeypox']",2018-02-13 04:06:09
+43,"['Cancer - Breast', 'Gonorrhea', 'West Nile Virus']",2012-03-10 15:08:33
+44,"['Tetanus', 'Stress']",2011-04-12 05:02:50
+45,"['Gonorrhea', 'Arboviral Encephalitis']",2012-01-01 11:11:10
+46,"['Cancer - Multiple Myeloma', 'Fibroids']",2019-12-03 16:59:00
+47,"['Cancer - Colorectal', 'Fibroids', 'Cancer - Endometrial (Spanish)']",2011-04-18 20:13:49
+48,"['Carbapenem-Resistant Enterobacteriaceae (CRE) Infections', 'Harmful Algal Blooms', 'Yellow Fever']",2014-11-23 11:17:07
+49,['Chlamydia'],2008-06-04 08:09:06
+50,[],2014-10-17 08:01:46
+51,[],2021-11-26 10:45:02
+52,"['Meningitis', 'Lupus', 'Diabetes']",2016-12-23 12:45:31
+53,['Lyme Disease'],2014-04-15 02:33:10
+54,['Zika Virus'],2008-03-17 12:50:13
+55,['MRSA'],2018-08-01 23:18:11
+56,[],2018-06-03 18:47:24
+57,['Pelvic Inflammatory Disease (PID)'],2019-11-17 20:05:24
+58,[],2016-10-19 09:56:36
+59,['Cancer - Leukemia'],2015-03-22 20:38:55
+60,"['Flu', 'Chagas Disease']",2013-09-30 12:27:28
+61,"['Lupus', 'Scabies', 'Chronic Fatigue Syndrome']",2015-01-13 02:45:45
+62,['Cancer - Ovarian'],2008-09-25 06:46:20
+63,['Carbapenem-Resistant Enterobacteriaceae (CRE) Infections'],2011-02-05 18:50:17
+64,"['Cancer - Skin', 'Flu']",2010-11-17 16:31:52
+65,"['Eastern Equine Encephalitis Virus (EEEV)', 'Creutzfeldt-Jakob Disease']",2017-08-13 04:46:20
+66,[],2008-05-10 15:18:29
+67,['Rocky Mountain Spotted Fever'],2009-03-24 12:38:12
+68,['Rubella'],2012-11-19 23:55:04
+69,"['Rotavirus', 'Yellow Fever', 'Ebola Virus']",2014-11-05 16:57:03
+70,[],2011-03-25 16:14:12
+71,"['Rabies', 'Vaginitis']",2010-10-28 13:21:08
+72,"['Creutzfeldt-Jakob Disease', 'Naegleria Fowleri']",2017-12-13 05:08:02
+73,"['Seoul Virus', 'Genital Herpes']",2018-03-24 03:51:59
+74,"['Cancer - Leukemia', 'Cancer - Skin']",2013-01-03 06:49:53
+75,[],2020-08-27 21:45:57
+76,['Cancer - Kidney'],2016-11-26 18:20:50
+77,['Chancroid'],2019-05-04 17:36:50
+78,"['Arboviral Encephalitis', 'Gonorrhea']",2014-07-10 10:20:59
+79,"['HIV/AIDS', 'Cancer - Liver']",2010-12-28 09:19:11
+80,"['Cardiovascular Disease', 'MRSA (Pet Owners)', 'Flu']",2010-01-28 23:39:53
+81,"['Cancer - Leukemia', 'Cancer - Bladder', 'Fibroids']",2009-04-11 10:55:12
+82,"['E. Coli', 'Carbon Monoxide Poisoning']",2017-01-23 06:28:28
+83,['Cancer - Testicular'],2012-02-23 18:27:14
+84,['Asthma'],2009-10-10 15:19:06
+85,"['Stroke', 'Rotavirus', 'Scabies']",2010-05-31 20:27:20
+86,['Carbapenem-Resistant Enterobacteriaceae (CRE) Infections'],2010-04-14 20:17:42
+87,[],2021-04-03 11:02:43
+88,"['Helicobacter Pylori', 'Enterovirus']",2016-02-24 22:08:12
+89,"['Cancer - Uterus (Spanish)', 'Staph Infection', 'Cancer - Endometrial (Spanish)']",2020-04-18 03:41:54
+90,"['Trichomoniasis', 'Cancer - Pancreatic']",2018-03-09 14:23:50
+91,['Mumps'],2016-09-15 07:23:34
+92,"['Gonorrhea', 'Rubella', 'Human Papillomavirus']",2008-08-28 14:30:57
+93,"['Conjunctivitis', 'Headaches']",2016-08-16 12:07:02
+94,"['Zika Virus', 'Cancer - Cervical (Spanish)']",2021-01-01 18:37:59
+95,['Plague'],2018-09-25 00:02:43
+96,['Celiac Disease'],2013-08-01 09:50:46
+97,[],2014-02-21 23:05:12
+98,[],2014-08-21 11:28:06
+99,['Methyl Parathion'],2020-04-20 23:49:12
+100,"['Head Lice', 'West Nile Virus', 'Gout']",2010-08-15 20:50:19
+101,"['Cancer - Kidney', 'Tetanus', 'Measles']",2019-10-05 23:00:11
+102,['Norwalk Virus'],2014-07-28 10:37:32
+103,"['Cancer - Stomach', ""Wilson's Disease"", 'MRSA (Pet Owners)']",2017-03-03 21:37:52
+104,"['West Nile Virus', 'Eastern Equine Encephalitis Virus (EEEV)']",2016-05-10 13:23:53
+105,"['Lead Poisoning', 'Chronic Obstructive Pulmonary Disease (COPD)', 'Meningococcal Disease']",2019-12-11 22:27:09
+106,[],2017-07-19 13:54:15
+107,"['Lyme Disease', 'Cardiovascular Disease']",2017-04-20 21:16:26
+108,['Cancer - Oral'],2014-08-13 22:05:42
+109,"['Cancer - Multiple Myeloma', 'Hepatitis']",2017-07-12 01:08:17
+110,"['Cancer - Breast Exams and Mammograms', 'Diabetes', 'Cancer - Cervical (Spanish)']",2021-08-17 20:56:11
+111,"['Celiac Disease', 'Chlamydia']",2014-05-13 11:44:30
+112,['Lead Poisoning'],2018-06-03 06:28:06
+113,"['Genital Herpes', ""Parkinson's Disease""]",2019-08-31 21:40:46
+114,[],2015-05-28 23:32:37
+115,"['Salmonella', 'Cancer - Uterus (Spanish)', 'Rabies']",2021-06-21 03:20:31
+116,"['Chancroid', 'Mumps']",2015-11-09 20:15:44
+117,"['Cancer - Breast Exams and Mammograms', 'Depression', 'Cancer - Testicular']",2015-11-08 21:36:03
+118,"['Salmonella', 'West Nile Virus', 'Harmful Algal Blooms']",2014-06-05 11:10:27
+119,['Flu'],2016-03-23 16:50:46
+120,"['Diabetes', 'Salmonella']",2021-07-02 17:17:27
+121,"['Rubella', 'MRSA (Pet Owners)']",2011-10-22 07:16:29
+122,['Molluscum Contagiosum'],2020-08-06 02:19:12
+123,"['Listeriosis', 'Meningitis']",2020-08-20 02:57:52
+124,"['Gout', 'Cancer - Uterus (Spanish)', 'Cancer - Colorectal']",2019-11-08 13:22:49
+125,[],2011-11-16 18:29:47
+126,['Cancer - Kidney'],2021-02-23 16:53:32
+127,"['Lymphogranuloma Venereum (LGV)', 'Measles', 'High Blood Pressure']",2017-07-15 08:35:45
+128,"['Group A Streptococcus', 'Eastern Equine Encephalitis Virus (EEEV)', 'Crabs']",2020-07-04 17:11:50
+129,[],2018-07-14 22:36:18
+130,"['Chronic Fatigue Syndrome', 'SARS (Healthcare Providers)']",2010-05-10 19:15:15
+131,[],2018-12-21 13:22:14
+132,"['Conjunctivitis', 'Ehrlichiosis']",2020-08-06 02:46:13
+133,"['Pneumococcal Disease', 'Meningitis']",2009-03-07 13:59:56
+134,"['Cancer - Cervical (Spanish)', 'Fibromyalgia', 'Cancer']",2016-03-20 12:20:51
+135,"['Creutzfeldt-Jakob Disease', 'Mumps']",2021-12-08 18:24:54
+136,[],2016-03-30 17:57:44
+137,"['Cancer - Thyroid', 'Leptospirosis', 'Alzheimer’s Disease']",2009-08-24 08:47:31
+138,"['Rotavirus', 'Cancer - Cervical (Spanish)']",2011-03-30 21:15:07
+139,"['Ehrlichiosis', 'Pneumococcal Disease']",2020-04-14 05:24:56
+140,"['Cancer - Colorectal', 'Hepatitis', 'Ebola Virus']",2021-02-13 20:21:48
+141,"['Conjunctivitis', 'Lyme Disease']",2018-05-29 06:59:03
+142,"['Noroviruses', 'Scabies']",2017-05-31 19:47:06
+143,['Shigellosis'],2011-10-15 00:20:36
+144,['Human Papillomavirus'],2019-07-24 17:33:14
+145,"['Cancer - Endometrial (Spanish)', 'Babesiosis']",2012-02-26 10:26:43
+146,"['Lymphogranuloma Venereum (LGV)', 'Tuberculosis (TB)', 'Ehrlichiosis']",2014-06-12 08:24:52
+147,"['Histoplasmosis', 'Salmonella', 'Cancer - Breast Exams and Mammograms']",2008-11-10 08:18:21
+148,"['Blue-green Algae', 'Chickenpox', 'High Blood Pressure']",2017-11-30 01:16:04
+149,['Chronic Obstructive Pulmonary Disease (COPD)'],2020-06-21 06:58:29
+150,"['Creutzfeldt-Jakob Disease', 'Tularemia', 'Respiratory Illness Due to Enterovirus']",2017-11-05 08:21:09
+151,['Acute Flaccid Myelitis (AFM)'],2017-03-08 17:49:42
+152,['Helicobacter Pylori'],2015-10-14 22:13:25
+153,"['Cancer - Endometrial', 'Cancer - Oral']",2014-07-25 02:40:18
+154,[],2014-12-31 05:39:52
+155,[],2013-08-14 00:51:37
+156,['Meningococcal Disease'],2016-06-17 17:00:00
+157,"['Cyclospora', ""Alzheimer's Diseases (Spanish)"", 'HIV/AIDS']",2016-07-01 07:32:41
+158,"['Cancer - Breast', 'Arboviral Encephalitis']",2010-05-02 15:49:15
+159,['Gonorrhea'],2018-02-27 15:46:05
+160,"['Cancer - Endometrial (Spanish)', 'Chancroid']",2021-11-15 15:36:25
+161,"['Cancer - Pancreatic', 'Tuberculosis (TB)', 'Heat-related Illnesses']",2009-09-10 23:22:33
+162,"['Influenza', 'Chronic Obstructive Pulmonary Disease (COPD)']",2015-01-31 15:05:02
+163,['Neonatal Abstinence Syndrome'],2008-05-23 20:10:42
+164,['Clostridium Difficile'],2017-01-13 17:39:33
+165,"['Cancer - Liver', 'Syphilis']",2018-03-12 11:22:48
+166,"['Monkeypox', 'Norwalk Virus']",2008-11-27 07:21:42
+167,"['AIDS (HIV/AIDS)', 'Flu']",2021-03-04 18:30:29
+168,[],2009-02-16 03:40:34
+169,[],2017-03-18 21:59:17
+170,['Cyclospora'],2019-04-16 00:40:28
+171,"['Crabs', 'Creutzfeldt-Jakob Disease']",2020-12-09 09:57:09
+172,"['Cancer - Lung', 'Ebola Virus']",2020-09-05 13:23:28
+173,"['Human Metapneumovirus', 'Naegleria Fowleri']",2013-01-29 16:25:40
+174,"['Tetanus', 'Gout', 'Haff Disease']",2018-05-28 20:52:57
+175,"['Cancer and Your Environment', 'Hepatitis']",2020-04-28 20:42:13
+176,"['Cancer - Colon', 'Asthma', 'Arboviral Encephalitis']",2017-06-23 12:08:49
+177,['Stress'],2018-01-10 04:16:39
+178,"['Headaches', 'Cancer - Ovarian (Spanish)', 'Cancer - Cervical']",2015-09-06 06:13:41
+179,[],2012-01-31 22:58:54
+180,[],2017-03-09 16:32:31
+181,"['Scabies', 'West Nile Virus', 'SARS']",2021-06-06 00:15:11
+182,[],2020-11-18 11:00:51
+183,"['Carbon Monoxide Poisoning', 'Shigellosis']",2013-07-14 07:12:17
+184,['Zika Virus'],2014-11-08 17:18:14
+185,[],2012-07-08 12:52:35
+186,"['Hepatitis', 'Enterovirus', 'Genital Herpes']",2017-10-02 00:14:02
+187,[],2021-09-30 01:56:40
+188,['Syphilis'],2008-01-21 16:04:50
+189,['Chagas Disease'],2012-10-04 09:39:41
+190,"['Heat-related Illnesses', 'Hantaviruses', 'Influenza']",2016-06-07 11:15:59
+191,"['Lead Poisoning', 'Creutzfeldt-Jakob Disease', ""Wilson's Disease""]",2010-09-18 23:50:15
+192,[],2020-01-05 10:30:21
+193,['Cancer - Skin'],2016-05-28 01:12:50
+194,"['Bacterial Vaginosis', 'Carbon Monoxide Poisoning']",2012-02-25 17:35:13
+195,"['Norwalk Virus', 'Cancer - Ovarian']",2021-04-04 16:43:47
+196,[],2013-11-17 21:20:13
+197,"['Cancer - Leukemia', 'Rotavirus', 'Rubella']",2013-06-09 17:24:20
+198,[],2017-01-17 10:18:12
+199,[],2011-09-09 03:52:54
+200,"['Cancer - Leukemia', 'Vaginitis', 'Leptospirosis']",2014-06-13 18:22:41
+201,[],2014-11-05 23:49:11
+202,"['Fibromyalgia', 'Tularemia']",2021-09-12 08:23:39
+203,"['Meningococcal Disease', 'Clostridium Difficile']",2015-08-20 12:28:08
+204,['Meningococcal Disease'],2021-01-05 13:46:34
+205,['Rocky Mountain Spotted Fever'],2020-07-01 20:06:02
+206,[],2018-12-28 14:46:24
+207,"['Rubella', 'Lead Poisoning']",2021-01-23 05:19:40
+208,"['Listeriosis', 'Cancer - Multiple Myeloma']",2017-04-20 06:11:47
+209,"['Group A Streptococcus', 'AIDS (HIV/AIDS)', 'MRSA']",2012-03-06 15:03:13
+210,[],2012-12-13 09:32:32
+211,['Sexually Transmitted Diseases (STDs)'],2018-05-02 15:48:23
+212,"['Depression', 'SARS', 'Shigellosis']",2019-03-16 08:49:04
+213,['Acute Flaccid Myelitis (AFM)'],2020-08-18 09:03:48
+214,"['Seoul Virus', 'Haff Disease']",2013-03-12 03:43:36
+215,['Diphtheria'],2010-10-13 02:08:44
+216,"['Helicobacter Pylori', 'Flu', 'Pertussis']",2016-12-09 06:47:57
+217,"['Cancer - Colorectal', 'Bacterial Vaginosis', 'Chagas Disease']",2010-04-15 18:00:23
+218,"['Cancer - Breast Exams and Mammograms', 'Cancer - Multiple Myeloma', 'Ebola Virus']",2018-10-06 14:00:49
+219,"['Hantaviruses', 'Group A Streptococcus', 'Pneumococcal Disease']",2013-10-10 07:07:02
+220,"['Giardiasis', 'Tularemia']",2020-06-11 10:28:15
+221,"['AIDS (HIV/AIDS)', 'Crabs']",2016-04-05 05:05:15
+222,['Bacterial Vaginosis'],2019-10-26 17:43:28
+223,"['Cancer - Thyroid', 'SARS', 'Cancer - Pancreatic']",2012-09-27 14:29:23
+224,[],2009-07-04 03:20:57
+225,"['Listeriosis', ""Parkinson's Disease""]",2014-02-01 19:49:08
+226,['Cancer - Skin'],2020-04-23 08:20:07
+227,"['Head Lice', 'Diphtheria', 'Arboviral Encephalitis']",2017-08-28 05:28:39
+228,"['Cancer - Testicular', 'Depression']",2020-01-26 19:56:28
+229,['Giardiasis'],2010-07-20 19:52:17
+230,[],2020-02-16 23:23:51
+231,[],2019-11-03 00:07:38
+232,['Cancer - Uterus (Spanish)'],2015-01-31 07:45:09
+233,['Head Lice'],2015-11-23 14:22:15
+234,"['Gonorrhea', 'Leptospirosis', 'Chickenpox']",2011-09-26 02:21:00
+235,"['Hantaviruses', 'Asthma', 'Pneumococcal Disease']",2020-10-27 11:57:44
+236,"['Human Metapneumovirus', 'Pertussis', 'Rocky Mountain Spotted Fever']",2021-05-09 20:58:42
+237,"['Conjunctivitis', 'Leptospirosis', 'Molluscum Contagiosum']",2018-10-28 04:36:47
+238,"['Syphilis', 'Respiratory Illness Due to Enterovirus']",2009-09-06 13:45:20
+239,"['Cryptosporidiosis', 'Rubella']",2019-09-01 03:44:30
+240,[],2016-06-22 02:48:34
+241,[],2015-03-01 20:31:22
+242,"['Arboviral Encephalitis', 'Meningitis']",2009-03-19 22:36:01
+243,['Cardiovascular Disease'],2020-03-15 11:27:01
+244,"['Human Papillomavirus', 'Chagas Disease', 'Chancroid']",2010-03-06 05:31:05
+245,"['Cancer - Multiple Myeloma', 'Cancer - Thyroid', 'Methyl Parathion']",2017-09-01 23:55:00
+246,"['Tetanus', 'Chickenpox']",2020-11-29 13:42:10
+247,[],2014-10-25 23:57:56
+248,[],2019-08-31 14:55:11
+249,"['Crabs', 'Group A Streptococcus (Parents/Caregivers)', 'Carbon Monoxide Poisoning']",2011-01-26 10:31:09
+250,"['Chagas Disease', 'Carbapenem-Resistant Enterobacteriaceae (CRE) Infections', 'Pneumococcal Disease']",2008-04-20 20:59:02
+251,"['Enterovirus', 'E. Coli', 'Lymphogranuloma Venereum (LGV)']",2008-01-09 02:50:08
+252,['Diabetes'],2013-08-18 15:32:30
+253,['Hantaviruses'],2013-12-24 13:38:30
+254,['Cancer - Thyroid'],2010-08-24 07:27:54
+255,"['Carbon Monoxide Poisoning', 'Primary Amebic Meningoencephalitis']",2008-01-06 11:01:42
+256,[],2009-07-15 15:12:15
+257,['Cancer - Skin'],2021-03-16 14:48:39
+258,"['Babesiosis', 'Haff Disease']",2008-03-19 05:00:10
+259,"['Human Metapneumovirus', 'Gout']",2017-07-12 05:16:46
+260,[],2013-11-25 07:42:15
+261,"['Salmonella', 'Cancer - Leukemia', 'Vaginitis']",2021-12-20 23:20:53
+262,"['Eastern Equine Encephalitis Virus (EEEV)', 'Zika Virus', 'HIV/AIDS']",2010-03-10 09:57:58
+263,['Cancer - Stomach'],2010-04-08 17:30:14
+264,"['Yellow Fever', 'Group A Streptococcus (Parents/Caregivers)', 'Chagas Disease']",2010-02-28 23:43:15
+265,['Cancer - Uterus'],2020-02-27 00:26:39
+266,"['Chagas Disease', 'Cancer - Ovarian (Spanish)']",2012-10-17 02:43:42
+267,"['Methyl Parathion', 'Cancer - Bladder']",2014-09-21 13:31:48
+268,['Genital Herpes'],2017-11-30 19:32:19
+269,['SARS (Healthcare Providers)'],2015-04-22 08:10:51
+270,['Tularemia'],2018-12-28 06:38:38
+271,"['Staph Infection', 'Measles']",2008-04-27 08:49:14
+272,[],2010-02-02 02:33:29
+273,[],2021-08-31 14:10:44
+274,['Eastern Equine Encephalitis Virus (EEEV)'],2015-07-13 00:34:06
+275,"['Cancer - Stomach', 'Babesiosis']",2008-08-08 13:27:25
+276,[],2020-11-28 03:38:44
+277,"['Staph Infection', 'High Blood Pressure', 'Monkeypox']",2010-10-08 01:22:44
+278,"['Tetanus', 'Chlamydia']",2013-02-04 20:10:28
+279,"['HIV/AIDS', 'Carbapenem-Resistant Enterobacteriaceae (CRE) Infections', 'Monkeypox']",2014-12-11 12:20:08
+280,"['Gonorrhea', 'Cancer - Testicular']",2020-11-06 06:42:09
+281,"['Head Lice', 'Cancer - Colon', 'Cardiovascular Disease']",2015-02-18 17:25:55
+282,[],2019-02-27 05:57:47
+283,"['Cancer - Kidney', 'Chagas Disease', 'Zika Virus']",2021-12-07 06:25:01
+284,"[""Parkinson's Disease""]",2008-06-26 21:12:25
+285,[],2020-01-24 09:49:32
+286,['Arboviral Encephalitis'],2011-01-10 17:12:12
+287,"['Cancer - Colon', 'Cancer - Colorectal']",2021-01-12 16:00:45
+288,[],2018-11-26 01:31:08
+289,"['Staph Infection', 'Chlamydia']",2016-06-05 05:04:29
+290,['Salmonella'],2013-10-29 19:38:54
+291,"['Hepatitis', 'Cancer']",2017-09-09 22:23:19
+292,"['Heat-related Illnesses', 'Sexually Transmitted Diseases (STDs)', 'Cancer - Kidney']",2012-01-14 23:16:51
+293,"['Lymphogranuloma Venereum (LGV)', 'Diphtheria']",2012-08-17 12:18:28
+294,"['Cancer - Colon', 'Methyl Parathion']",2015-01-09 14:49:20
+295,[],2014-05-08 08:04:05
+296,"['Salmonella', 'Tetanus']",2021-09-28 12:21:26
+297,[],2019-11-26 07:50:02
+298,['SARS (Healthcare Providers)'],2015-06-28 18:50:14
+299,"['Lymphogranuloma Venereum (LGV)', 'Ebola Virus', 'Cancer - Kidney']",2011-07-17 18:22:13
+300,"['Lupus', 'Chronic Fatigue Syndrome']",2017-04-14 03:20:46
+301,[],2013-07-10 05:20:19
+302,['West Nile Virus'],2008-11-20 22:57:32
+303,"['Clostridium Difficile', 'Stroke', 'Depression']",2014-02-05 14:08:08
+304,[],2018-11-30 07:29:40
+305,[],2014-10-17 00:17:16
+306,"['Babesiosis', 'Ebola Virus', 'Cancer - Skin']",2008-03-24 23:43:59
+307,['Plague'],2016-07-16 05:26:57
+308,"['Monkeypox', 'SARS (Healthcare Providers)']",2015-10-23 03:48:10
+309,"['Fibromyalgia', ""Wilson's Disease""]",2012-03-21 22:52:33
+310,"['Bacterial Vaginosis', 'Eastern Equine Encephalitis Virus (EEEV)', 'MRSA (Pet Owners)']",2009-06-22 22:20:07
+311,['Flu'],2010-02-15 19:54:05
+312,['Sarcoidosis'],2012-09-01 19:33:37
+313,['Monkeypox'],2012-04-13 04:03:26
+314,['Rubella'],2013-06-12 13:29:36
+315,"['Cancer - Stomach', 'Salmonella', 'Rubella']",2021-09-01 05:46:48
+316,[],2017-06-03 01:26:05
+317,['Babesiosis'],2020-04-13 23:41:16
+318,['Staph Infection'],2016-04-14 19:11:16
+319,[],2021-08-08 07:30:40
+320,"['Rabies', 'Alphaviruses']",2011-05-05 05:40:08
+321,"['E. Coli', 'Norwalk Virus']",2010-11-27 07:21:06
+322,"['Heat-related Illnesses', 'HIV/AIDS']",2019-10-13 00:40:02
+323,[],2009-08-24 12:28:19
+324,"['Cyclospora', 'Neonatal Abstinence Syndrome']",2018-05-28 06:03:31
+325,"['Cryptosporidiosis', 'Crabs']",2011-04-30 21:19:07
+326,['Celiac Disease'],2013-09-19 23:56:22
+327,['Trichomoniasis'],2010-09-14 14:36:28
+328,"['Chronic Fatigue Syndrome', 'Fibroids']",2009-04-22 21:24:25
+329,"['Meningitis', 'Cancer - Leukemia', 'Cancer - Breast']",2014-05-08 12:16:20
+330,[],2015-03-01 04:22:41
+331,"['Cancer - Breast Exams and Mammograms', ""Alzheimer's Diseases (Spanish)""]",2012-12-14 12:39:30
+332,[],2020-09-15 15:37:35
+333,"['Measles', 'Cryptosporidiosis', 'Leptospirosis']",2015-05-09 00:52:44
+334,"['Chlamydia', 'Carbapenem-Resistant Enterobacteriaceae (CRE) Infections']",2018-02-14 08:21:44
+335,"['Group A Streptococcus (Parents/Caregivers)', 'Cancer - Ovarian (Spanish)']",2010-03-09 07:01:14
+336,['Fibromyalgia'],2014-07-03 23:11:19
+337,[],2017-09-01 16:46:09
+338,[],2015-10-01 23:51:27
+339,"['Trichomoniasis', 'Cancer - Colon']",2015-12-17 00:00:15
+340,[],2010-10-19 23:54:52
+341,[],2020-10-03 07:45:39
+342,"['Harmful Algal Blooms', 'Cancer - Stomach', 'Human Metapneumovirus']",2010-02-23 14:44:57
+343,[],2016-12-26 08:21:19
+344,['Cancer and Your Environment'],2016-07-25 18:00:20
+345,"['Yellow Fever', 'Cancer - Stomach']",2009-08-10 19:25:09
+346,"['Giardiasis', 'Chickenpox', 'Diphtheria']",2010-07-17 07:16:56
+347,"['Zika Virus', 'Cancer - Testicular', 'Histoplasmosis']",2020-04-08 01:08:23
+348,['Methyl Parathion'],2017-10-23 22:46:31
+349,[],2011-11-08 11:16:06
+350,"['Head Lice', 'Stress']",2012-01-16 14:33:13
+351,"['Crabs', 'Heart Disease']",2020-04-28 07:59:46
+352,"['Cancer - Skin', 'West Nile Virus', ""Parkinson's Disease""]",2020-07-04 09:11:18
+353,"['Hepatitis', 'Chronic Fatigue Syndrome']",2012-10-29 00:34:02
+354,"['Tuberculosis (TB)', 'Celiac Disease']",2012-10-06 04:58:31
+355,[],2017-12-29 15:50:59
+356,"['Rotavirus', 'Pelvic Inflammatory Disease (PID)']",2009-10-19 14:38:37
+357,"['Diabetes', 'Cancer - Cervical (Spanish)']",2008-07-24 12:17:43
+358,"['Celiac Disease', 'Asthma']",2017-12-05 23:39:41
+359,['Flu'],2018-03-26 12:41:14
+360,"['Cancer - Skin', 'Cancer - Stomach']",2010-04-02 17:49:33
+361,['SARS (Healthcare Providers)'],2010-07-05 10:16:08
+362,['Scabies'],2016-12-01 17:04:32
+363,"['High Blood Pressure', 'Influenza']",2010-04-25 17:40:13
+364,[],2020-02-01 12:11:16
+365,[],2021-11-16 07:31:33
+366,"['AIDS (HIV/AIDS)', 'Ebola Virus']",2015-03-10 06:58:50
+367,"['Fibromyalgia', 'Blue-green Algae']",2018-06-26 00:02:18
+368,"['Babesiosis', 'MRSA']",2013-07-13 21:09:03
+369,['Depression'],2012-09-10 11:08:33
+370,"['Cancer - Oral', 'Histoplasmosis']",2015-11-14 09:17:15
+371,"['Cancer - Uterus', 'Primary Amebic Meningoencephalitis']",2016-08-23 14:52:14
+372,"['Influenza', 'Chlamydia']",2009-01-31 11:04:10
+373,['Cancer - Lung'],2019-03-28 13:28:02
+374,"['Norwalk Virus', 'Ehrlichiosis', 'Cancer - Pancreatic']",2008-07-10 01:58:03
+375,"['Cancer - Ovarian', 'Cancer - Colon']",2013-06-28 14:44:50
+376,"['Pneumococcal Disease', 'Influenza']",2011-09-11 14:11:28
+377,"['Cancer - Skin', 'West Nile Virus']",2016-10-31 19:08:52
+378,['Cancer - Bladder'],2017-08-24 02:16:51
+379,"['West Nile Virus', 'Cancer - Testicular', 'Harmful Algal Blooms']",2016-04-15 13:09:09
+380,[],2019-09-18 15:35:14
+381,['Chlamydia'],2013-09-23 12:01:33
+382,[],2018-04-28 19:25:24
+383,['Stress'],2009-10-04 12:05:48
+384,"['Alphaviruses', 'Rocky Mountain Spotted Fever', 'Cancer - Uterus (Spanish)']",2014-06-08 10:29:29
+385,[],2017-08-08 02:59:15
+386,"['Pneumococcal Disease', 'Sarcoidosis']",2019-04-27 01:34:48
+387,['Norwalk Virus'],2012-12-07 03:48:22
+388,"['Cancer - Pancreatic', 'Group A Streptococcus', 'Meningitis']",2017-10-10 14:52:53
+389,['Hepatitis'],2018-10-08 15:13:27
+390,['Pertussis'],2008-07-12 22:49:43
+391,['Shigellosis'],2016-06-29 08:43:20
+392,"['Rubella', 'Human Metapneumovirus']",2011-01-30 12:52:12
+393,"['Sarcoidosis', 'Ehrlichiosis', 'Meningococcal Disease']",2017-11-24 00:56:42
+394,"['Tularemia', 'Genital Herpes']",2013-08-28 22:17:29
+395,[],2017-05-25 23:21:47
+396,"['Naegleria Fowleri', 'Cancer - Bladder']",2011-01-14 16:00:42
+397,[],2011-09-15 03:41:37
+398,[],2011-11-21 01:46:47
+399,[],2017-03-03 09:21:48
+400,"['Lupus', 'Heart Disease', 'Celiac Disease']",2021-05-19 14:17:52
+401,[],2017-10-20 06:45:30
+402,"['Arboviral Encephalitis', 'Babesiosis']",2010-07-21 18:30:44
+403,"['Cancer - Endometrial', 'Meningococcal Disease', 'Head Lice']",2008-10-26 19:16:37
+404,"['Gonorrhea', 'Respiratory Illness Due to Enterovirus', 'Asthma']",2019-10-21 21:46:10
+405,['Cancer - Liver'],2016-07-01 05:12:39
+406,"['Cancer - Breast Exams and Mammograms', 'Enterovirus', 'Stress']",2015-07-20 22:05:34
+407,"['Cancer - Kidney', 'Enterovirus', 'Cancer - Cervical (Spanish)']",2019-12-22 06:42:38
+408,['SARS (Healthcare Providers)'],2018-01-24 14:56:13
+409,"['Genital Herpes', 'MRSA (Pet Owners)', 'Listeriosis']",2009-06-01 07:51:30
+410,[],2012-05-17 14:22:23
+411,"['Cancer - Leukemia', 'Cancer - Uterus', 'Cancer - Bladder']",2011-05-11 00:19:20
+412,['Listeriosis'],2009-07-09 04:02:51
+413,"['Diphtheria', 'Cancer - Uterus']",2014-06-06 20:57:11
+414,[],2021-12-30 21:23:51
+415,['AIDS (HIV/AIDS)'],2018-06-28 13:00:34
+416,['Monkeypox'],2012-06-03 18:59:07
+417,"['Celiac Disease', 'Rubella']",2009-03-03 19:02:00
+418,['MRSA (Pet Owners)'],2019-07-18 12:31:20
+419,['Helicobacter Pylori'],2012-11-23 15:46:30
+420,['Asthma'],2012-10-31 02:17:49
+421,"[""Parkinson's Disease""]",2012-10-18 21:30:47
+422,[],2017-05-25 13:04:40
+423,[],2019-12-25 19:21:02
+424,"['Cancer - Ovarian (Spanish)', 'Fibroids']",2009-02-13 03:02:34
+425,['Human Metapneumovirus'],2015-09-04 02:48:36
+426,"['Ebola Virus', 'Chagas Disease']",2014-09-13 00:05:44
+427,['Trichomoniasis'],2010-08-11 08:05:50
+428,[],2021-05-14 23:36:06
+429,['Headaches'],2020-03-11 14:20:53
+430,[],2016-08-08 23:13:11
+431,"[""Parkinson's Disease"", ""Wilson's Disease""]",2014-08-06 15:41:10
+432,"['Lead Poisoning', 'Chronic Obstructive Pulmonary Disease (COPD)', 'MRSA']",2008-10-30 06:12:22
+433,[],2010-07-02 13:22:22
+434,['Cancer - Uterus'],2021-05-14 12:50:09
+435,"['Cancer - Pancreatic', 'Tetanus', 'Chancroid']",2020-01-15 09:25:24
+436,"['Sarcoidosis', 'Rotavirus', 'Asthma']",2018-03-20 05:29:15
+437,"['Vaginitis', 'MRSA (Pet Owners)', 'Haff Disease']",2020-12-27 07:08:17
+438,[],2017-08-27 11:30:39
+439,"['Primary Amebic Meningoencephalitis', 'Monkeypox']",2016-04-18 07:11:41
+440,['HIV/AIDS'],2010-02-19 23:05:13
+441,"['Respiratory Illness Due to Enterovirus', 'Pneumococcal Disease', 'Chronic Obstructive Pulmonary Disease (COPD)']",2019-05-03 20:09:06
+442,[],2020-09-09 09:43:27
+443,"['SARS (Healthcare Providers)', 'Cancer - Testicular', 'Respiratory Illness Due to Enterovirus']",2017-12-02 23:09:36
+444,['Carbapenem-Resistant Enterobacteriaceae (CRE) Infections'],2011-11-05 10:49:58
+445,"['Stroke', 'Heart Disease', 'Scabies']",2012-02-05 01:00:43
+446,"['Head Lice', 'Zika Virus', 'Ebola Virus']",2014-03-29 02:30:28
+447,"['Cancer - Colon', 'Sarcoidosis', 'Rubella']",2017-08-28 13:59:42
+448,[],2017-12-25 02:16:37
+449,"['Cancer - Breast Exams and Mammograms', 'SARS']",2016-04-30 18:24:30
+450,['Arboviral Encephalitis'],2020-02-20 08:49:13
+451,[],2018-07-28 05:55:31
+452,[],2016-04-19 05:14:16
+453,"['Methyl Parathion', 'Genital Herpes', 'Pertussis']",2008-03-26 22:03:38
+454,"['Rocky Mountain Spotted Fever', 'Sexually Transmitted Diseases (STDs)']",2018-09-17 10:12:37
+455,"['Cancer - Colorectal', 'Tularemia', 'Cancer - Colon']",2014-05-24 18:42:34
+456,"[""Parkinson's Disease"", 'Vaginitis', 'Chickenpox']",2019-12-12 17:43:03
+457,['Lyme Disease'],2012-01-14 18:00:12
+458,['Rotavirus'],2015-11-20 00:07:34
+459,[],2013-10-11 07:47:29
+460,"['Norwalk Virus', 'Heat-related Illnesses', 'Cancer - Testicular']",2011-12-13 20:17:14
+461,"['Zika Virus', 'Enterovirus']",2013-05-24 18:08:30
+462,[],2017-05-13 10:03:48
+463,"['High Blood Pressure', 'Rabies']",2020-06-22 11:46:12
+464,"['Rotavirus', 'Influenza']",2017-01-06 18:30:45
+465,"['Chronic Obstructive Pulmonary Disease (COPD)', 'Tuberculosis (TB)']",2018-03-01 23:19:58
+466,['Influenza'],2014-02-11 02:39:51
+467,"['Cancer - Stomach', 'Primary Amebic Meningoencephalitis']",2011-12-10 13:23:59
+468,"['Chickenpox', 'Tetanus']",2014-10-28 18:17:45
+469,"['Rotavirus', 'Depression']",2009-05-25 07:24:30
+470,"['Cancer - Breast Exams and Mammograms', 'Fibroids', 'Scabies']",2010-02-09 16:00:26
+471,['Cancer - Colorectal'],2016-03-18 01:42:32
+472,"['Meningitis', 'Vaginitis', 'Scabies']",2015-08-11 03:20:18
+473,['Acute Flaccid Myelitis (AFM)'],2021-07-31 20:56:42
+474,[],2011-01-17 11:58:28
+475,"['Tetanus', 'Rocky Mountain Spotted Fever', 'Rotavirus']",2018-08-18 21:49:41
+476,"['High Blood Pressure', 'Hantaviruses', 'Trichomoniasis']",2020-12-03 23:01:19
+477,['Polio'],2012-10-25 22:58:46
+478,[],2010-04-08 10:44:36
+479,[],2011-06-02 21:44:52
+480,[],2014-12-28 01:18:03
+481,"['HIV/AIDS', 'Shigellosis']",2016-05-09 18:25:54
+482,"['Cardiovascular Disease', 'Eastern Equine Encephalitis Virus (EEEV)', 'Mumps']",2018-04-22 11:27:57
+483,"['Depression', 'Meningococcal Disease', 'Mumps']",2021-02-13 08:57:38
+484,[],2017-06-06 03:29:38
+485,['Cancer - Testicular'],2015-12-13 18:56:01
+486,"['Lymphogranuloma Venereum (LGV)', 'Tetanus', 'Influenza']",2016-11-12 16:34:23
+487,"['Cancer - Uterus', 'Fibroids', 'Non-Gonococcal Urethritis (NGU)']",2017-02-02 07:32:27
+488,"['Eastern Equine Encephalitis Virus (EEEV)', 'Salmonella', 'HIV/AIDS']",2009-06-30 10:51:53
+489,[],2013-05-04 17:02:06
+490,[],2015-01-30 11:19:44
+491,"['Diphtheria', 'E. Coli', 'Hepatitis']",2011-01-04 13:36:05
+492,[],2015-03-30 04:37:39
+493,"['Shigellosis', 'Chickenpox']",2012-03-11 16:09:50
+494,"['Haff Disease', ""Legionnaires' Disease"", 'Primary Amebic Meningoencephalitis']",2010-08-15 13:58:31
+495,[],2012-01-06 03:19:32
+496,['Noroviruses'],2019-10-14 11:48:45
+497,['Cancer - Endometrial (Spanish)'],2014-06-09 16:35:07
+498,"['Cancer - Colorectal', 'Arthritis', 'Cancer - Ovarian (Spanish)']",2020-11-15 15:34:56
+499,[],2012-07-10 07:52:43
+500,[],2018-03-27 10:09:34
+501,"['MRSA (Pet Owners)', 'Giardiasis', 'Cancer']",2020-04-28 16:40:45
+502,[],2015-09-12 06:51:31
+503,[],2013-11-14 07:48:18
+504,"['Clostridium Difficile', 'Vaginitis']",2013-07-28 14:06:03
+505,"['E. Coli', 'Cancer - Ovarian (Spanish)', 'West Nile Virus']",2013-06-08 18:17:10
+506,['Cardiovascular Disease'],2019-04-11 19:32:55
+507,"['Cancer - Ovarian (Spanish)', 'Meningococcal Disease']",2008-02-24 05:44:16
+508,"['Flu', 'Cancer - Kidney', 'Lupus']",2009-08-16 21:02:23
+509,"['Group A Streptococcus (Parents/Caregivers)', 'Listeriosis', 'Acute Flaccid Myelitis (AFM)']",2021-04-25 04:06:45
+510,"['Cancer - Testicular', 'Cancer - Endometrial']",2013-06-22 19:40:12
+511,[],2019-12-14 02:41:09
+512,[],2011-10-21 04:30:30
+513,"['Acute Flaccid Myelitis (AFM)', 'Naegleria Fowleri']",2009-08-24 08:22:43
+514,['Diphtheria'],2009-12-01 05:08:59
+515,"['Ebola Virus', 'Scabies', 'E. Coli']",2016-03-03 09:53:13
+516,['Alphaviruses'],2021-01-06 04:01:15
+517,[],2012-06-23 08:23:34
+518,"['Head Lice', 'Polio']",2011-01-27 10:40:51
+519,"['Leptospirosis', 'Naegleria Fowleri']",2013-03-24 08:30:25
+520,"['Hepatitis', 'Scabies']",2015-02-20 08:06:54
+521,"['Cryptosporidiosis', 'Asthma', 'Cancer - Liver']",2011-11-17 08:35:49
+522,"['Alzheimer’s Disease', 'Trichomoniasis', 'Cancer - Stomach']",2013-06-08 13:45:35
+523,"['Cancer - Ovarian (Spanish)', 'Mumps']",2011-12-29 00:23:09
+524,[],2012-06-01 05:35:39
+525,['Cancer - Uterus'],2011-10-25 19:16:21
+526,['Conjunctivitis'],2015-02-05 06:34:08
+527,[],2009-09-19 11:49:27
+528,"['MRSA', 'Fibroids']",2014-09-29 08:17:53
+529,[],2021-12-28 03:52:30
+530,"['Cancer - Uterus', 'Mumps', 'Pelvic Inflammatory Disease (PID)']",2010-09-27 21:02:11
+531,[],2010-12-31 09:07:33
+532,"['Cancer - Breast', ""Legionnaires' Disease""]",2011-07-02 22:40:20
+533,[],2015-11-09 18:09:15
+534,[],2014-07-25 14:01:32
+535,['Chagas Disease'],2008-04-27 00:44:56
+536,"['Arthritis', ""Wilson's Disease""]",2014-11-16 05:43:50
+537,"['SARS', 'Clostridium Difficile']",2019-02-07 05:08:09
+538,"['Cancer - Cervical (Spanish)', 'Human Metapneumovirus', 'Chickenpox']",2014-04-30 13:48:08
+539,['Cancer - Colon'],2018-05-19 06:44:03
+540,[],2018-12-24 07:13:05
+541,"['Lymphogranuloma Venereum (LGV)', 'Enterovirus', 'Chickenpox']",2019-02-05 12:02:51
+542,['Incontinence'],2020-10-27 16:29:23
+543,['Listeriosis'],2021-12-31 16:11:02
+544,['Cancer - Lung'],2021-01-27 22:44:23
+545,[],2015-12-21 03:17:04
+546,"['Pneumococcal Disease', 'High Blood Pressure', 'Cancer - Skin']",2017-05-29 02:26:02
+547,['Conjunctivitis'],2018-04-10 21:16:16
+548,"['Vaginitis', 'Seoul Virus']",2011-12-13 01:47:20
+549,"['SARS', ""Legionnaires' Disease""]",2020-02-02 05:52:30
+550,[],2017-10-05 02:35:01
+551,"['Cancer and Your Environment', 'Carbapenem-Resistant Enterobacteriaceae (CRE) Infections']",2011-02-07 19:15:15
+552,"['Alzheimer’s Disease', 'Cancer - Colorectal']",2009-11-17 19:24:35
+553,"['Chancroid', 'Cardiovascular Disease', 'Alzheimer’s Disease']",2018-10-23 02:52:27
+554,"['Cancer - Endometrial (Spanish)', 'SARS', 'AIDS (HIV/AIDS)']",2021-11-04 08:50:42
+555,[],2016-06-06 22:29:13
+556,['Heart Disease'],2009-12-30 19:42:42
+557,[],2016-09-19 00:54:14
+558,"['Norwalk Virus', 'Enterovirus']",2013-08-18 02:39:52
+559,[],2013-11-06 12:01:41
+560,"['Rabies', 'Stroke', 'Group A Streptococcus']",2009-08-28 22:03:43
+561,"['Cancer - Pancreatic', 'E. Coli', 'Rubella']",2018-01-09 18:02:08
+562,"['Group A Streptococcus', 'Flu']",2019-03-16 21:20:48
+563,[],2013-11-07 22:09:52
+564,['Cancer - Thyroid'],2015-02-21 18:51:58
+565,"['Carbapenem-Resistant Enterobacteriaceae (CRE) Infections', 'Asthma', 'Chronic Obstructive Pulmonary Disease (COPD)']",2015-08-27 12:52:08
+566,[],2017-05-21 22:11:12
+567,['Cancer - Oral'],2021-01-04 10:11:47
+568,['Cancer - Multiple Myeloma'],2018-02-28 15:00:14
+569,['HIV/AIDS'],2008-12-12 04:43:17
+570,['Sarcoidosis'],2021-07-11 12:32:18
+571,[],2011-05-14 15:59:42
+572,"[""Legionnaires' Disease"", 'Stroke', 'Flu']",2012-09-24 16:23:59
+573,['Sexually Transmitted Diseases (STDs)'],2021-01-12 13:01:38
+574,"['Celiac Disease', 'Noroviruses', 'Cancer - Lung']",2021-04-08 16:34:14
+575,"[""Wilson's Disease""]",2021-04-24 12:54:59
+576,['Cancer - Testicular'],2014-12-24 04:30:03
+577,[],2017-09-20 23:41:46
+578,"['Cardiovascular Disease', 'Influenza', 'Noroviruses']",2017-05-24 09:24:09
+579,"['Alzheimer’s Disease', 'Alphaviruses']",2014-11-18 11:24:57
+580,"['Seoul Virus', 'Cancer - Multiple Myeloma']",2013-04-03 08:33:44
+581,"['Tuberculosis (TB)', 'E. Coli']",2020-09-05 11:36:11
+582,"['Heart Disease', 'MRSA (Pet Owners)']",2020-03-06 11:54:12
+583,[],2011-05-27 21:07:37
+584,"['Harmful Algal Blooms', 'Haff Disease']",2017-05-06 19:42:11
+585,"['Cancer - Breast', 'Blue-green Algae']",2013-03-18 19:01:48
+586,[],2009-03-29 07:58:37
+587,['Giardiasis'],2019-12-28 11:44:00
+588,['Enterovirus'],2018-11-25 07:47:19
+589,"['Noroviruses', 'Lupus', 'Naegleria Fowleri']",2017-05-19 23:50:14
+590,"['Cancer - Stomach', 'Fibroids']",2016-03-12 10:35:07
+591,[],2012-07-10 11:53:29
+592,"['Histoplasmosis', 'Cancer - Pancreatic', 'Cancer - Endometrial']",2009-06-15 16:39:30
+593,[],2018-07-02 16:14:40
+594,"['Leptospirosis', 'Zika Virus']",2011-12-07 15:41:59
+595,['Mumps'],2019-11-07 00:23:15
+596,"['Plague', 'Cancer - Multiple Myeloma', 'Noroviruses']",2020-08-31 01:30:24
+597,"[""Alzheimer's Diseases (Spanish)"", 'Cancer - Uterus', 'Plague']",2021-09-12 20:46:13
+598,[],2014-10-06 20:11:31
+599,"['Sarcoidosis', 'Tetanus', 'Cancer - Breast']",2018-06-07 10:33:15
+600,['Blue-green Algae'],2012-08-18 13:11:25
+601,[],2010-10-29 17:31:44
+602,"['Cancer - Uterus', 'Pneumococcal Disease', 'Human Metapneumovirus']",2019-10-02 08:23:12
+603,"['Blue-green Algae', 'Polio']",2015-02-02 01:06:08
+604,"['Lyme Disease', 'Cancer and Your Environment', 'Rabies']",2014-12-06 13:15:53
+605,"['Cancer - Colon', 'Gonorrhea']",2018-06-26 13:19:10
+606,[],2012-11-23 06:02:32
+607,['Gonorrhea'],2012-04-01 07:27:12
+608,"['Measles', 'Sarcoidosis', 'Cancer - Multiple Myeloma']",2009-03-25 00:33:48
+609,[],2017-02-18 23:31:20
+610,"['HIV/AIDS', 'Naegleria Fowleri', 'Depression']",2009-07-14 20:25:10
+611,"['Cancer - Bladder', 'Chronic Fatigue Syndrome']",2010-09-02 06:10:13
+612,['Chancroid'],2014-02-04 07:16:09
+613,"['Methyl Parathion', 'Chronic Obstructive Pulmonary Disease (COPD)', 'Arboviral Encephalitis']",2013-11-12 23:45:50
+614,"['Enterovirus', 'Cancer - Uterus (Spanish)']",2013-05-06 15:14:17
+615,[],2021-10-24 12:42:26
+616,['Heart Disease'],2021-04-05 07:40:18
+617,['Arboviral Encephalitis'],2010-11-22 11:23:46
+618,[],2011-12-16 09:22:19
+619,['Chickenpox'],2009-10-27 23:09:40
+620,['High Blood Pressure'],2016-02-28 17:51:06
+621,"['Cancer - Skin', 'Cancer - Lung']",2013-05-17 01:20:18
+622,['Group A Streptococcus (Parents/Caregivers)'],2019-09-14 21:56:33
+623,"['Cancer - Endometrial (Spanish)', 'Genital Herpes', 'E. Coli']",2010-01-28 16:39:40
+624,['Sarcoidosis'],2010-03-27 20:06:01
+625,"['E. Coli', 'Salmonella']",2008-02-12 05:58:02
+626,"['Eastern Equine Encephalitis Virus (EEEV)', 'Cancer - Ovarian']",2016-05-08 03:44:42
+627,"['Lupus', 'Lyme Disease', 'Cancer and Your Environment']",2020-12-17 06:49:10
+628,[],2010-01-08 22:25:30
+629,"['Listeriosis', 'Rabies']",2014-02-06 18:36:10
+630,[],2021-01-03 16:58:55
+631,[],2012-09-20 01:22:23
+632,['Cancer - Oral'],2021-10-07 05:46:26
+633,['Clostridium Difficile'],2015-10-03 02:44:15
+634,[],2021-09-20 02:43:21
+635,['Measles'],2010-03-28 15:05:04
+636,"['Rocky Mountain Spotted Fever', 'Lymphogranuloma Venereum (LGV)']",2012-09-23 23:28:37
+637,"['Sexually Transmitted Diseases (STDs)', 'Cancer - Uterus']",2009-12-30 23:41:12
+638,"['Syphilis', 'Heart Disease', 'SARS (Healthcare Providers)']",2009-07-12 03:58:42
+639,[],2014-10-19 12:17:01
+640,[],2020-02-01 23:10:08
+641,[],2017-01-18 03:48:42
+642,['Flu'],2017-12-24 11:12:29
+643,"['Cancer - Ovarian', 'Cancer - Uterus']",2013-02-14 22:23:01
+644,[],2016-09-27 06:42:23
+645,"['Non-Gonococcal Urethritis (NGU)', 'Chronic Obstructive Pulmonary Disease (COPD)', 'Cancer - Stomach']",2015-01-30 13:15:17
+646,[],2011-09-19 08:58:16
+647,"['Chronic Fatigue Syndrome', 'Sexually Transmitted Diseases (STDs)']",2008-07-22 21:47:31
+648,['Harmful Algal Blooms'],2010-11-14 18:41:53
+649,['Cancer - Colon'],2012-02-04 17:41:20
+650,['Diphtheria'],2018-12-07 01:10:05
+651,"['Cryptosporidiosis', 'Leptospirosis']",2018-05-09 21:58:27
+652,"['Cancer - Bladder', 'Listeriosis']",2020-01-11 07:57:55
+653,"['Tetanus', 'Eastern Equine Encephalitis Virus (EEEV)', 'Syphilis']",2011-06-24 16:59:15
+654,[],2020-09-27 08:59:16
+655,"['Cancer - Cervical', 'Cancer - Uterus (Spanish)', 'Cancer - Stomach']",2015-11-15 19:44:25
+656,['Cancer - Thyroid'],2019-03-14 09:53:58
+657,['Rabies'],2018-07-02 15:04:53
+658,"['Haff Disease', 'Hepatitis']",2016-04-07 05:32:19
+659,"['Syphilis', 'Cancer - Uterus (Spanish)', 'MRSA']",2012-01-22 17:10:23
+660,"['Enterovirus', 'Tetanus']",2019-10-13 06:54:13
+661,"[""Legionnaires' Disease""]",2020-02-12 18:50:50
+662,[],2017-01-09 01:28:51
+663,['Methyl Parathion'],2008-04-16 19:05:02
+664,"['Heat-related Illnesses', 'Listeriosis']",2013-06-09 15:47:55
+665,[],2008-08-03 01:14:13
+666,"['Asthma', 'Vaginitis', 'Chagas Disease']",2011-06-07 07:00:31
+667,"['Asthma', 'Group A Streptococcus (Parents/Caregivers)']",2017-07-03 03:54:34
+668,"['Giardiasis', 'Histoplasmosis', 'Cancer - Endometrial (Spanish)']",2017-05-31 14:45:21
+669,[],2015-01-23 10:02:42
+670,"[""Parkinson's Disease"", 'Crabs', 'Molluscum Contagiosum']",2011-12-01 13:33:48
+671,"['Cyclospora', 'Rotavirus']",2015-05-21 13:38:42
+672,"['Stroke', 'Incontinence']",2012-05-09 09:58:19
+673,['Lymphogranuloma Venereum (LGV)'],2013-06-22 02:53:47
+674,[],2010-04-21 16:01:49
+675,"['Harmful Algal Blooms', 'Human Papillomavirus', 'Measles']",2009-10-08 20:21:48
+676,"['Cancer - Bladder', 'Ebola Virus']",2020-02-22 03:31:27
+677,"['SARS (Healthcare Providers)', 'Stress', 'Harmful Algal Blooms']",2017-07-02 05:21:41
+678,[],2013-05-16 04:19:21
+679,['Human Papillomavirus'],2019-05-09 00:45:36
+680,['Yellow Fever'],2015-07-28 09:14:19
+681,"[""Parkinson's Disease"", 'Noroviruses', 'Cancer and Your Environment']",2015-02-28 10:23:50
+682,['Chronic Fatigue Syndrome'],2008-11-08 16:13:08
+683,['Meningococcal Disease'],2016-07-05 02:24:16
+684,"['Flu', 'Cancer - Endometrial (Spanish)', 'Ehrlichiosis']",2020-12-16 01:18:21
+685,['Group A Streptococcus'],2008-10-17 11:11:19
+686,[],2009-09-13 09:01:28
+687,"[""Legionnaires' Disease"", 'Rabies', 'Cancer - Uterus']",2016-06-29 03:24:42
+688,[],2016-08-25 16:21:12
+689,"['Naegleria Fowleri', ""Wilson's Disease""]",2019-06-26 06:23:02
+690,"['Flu', 'Acute Flaccid Myelitis (AFM)', 'HIV/AIDS']",2012-04-25 05:28:20
+691,[],2011-07-09 23:44:29
+692,[],2014-01-07 10:46:56
+693,"['Group A Streptococcus (Parents/Caregivers)', 'Noroviruses', 'Human Papillomavirus']",2019-05-06 04:55:44
+694,"['Chickenpox', 'Naegleria Fowleri', 'High Blood Pressure']",2021-09-25 02:11:11
+695,"['Cancer - Endometrial', 'Yellow Fever']",2013-01-30 05:52:18
+696,"['Eastern Equine Encephalitis Virus (EEEV)', 'West Nile Virus']",2012-12-26 17:50:49
+697,"['Headaches', 'Chickenpox', 'Blue-green Algae']",2018-09-07 06:14:04
+698,"['Rabies', 'Zika Virus', 'Crabs']",2010-02-05 16:38:50
+699,"['Heart Disease', 'Lupus', 'Flu']",2009-05-04 22:58:00
+700,"['Histoplasmosis', 'Diabetes', 'Listeriosis']",2008-04-10 14:33:52
+701,"['Clostridium Difficile', 'Ebola Virus']",2012-04-10 17:18:04
+702,[],2011-07-05 11:35:58
+703,"['Molluscum Contagiosum', 'Cancer - Cervical (Spanish)']",2019-09-16 16:05:48
+704,"['Head Lice', 'Arboviral Encephalitis']",2020-11-17 20:55:25
+705,[],2019-05-08 13:55:01
+706,"['Harmful Algal Blooms', 'Hepatitis']",2009-04-13 22:58:09
+707,"['Norwalk Virus', 'Lead Poisoning', 'Genital Herpes']",2021-03-18 18:41:41
+708,[],2019-03-07 21:22:00
+709,['Carbapenem-Resistant Enterobacteriaceae (CRE) Infections'],2015-02-11 01:17:00
+710,"['Creutzfeldt-Jakob Disease', 'Lymphogranuloma Venereum (LGV)']",2016-06-07 21:31:41
+711,['Alzheimer’s Disease'],2019-11-27 19:21:21
+712,[],2010-09-09 03:24:18
+713,"['Tularemia', 'Shigellosis']",2015-04-23 17:07:24
+714,"['Influenza', 'Methyl Parathion', 'Trichomoniasis']",2021-10-23 01:41:57
+715,"['Rubella', 'Cancer - Colon', 'Carbon Monoxide Poisoning']",2010-11-21 18:31:12
+716,"['Incontinence', 'Cancer - Breast Exams and Mammograms']",2020-11-17 13:49:41
+717,"['Chickenpox', ""Alzheimer's Diseases (Spanish)"", 'Cancer - Liver']",2017-05-16 03:44:39
+718,"['HIV/AIDS', 'Cancer - Kidney']",2019-10-04 22:15:55
+719,"['Enterovirus', 'Chagas Disease', 'Depression']",2011-08-29 17:43:47
+720,[],2020-09-08 08:10:43
+721,[],2014-11-30 05:05:24
+722,"['Blue-green Algae', 'Naegleria Fowleri']",2014-02-20 08:49:37
+723,[],2019-11-24 20:31:30
+724,"['Chronic Obstructive Pulmonary Disease (COPD)', 'Naegleria Fowleri', 'Pertussis']",2012-08-27 21:57:28
+725,"['Chagas Disease', 'Neonatal Abstinence Syndrome']",2021-07-21 16:47:23
+726,"['Cancer - Multiple Myeloma', 'Chagas Disease']",2021-04-04 01:49:11
+727,"['Hantaviruses', 'Salmonella', 'Shigellosis']",2015-07-29 02:48:50
+728,"[""Parkinson's Disease"", 'Human Metapneumovirus', 'Tuberculosis (TB)']",2009-01-14 00:30:01
+729,[],2021-05-01 03:08:51
+730,[],2010-10-25 18:36:02
+731,[],2016-11-14 05:25:56
+732,[],2008-11-04 05:15:45
+733,[],2016-01-28 18:45:02
+734,"['Leptospirosis', 'Diphtheria']",2008-02-14 14:24:04
+735,"['Blue-green Algae', 'Harmful Algal Blooms', 'Cancer - Testicular']",2018-04-03 11:29:19
+736,['Chronic Fatigue Syndrome'],2009-05-20 01:46:56
+737,['Plague'],2008-12-12 05:17:08
+738,[],2011-02-23 13:00:58
+739,[],2016-08-30 22:30:32
+740,"['Listeriosis', 'Human Papillomavirus']",2012-11-17 03:48:52
+741,"['Creutzfeldt-Jakob Disease', 'Acute Flaccid Myelitis (AFM)']",2019-03-16 08:05:47
+742,"['Cancer - Colon', 'Naegleria Fowleri']",2010-05-21 00:35:50
+743,['Flu'],2017-03-27 17:45:25
+744,[],2016-11-22 03:32:48
+745,['Salmonella'],2019-11-13 08:02:30
+746,"['Cardiovascular Disease', 'Carbon Monoxide Poisoning']",2019-10-18 05:12:38
+747,[],2020-09-23 03:05:17
+748,"['Leptospirosis', 'Cancer - Breast Exams and Mammograms', 'Scabies']",2019-04-21 18:37:52
+749,"['MRSA', 'Group A Streptococcus', 'Tularemia']",2017-06-10 02:38:18
+750,"['Cancer - Endometrial (Spanish)', 'Zika Virus', 'Leptospirosis']",2015-02-15 10:28:55
+751,[],2008-07-02 06:15:39
+752,"['Cancer - Pancreatic', 'Cyclospora']",2013-05-22 01:36:36
+753,"['Group A Streptococcus (Parents/Caregivers)', 'Syphilis']",2008-08-01 06:29:12
+754,"[""Alzheimer's Diseases (Spanish)"", 'Sexually Transmitted Diseases (STDs)']",2021-08-09 01:16:31
+755,['Tetanus'],2015-08-25 13:50:30
+756,['Cyclospora'],2008-07-21 09:57:26
+757,"[""Wilson's Disease"", 'Cancer - Thyroid', 'Cyclospora']",2019-04-11 05:28:13
+758,[],2015-05-28 16:21:23
+759,"['Vaginitis', ""Wilson's Disease"", 'Norwalk Virus']",2020-03-25 13:29:55
+760,"['Pertussis', 'Histoplasmosis']",2015-07-01 17:33:47
+761,[],2021-12-07 00:30:11
+762,['Lupus'],2021-10-29 18:04:41
+763,['Influenza'],2018-04-24 15:19:06
+764,"['Alphaviruses', 'Group A Streptococcus', 'Cancer - Cervical']",2020-03-20 14:22:32
+765,['Group A Streptococcus (Parents/Caregivers)'],2009-04-08 08:08:11
+766,['Clostridium Difficile'],2011-12-24 10:50:35
+767,"['Cancer - Skin', ""Parkinson's Disease""]",2011-09-18 14:09:26
+768,['Methyl Parathion'],2010-08-08 21:16:23
+769,[],2013-05-03 05:57:10
+770,"['Clostridium Difficile', 'Cancer - Endometrial (Spanish)']",2011-08-02 06:14:44
+771,"['Rotavirus', 'Meningococcal Disease']",2017-09-20 18:16:45
+772,"['Naegleria Fowleri', 'Human Papillomavirus', 'Pertussis']",2020-05-27 05:05:31
+773,['Cancer - Uterus'],2019-11-25 00:04:20
+774,['Clostridium Difficile'],2017-05-19 09:07:01
+775,[],2014-12-30 07:18:17
+776,['Lupus'],2018-02-26 21:40:06
+777,"['Staph Infection', 'Cancer - Skin']",2020-09-10 07:50:42
+778,[],2011-03-10 15:13:16
+779,"['Respiratory Illness Due to Enterovirus', 'High Blood Pressure']",2017-10-11 17:19:54
+780,"['Cancer - Pancreatic', 'Cancer - Leukemia', 'Meningococcal Disease']",2016-10-11 06:27:48
+781,['Lead Poisoning'],2020-08-24 12:55:55
+782,"['Cancer', 'Headaches']",2019-03-28 11:35:59
+783,"['Cryptosporidiosis', 'Diabetes']",2010-11-02 04:17:32
+784,"['Fibromyalgia', 'SARS', 'Trichomoniasis']",2011-05-06 11:20:01
+785,"['Lead Poisoning', 'Rotavirus', 'SARS (Healthcare Providers)']",2013-02-08 21:07:06
+786,"['Yellow Fever', 'Creutzfeldt-Jakob Disease']",2008-01-31 16:20:12
+787,"[""Alzheimer's Diseases (Spanish)"", 'Giardiasis', 'West Nile Virus']",2016-10-19 14:41:38
+788,[],2018-07-09 14:05:52
+789,"[""Parkinson's Disease""]",2015-09-18 16:23:35
+790,['Tularemia'],2018-12-19 19:56:48
+791,['Ebola Virus'],2015-09-25 10:20:53
+792,"['Meningococcal Disease', 'Haff Disease']",2011-11-14 17:54:30
+793,"['Salmonella', 'Tularemia']",2011-03-02 12:42:28
+794,[],2019-08-04 10:30:38
+795,"['Stroke', 'Chancroid', 'Cancer - Thyroid']",2019-07-18 03:15:56
+796,['West Nile Virus'],2015-12-14 14:29:59
+797,[],2013-11-13 08:24:34
+798,"['Cancer - Kidney', 'Scabies', 'Cancer - Uterus (Spanish)']",2009-03-27 07:47:03
+799,['Fibroids'],2021-11-06 22:31:37
+800,[],2013-03-12 20:33:05
+801,[],2018-02-11 11:26:38
+802,"['Pertussis', 'MRSA']",2015-08-06 13:31:02
+803,['Shigellosis'],2018-11-29 14:18:29
+804,[],2019-01-01 03:39:42
+805,"['Measles', 'Syphilis']",2020-05-07 10:03:26
+806,['Cancer - Multiple Myeloma'],2009-05-25 05:55:27
+807,['Listeriosis'],2014-04-04 01:19:58
+808,[],2013-12-07 21:36:43
+809,"['Heart Disease', 'Eastern Equine Encephalitis Virus (EEEV)', 'Pneumococcal Disease']",2012-11-18 05:03:35
+810,['Cancer - Liver'],2021-05-16 16:00:57
+811,[],2014-08-30 23:24:29
+812,"['Cancer - Uterus (Spanish)', ""Alzheimer's Diseases (Spanish)""]",2016-03-28 12:57:55
+813,[],2021-06-20 13:37:37
+814,['Lupus'],2020-04-21 17:59:26
+815,[],2011-07-02 14:16:41
+816,[],2017-01-25 00:00:14
+817,['Incontinence'],2018-11-09 16:46:12
+818,"['Bacterial Vaginosis', 'Giardiasis', 'Ebola Virus']",2013-11-05 01:01:57
+819,[],2018-11-23 13:55:32
+820,[],2017-02-04 00:41:34
+821,[],2018-11-13 22:58:20
+822,"['Ehrlichiosis', 'Cancer - Lung', 'Cancer - Ovarian']",2020-07-04 21:18:06
+823,"['Seoul Virus', 'Plague', 'Cryptosporidiosis']",2020-10-23 14:50:10
+824,"['Sarcoidosis', 'Headaches']",2021-06-04 21:09:05
+825,"['Conjunctivitis', 'Monkeypox']",2020-12-07 16:15:51
+826,[],2008-11-19 20:39:01
+827,[],2009-09-25 04:26:24
+828,[],2013-08-27 10:24:10
+829,"['Cancer - Skin', 'Incontinence', ""Parkinson's Disease""]",2013-07-31 23:13:44
+830,"['Lead Poisoning', 'Depression']",2020-05-17 17:47:00
+831,"['Non-Gonococcal Urethritis (NGU)', 'E. Coli']",2011-09-08 21:23:33
+832,"['Cancer and Your Environment', 'Monkeypox']",2021-04-26 21:23:12
+833,"['Group A Streptococcus (Parents/Caregivers)', 'Cancer - Bladder']",2015-06-20 06:52:36
+834,['Clostridium Difficile'],2019-02-11 02:03:31
+835,['Cryptosporidiosis'],2013-04-04 12:32:34
+836,"['E. Coli', 'Chronic Fatigue Syndrome', 'Primary Amebic Meningoencephalitis']",2018-03-22 18:23:33
+837,"['Babesiosis', 'Eastern Equine Encephalitis Virus (EEEV)']",2015-04-17 19:44:06
+838,"['Celiac Disease', 'Rubella', 'Syphilis']",2017-03-14 05:46:38
+839,[],2016-03-15 13:26:02
+840,"['Cancer', 'Helicobacter Pylori', 'Gout']",2009-05-08 23:45:16
+841,['Group A Streptococcus (Parents/Caregivers)'],2011-03-13 14:02:05
+842,[],2013-05-20 00:44:15
+843,[],2013-07-01 23:46:33
+844,[],2012-07-02 02:17:13
+845,"['Pneumococcal Disease', 'Alzheimer’s Disease']",2018-10-18 10:18:41
+846,"['Pelvic Inflammatory Disease (PID)', 'Asthma']",2009-07-29 03:55:57
+847,['Cancer - Uterus (Spanish)'],2008-08-24 00:02:25
+848,"['Methyl Parathion', 'HIV/AIDS']",2017-08-27 23:53:28
+849,"['Gonorrhea', ""Parkinson's Disease""]",2011-11-14 15:32:11
+850,[],2017-07-25 00:55:45
+851,['Ehrlichiosis'],2009-09-28 00:25:44
+852,['Clostridium Difficile'],2014-08-05 21:38:21
+853,"['Primary Amebic Meningoencephalitis', ""Wilson's Disease""]",2010-09-07 22:18:13
+854,[],2020-06-26 17:18:07
+855,['Cancer - Ovarian (Spanish)'],2011-12-12 01:08:56
+856,"['Cardiovascular Disease', 'Helicobacter Pylori']",2015-01-15 19:07:50
+857,['Plague'],2018-10-16 14:35:32
+858,[],2010-06-14 20:33:23
+859,"['Fibroids', 'Group A Streptococcus (Parents/Caregivers)']",2020-08-09 13:04:18
+860,"['Cancer - Colorectal', 'Headaches', 'Cancer - Kidney']",2009-07-03 13:56:01
+861,[],2009-03-12 05:17:56
+862,[],2008-07-26 01:55:56
+863,['Alzheimer’s Disease'],2010-02-23 07:29:12
+864,"['Scabies', 'Respiratory Illness Due to Enterovirus', 'Sexually Transmitted Diseases (STDs)']",2020-03-24 01:23:08
+865,[],2020-08-28 01:30:48
+866,"['Monkeypox', 'Gout', 'Cancer - Pancreatic']",2021-11-06 18:00:40
+867,[],2019-12-31 04:48:21
+868,[],2010-09-10 07:13:38
+869,['Zika Virus'],2012-03-03 08:03:33
+870,[],2009-11-05 22:05:03
+871,"['Heart Disease', 'HIV/AIDS']",2016-11-05 02:06:05
+872,[],2016-02-02 23:15:38
+873,"['Norwalk Virus', 'Pertussis']",2013-11-10 21:25:29
+874,"['Genital Herpes', 'Diphtheria']",2021-11-01 08:28:40
+875,"['Neonatal Abstinence Syndrome', 'Hepatitis']",2013-05-03 00:02:36
+876,[],2018-05-08 10:08:15
+877,"['Lupus', 'Celiac Disease']",2017-11-26 11:35:51
+878,['Cancer and Your Environment'],2016-09-23 11:49:11
+879,"['West Nile Virus', 'Tuberculosis (TB)', 'E. Coli']",2014-05-13 13:44:52
+880,"['Pertussis', 'Group A Streptococcus', 'Helicobacter Pylori']",2012-07-25 19:04:59
+881,"['Cancer - Breast Exams and Mammograms', 'Scabies']",2012-06-05 23:55:41
+882,['Carbon Monoxide Poisoning'],2014-04-26 10:14:34
+883,['Rocky Mountain Spotted Fever'],2009-07-06 13:18:27
+884,['Noroviruses'],2019-04-22 11:51:48
+885,"['Head Lice', 'Helicobacter Pylori', 'Tularemia']",2014-03-28 19:07:29
+886,"['Cancer - Breast', 'Hepatitis', 'E. Coli']",2021-08-25 03:46:00
+887,['Cancer - Lung'],2010-09-29 06:54:33
+888,['Blue-green Algae'],2011-01-09 12:19:56
+889,['Cancer - Breast'],2019-12-24 04:54:55
+890,"['Eastern Equine Encephalitis Virus (EEEV)', 'Cancer - Breast Exams and Mammograms', 'Cancer - Lung']",2008-07-02 08:36:38
+891,"['Vaginitis', 'Cancer - Ovarian (Spanish)']",2021-11-08 04:58:52
+892,"['Pelvic Inflammatory Disease (PID)', 'Meningococcal Disease', 'Cancer - Liver']",2019-07-09 15:25:08
+893,"['Cancer - Endometrial (Spanish)', 'Plague', 'Chronic Fatigue Syndrome']",2018-12-12 10:43:45
+894,['Chickenpox'],2013-10-05 05:48:56
+895,[],2015-10-31 22:18:14
+896,['Noroviruses'],2018-02-05 03:32:27
+897,"['Leptospirosis', 'Cancer - Bladder', 'Celiac Disease']",2009-08-03 16:19:59
+898,['Rubella'],2017-07-06 23:53:59
+899,"[""Legionnaires' Disease"", 'Non-Gonococcal Urethritis (NGU)', 'Cancer - Multiple Myeloma']",2014-07-31 12:16:42
+900,"['Genital Herpes', 'Norwalk Virus', 'E. Coli']",2012-03-27 03:34:57
+901,"['Lupus', 'Headaches', 'Carbapenem-Resistant Enterobacteriaceae (CRE) Infections']",2018-08-30 19:28:54
+902,[],2013-04-03 07:48:20
+903,"['Stress', 'West Nile Virus']",2014-08-09 09:45:58
+904,['Cancer - Colon'],2018-04-15 09:09:47
+905,['Gout'],2018-10-14 17:24:35
+906,"['Cancer - Ovarian', 'Cancer - Multiple Myeloma']",2017-03-19 08:52:35
+907,"['Sarcoidosis', 'Cancer - Endometrial', 'Lyme Disease']",2009-02-16 23:29:48
+908,"['Alphaviruses', 'Cancer - Liver', 'Depression']",2008-04-13 09:22:33
+909,"['Syphilis', 'Chronic Fatigue Syndrome']",2011-06-25 10:13:16
+910,"['Cancer - Ovarian', 'Cancer - Lung', 'Headaches']",2013-12-08 04:13:58
+911,['Pneumococcal Disease'],2017-10-08 22:51:45
+912,['Histoplasmosis'],2008-10-24 20:52:22
+913,"['Bacterial Vaginosis', 'High Blood Pressure']",2008-05-02 02:36:03
+914,[],2016-01-16 05:27:41
+915,"['Carbapenem-Resistant Enterobacteriaceae (CRE) Infections', 'Celiac Disease']",2020-03-23 21:03:19
+916,"['Alzheimer’s Disease', 'Bacterial Vaginosis', 'Lupus']",2019-11-16 22:02:44
+917,"['HIV/AIDS', 'AIDS (HIV/AIDS)', 'Giardiasis']",2016-08-21 18:07:02
+918,[],2018-09-29 13:51:50
+919,"['Creutzfeldt-Jakob Disease', 'Lead Poisoning']",2018-09-16 17:06:48
+920,[],2014-04-25 08:06:25
+921,"['Naegleria Fowleri', 'Cancer - Colorectal']",2016-03-22 05:45:00
+922,"['Crabs', 'Chickenpox', 'Staph Infection']",2013-12-19 04:13:17
+923,['Arboviral Encephalitis'],2020-11-13 18:58:18
+924,"['Molluscum Contagiosum', 'Syphilis', 'Cancer - Uterus (Spanish)']",2010-04-28 21:22:49
+925,['Ehrlichiosis'],2016-03-23 05:01:19
+926,"['Human Metapneumovirus', 'Polio', 'Cancer - Breast Exams and Mammograms']",2013-11-07 23:38:30
+927,"['Head Lice', 'Arthritis', 'Cancer - Colon']",2018-03-26 22:59:34
+928,"['Chancroid', 'Cancer - Multiple Myeloma', 'Lead Poisoning']",2008-06-11 19:57:37
+929,[],2021-09-15 19:02:47
+930,[],2021-02-01 12:25:39
+931,[],2016-09-26 10:38:40
+932,"['Ebola Virus', 'Cancer - Colon']",2020-04-15 14:14:38
+933,"['Cancer - Multiple Myeloma', 'SARS']",2010-11-28 12:31:14
+934,"['Cancer - Breast', 'Naegleria Fowleri']",2019-07-13 16:57:14
+935,[],2012-08-23 10:13:00
+936,"[""Wilson's Disease""]",2016-11-09 16:23:22
+937,"['Cancer - Uterus (Spanish)', 'Plague', 'Primary Amebic Meningoencephalitis']",2020-09-19 22:27:06
+938,"['Acute Flaccid Myelitis (AFM)', 'Meningococcal Disease']",2015-02-19 04:45:56
+939,['Meningitis'],2014-05-17 19:17:11
+940,[],2018-06-10 16:33:05
+941,"[""Wilson's Disease""]",2010-03-21 12:24:35
+942,"['Gout', 'MRSA']",2015-03-11 11:12:25
+943,[],2017-10-06 17:17:52
+944,"['Sarcoidosis', 'Mumps']",2009-02-24 21:12:05
+945,"['Sexually Transmitted Diseases (STDs)', 'Meningitis']",2020-12-07 08:55:46
+946,"['Syphilis', 'Cancer - Breast Exams and Mammograms']",2012-03-05 19:38:00
+947,"['Fibromyalgia', 'Group A Streptococcus']",2009-08-23 15:43:40
+948,"['Meningitis', 'Yellow Fever']",2010-03-24 02:33:25
+949,"['Cancer - Endometrial (Spanish)', 'Naegleria Fowleri']",2008-09-11 03:33:24
+950,"['Cancer - Colorectal', 'Gonorrhea']",2013-08-07 12:24:05
+951,[],2016-12-29 01:46:50
+952,"['Non-Gonococcal Urethritis (NGU)', 'Blue-green Algae']",2021-06-28 12:28:53
+953,[],2016-07-17 01:15:25
+954,[],2013-12-31 17:05:26
+955,"['Chronic Fatigue Syndrome', 'Chancroid']",2011-12-29 01:13:07
+956,[],2009-07-16 13:31:19
+957,['Babesiosis'],2016-11-14 16:49:37
+958,"[""Wilson's Disease"", 'Cancer - Kidney', 'Hepatitis']",2013-01-31 01:42:00
+959,"['Crabs', 'Non-Gonococcal Urethritis (NGU)']",2016-05-05 15:13:59
+960,[],2020-02-10 01:55:20
+961,[],2014-03-09 12:10:26
+962,"['Sarcoidosis', 'Seoul Virus', 'Cancer - Liver']",2012-02-09 09:20:31
+963,"['Hepatitis', 'Flu', 'Carbapenem-Resistant Enterobacteriaceae (CRE) Infections']",2013-08-17 09:15:46
+964,['Blue-green Algae'],2018-12-12 21:50:26
+965,['Cancer - Endometrial (Spanish)'],2014-02-23 07:14:46
+966,['Cancer - Uterus (Spanish)'],2020-08-26 14:50:37
+967,"['Sexually Transmitted Diseases (STDs)', 'Rubella', 'Gout']",2015-10-23 08:06:27
+968,['E. Coli'],2008-09-23 05:12:26
+969,['Eastern Equine Encephalitis Virus (EEEV)'],2016-07-09 10:19:53
+970,[],2020-02-27 07:52:00
+971,"['Enterovirus', 'Lymphogranuloma Venereum (LGV)', 'Gonorrhea']",2017-04-05 23:49:02
+972,"['Cancer - Oral', 'Cardiovascular Disease', 'Cancer - Testicular']",2019-01-04 07:32:54
+973,[],2021-10-13 12:22:56
+974,"['Cancer - Uterus', 'Arboviral Encephalitis', 'Heat-related Illnesses']",2011-01-11 09:09:29
+975,"['Cancer - Leukemia', 'Cancer - Kidney', 'Blue-green Algae']",2018-03-26 18:45:17
+976,"['Chickenpox', 'Plague']",2016-12-02 04:10:45
+977,"['Stress', 'Tularemia']",2019-09-06 19:13:19
+978,['Gonorrhea'],2011-03-27 04:29:30
+979,['Chickenpox'],2014-01-06 13:39:41
+980,['Listeriosis'],2015-03-02 23:57:32
+981,[],2009-01-28 21:30:59
+982,"['Rocky Mountain Spotted Fever', 'Primary Amebic Meningoencephalitis', 'Cancer - Endometrial']",2013-10-14 03:51:40
+983,"['AIDS (HIV/AIDS)', 'Cancer - Skin']",2009-07-29 03:32:46
+984,['Cancer - Breast Exams and Mammograms'],2014-10-06 00:04:47
+985,"['Polio', 'Group A Streptococcus (Parents/Caregivers)', 'Cancer and Your Environment']",2021-06-26 04:59:25
+986,['Tetanus'],2021-02-16 10:43:39
+987,[],2012-03-26 22:54:00
+988,[],2021-08-29 03:28:36
+989,[],2010-01-24 18:16:34
+990,[],2018-06-28 00:28:03
+991,[],2020-10-30 14:08:13
+992,[],2012-10-05 01:45:45
+993,['Heart Disease'],2013-05-29 11:55:59
+994,['Listeriosis'],2009-02-26 12:32:36
+995,"['Heart Disease', 'Methyl Parathion', 'Enterovirus']",2013-09-23 10:38:30
+996,"['Clostridium Difficile', ""Alzheimer's Diseases (Spanish)"", 'Cancer - Colon']",2009-07-03 21:16:43
+997,['Trichomoniasis'],2019-11-05 18:14:28
+998,"['Cancer - Lung', 'Primary Amebic Meningoencephalitis']",2009-01-04 20:43:32
+999,"['Methyl Parathion', 'Cancer - Leukemia']",2011-11-21 21:59:13
