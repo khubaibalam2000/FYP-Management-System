@@ -72,38 +72,15 @@ for i in range(21):
     medicines.pop()
 
 # Writing into files for further processing
+def writeToFile(path, data):
+    with open(path, 'w') as fp:
+        for item in data:
+            fp.write("%s\n" % item)
 
-# Writing Allergens to File
-with open(r'./Data-Files/Temp-Data/TempAllergens.txt', 'w') as fp:
-    for item in allergens:
-        fp.write("%s\n" % item)
-
-# Writing diagnosis to File
-with open(r'./Data-Files/Temp-Data/TempDiagnosis.txt', 'w') as fp:
-    for item in diagnosis:
-        fp.write("%s\n" % item)
-
-# Writing vitals_signs to File
-with open(r'./Data-Files/Temp-Data/TempVitalSigns.txt', 'w') as fp:
-    for item in vitals_signs:
-        fp.write("%s\n" % item)
-
-# Writing surgeries to File
-with open(r'./Data-Files/Temp-Data/TempSurgeries.txt', 'w') as fp:
-    for item in surgeries:
-        fp.write("%s\n" % item)
-
-# Writing treatments to File
-with open(r'./Data-Files/Temp-Data/TempTreatments.txt', 'w') as fp:
-    for item in treatments:
-        fp.write("%s\n" % item)
-
-# Writing immunizations to File
-with open(r'./Data-Files/Temp-Data/TempImmunizations.txt', 'w') as fp:
-    for item in immunizations:
-        fp.write("%s\n" % item)
-
-# Writing medicines to File
-with open(r'./Data-Files/Temp-Data/TempMedicines.txt', 'w') as fp:
-    for item in medicines:
-        fp.write("%s\n" % item)
+writeToFile('./Data-Files/Temp-Data/TempAllergens.txt', allergens)
+writeToFile('./Data-Files/Temp-Data/TempDiagnosis.txt', diagnosis)
+writeToFile('./Data-Files/Temp-Data/TempVitalSigns.txt', vitals_signs)
+writeToFile('./Data-Files/Temp-Data/TempSurgeries.txt', surgeries)
+writeToFile('./Data-Files/Temp-Data/TempTreatments.txt', treatments)
+writeToFile('./Data-Files/Temp-Data/TempImmunizations.txt', immunizations)
+writeToFile('./Data-Files/Temp-Data/TempMedicines.txt', medicines)
