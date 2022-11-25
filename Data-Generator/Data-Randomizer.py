@@ -60,8 +60,21 @@ def generateHabits():
     df = pd.DataFrame(dictForHabits)
     df.to_csv('./Data-Files/CSV-Files/Habits.csv', header=False, index=False)
 
-# def randomVitalSigns():
-#     for i in range(1000):
+def randomVitalSigns():
+    hr = []
+    bp = []
+    rr = []
+    spo2 = []
+    temperature = []
+    for i in range(1000):
+        hr.append(rn.randint(50,115))
+        bp.append(rn.randint(70,140))
+        rr.append(rn.randint(8,22))
+        spo2.append(rn.randint(90,100))
+        temperature.append(rn.randint(97,104))
+    dictForVS = {'Heart Rate': hr, 'Blood Pressure': bp, 'Respiration Rate': rr, 'Oxygen Saturation': spo2, 'Temperature': temperature}
+    df = pd.DataFrame(dictForVS)
+    df.to_csv('./Data-Files/CSV-Files/VitalSigns.csv', header=False, index=False) 
 
 allergens = []
 diagnosis = []
@@ -94,3 +107,4 @@ sendDataToCSV('./Data-Files/CSV-Files/Treatments.csv', {'Treatments': csvTreatme
 sendDataToCSV('./Data-Files/CSV-Files/Medicines.csv', {'Medicines': csvMedicines})
 sendDataToCSV('./Data-Files/CSV-Files/Immunizations.csv', {'Immunizations': csvImmunizations})
 generateHabits()
+randomVitalSigns()
