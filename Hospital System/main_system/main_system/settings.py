@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # For REST API
     'rest_framework',
+
+    # For Hospital System
+    'hospital_api.apps.HospitalApiConfig'
 ]
 
 MIDDLEWARE = [
