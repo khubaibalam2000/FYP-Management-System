@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # For Hospital System
-    'hospital_api.apps.HospitalApiConfig'
+    'hospital_api.apps.HospitalApiConfig',
+    'diagnosis.apps.DiagnosisConfig'
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,18 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'db_treatment': {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': BASE_DIR / 'treatment/treatmentDb.sqlite3'
+    },
+    'db_diagnosis': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'diagnosis/diagnosisDb.sqlite3'
+    },
+    'db_prescription': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'prescription/prescriptionDb.sqlite3'
     }
 }
 
