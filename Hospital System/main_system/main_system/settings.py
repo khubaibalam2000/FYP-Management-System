@@ -88,8 +88,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     },
     'db_treatment': {
-    'ENGINE': 'django.db.backends.sqlite3',
-    'NAME': BASE_DIR / 'treatment/treatmentsDb.sqlite3'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'treatment/treatmentsDb.sqlite3'
     },
     'db_diagnosis': {
         'ENGINE': 'django.db.backends.sqlite3',
