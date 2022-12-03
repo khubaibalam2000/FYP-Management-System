@@ -17,3 +17,6 @@ PrivaciOps in Smart Cities, FYP code repository.
 ```
     python CopyTableToAnotherDb.py (Name of db to add table) (Name of db to add table from) (table name)
 ```
+
+
+cd "Hospital System/main_system"
