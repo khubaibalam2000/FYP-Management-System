@@ -96,7 +96,7 @@ csvAllergens = makeRandomValues(allergens, 4, len(allergens) - 1)
 csvDiagnosis = makeRandomValues(diagnosis, 3, len(diagnosis) - 1)
 csvSurgeries = makeRandomValues(surgeries, 2, len(surgeries) - 1)
 csvTreatments = makeRandomValues(treatments, 3, len(treatments) - 1)
-csvMedicines = makeRandomValues(medicines, 15, len(medicines) - 1)
+csvMedicines = makeRandomValues(medicines, 8, len(medicines) - 1)
 csvImmunizations = makeRandomValues(immunizations, 2, len(immunizations) - 1)
 
 sendDataToCSV('./Data-Files/CSV-Files/Allergens.csv', {'Allergens': csvAllergens})
