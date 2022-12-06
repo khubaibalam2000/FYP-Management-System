@@ -102,7 +102,6 @@ def generateReportSummary(data):
     elems.append(line)
 
 
-
 userId = rn.randint(0,1000)
 
 pii = getDataFromDB('./Data-Files/DB-Files/piiDb.db', 'select * from personal_info where id = ' + str(userId))
