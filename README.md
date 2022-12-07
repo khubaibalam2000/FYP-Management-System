@@ -1,6 +1,6 @@
 # FYP-Management-System
 
-PrivaciOps in Smart Cities, FYP code repository.
+PrivacyOps in Smart Cities, FYP code repository.
 
 # How to run:
 
