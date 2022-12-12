@@ -95,9 +95,7 @@ def generateReportSummary(data):
         ]
     )
     table.setStyle(ts)
-
     elems.append(table)
-
     line = Spacer(0,20)
     elems.append(line)
 

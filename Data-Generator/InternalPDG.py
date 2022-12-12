@@ -2,13 +2,6 @@ import plotly.express as px
 import sqlite3
 import random as rn
 import pandas as pd
-from reportlab.platypus import SimpleDocTemplate
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import TableStyle
-from reportlab.lib import colors
-from reportlab.lib.styles import ParagraphStyle
-from reportlab.platypus import Table
-from reportlab.platypus import Spacer, Paragraph
 
 def getDataFromDB(dbName, query):
     connection = sqlite3.connect(dbName)

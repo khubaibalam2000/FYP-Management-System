@@ -6,7 +6,7 @@ from rest_framework.response import Response
 
 from .serializers import *
 from .models import *
-
+import sqlite3
 
 def index(request):
     if request.method != "GET":
@@ -38,9 +38,43 @@ def add(request):
     else:
         return HttpResponse("Bad Data", status=status.HTTP_400_BAD_REQUEST)
 
-def getdatadetails(request):
+def updateLinkingDatabase(queryOfLink, dbPath, toInsert):
+    connection = sqlite3.connect(dbPath)
+    cursor = connection.cursor()
+    cursor.execute(queryOfLink, toInsert)
+    connection.commit()
+    connection.close()
+
+def requestForData(request):
     if request.method != 'GET':
         return HttpResponse("Bad Request", status=status.HTTP_400_BAD_REQUEST)
+
+    requirements = request.GET.getlist('attributes')
+    froms = request.GET.getlist('froms')
+    tos = request.GET.getlist('tos')
+    ssn = request.GET['ssn']
+    person = PersonalInfo.objects.filter(ssn=request.GET['ssn'])
+    dataToSend = []
+    for r in requirements:
+        dataToSend.append(person.values_list(r)[0][0])
+    toInsert = (int(ssn), str(requirements), str(froms), str(tos))
+    updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', 'D:\Semesters\Semester VII\FYP\FYP-Management-System\Data-Files\DB-Files\Links.db', toInsert)
+    return JsonResponse(dataToSend, safe=False)
+
+def inform(request):
+    if request.method != 'GET':
+        return HttpResponse("Bad Request", status=status.HTTP_400_BAD_REQUEST)
+    
+    attributes = request.GET.getlist('attributes')
+    froms = request.GET.getlist('froms')
+    tos = request.GET.getlist('tos')
+    ssn = request.GET.getlist('ssn')
+
+
+    toInsert = (int(ssn), str(attributes), str(froms), str(tos))
+    updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', 'D:\Semesters\Semester VII\FYP\FYP-Management-System\Data-Files\DB-Files\Links.db', toInsert)
+    return HttpResponse(200)
+
 
 def updatedatadetails(request):
     if request.method != 'POST':
