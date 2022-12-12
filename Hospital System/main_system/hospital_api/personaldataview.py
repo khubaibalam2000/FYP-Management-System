@@ -58,7 +58,7 @@ def requestForData(request):
     for r in requirements:
         dataToSend.append(person.values_list(r)[0][0])
     toInsert = (int(ssn), str(requirements), str(froms), str(tos))
-    updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', 'D:\Semesters\Semester VII\FYP\FYP-Management-System\Data-Files\DB-Files\Links.db', toInsert)
+    updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', './hospital_api/Links.db', toInsert)
     return JsonResponse(dataToSend, safe=False)
 
 def inform(request):
@@ -72,14 +72,10 @@ def inform(request):
 
 
     toInsert = (int(ssn), str(attributes), str(froms), str(tos))
-    updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', 'D:\Semesters\Semester VII\FYP\FYP-Management-System\Data-Files\DB-Files\Links.db', toInsert)
+    updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', './hospital_api/Links.db', toInsert)
     return HttpResponse(200)
 
 
 def updatedatadetails(request):
     if request.method != 'POST':
         return HttpResponse("Bad Request", status=status.HTTP_400_BAD_REQUEST)
-
-    
-
-

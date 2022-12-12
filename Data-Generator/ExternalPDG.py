@@ -10,13 +10,13 @@ def createLinkingDatabase(queryCreation, dbPath):
     connection.commit()
     connection.close()
 
-# createLinkingDatabase('''CREATE TABLE linking(
-#                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-#                 userId INTEGER,
-#                 attributes TEXT,
-#                 froms TEXT,
-#                 tos TEXT);
-#                 ''', './Data-Files/DB-Files/Links.db')
+createLinkingDatabase('''CREATE TABLE linking(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                userId INTEGER,
+                attributes TEXT,
+                froms TEXT,
+                tos TEXT);
+                ''', './Hospital System/main_system/hospital_api/Links.db')
 
 def getDataFromDB(dbName, query):
     connection = sqlite3.connect(dbName)
@@ -29,14 +29,14 @@ def getDataFromDB(dbName, query):
 
 ssn = 4903773748744614
 
-linkData = getDataFromDB('./Data-Files/DB-Files/Links.db', 'select * from linking where userId = ' + str(ssn))
-edges = []
+# linkData = getDataFromDB('./Data-Files/DB-Files/Links.db', 'select * from linking where userId = ' + str(ssn))
+# edges = []
 G = nx.DiGraph()
 # G.add_node('H')
 # G.add_node('MH')
 # G.add_node('P')
-for i in linkData:
-    G.add_edge(i[3][2:len(i[3])-2], i[4][2:len(i[4])-2], weight=5)
+# for i in linkData:
+#     G.add_edge(i[3][2:len(i[3])-2], i[4][2:len(i[4])-2], weight=5)
     # edges.append((i[3][2:len(i[3])-2], i[4][2:len(i[4])-2]))
 # G.add_edges_from(edges)
 # print(linkData[0][1])
@@ -49,12 +49,12 @@ for i in linkData:
 # nx.draw_networkx(G, with_labels=True, node_color ='green')
 
 
-plt.figure()    
-pos = nx.spring_layout(G)
-weight_labels = nx.get_edge_attributes(G,'weight')
-nx.draw(G,pos,font_color = 'white', node_shape = 's', with_labels = True,)
-output = nx.draw_networkx_edge_labels(G,pos,edge_labels=weight_labels)
-plt.show()
+# plt.figure()    
+# pos = nx.spring_layout(G)
+# weight_labels = nx.get_edge_attributes(G,'weight')
+# nx.draw(G,pos,font_color = 'white', node_shape = 's', with_labels = True,)
+# output = nx.draw_networkx_edge_labels(G,pos,edge_labels=weight_labels)
+# plt.show()
 
 # plt.show()
 # plt.savefig("UserGraph.png")
