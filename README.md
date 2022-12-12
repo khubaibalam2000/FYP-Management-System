@@ -20,3 +20,14 @@ PrivacyOps in Smart Cities, FYP code repository.
 
 
 cd "Hospital System/main_system"
+
+
+# How to call /requestForData Api:
+requesting data:
+http://127.0.0.1:8000/datadetails/personal/requestForData/?ssn=4903773748744614&froms=Hospital&tos=Paramedics&attributes=name&attributes=city&attributes=province
+http://127.0.0.1:8000/datadetails/personal/requestForData/?ssn=4903773748744614&froms=Hospital&tos=Paramedics&attributes=name&attributes=city
+http://127.0.0.1:8000/datadetails/personal/requestForData/?ssn=4903773748744614&froms=Hospital&tos=MinistryOfHealth&attributes=name&attributes=province
+http://127.0.0.1:8000/datadetails/personal/requestForData/?ssn=4903773748744614&froms=Hospital&tos=MinistryOfHealth&attributes=city
+
+# How to call /inform API:
+I guess just change the requestForData to inform in the above API callings
