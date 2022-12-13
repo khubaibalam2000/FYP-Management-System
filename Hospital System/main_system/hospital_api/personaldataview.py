@@ -57,7 +57,8 @@ def requestForData(request):
     dataToSend = []
     for r in requirements:
         dataToSend.append(person.values_list(r)[0][0])
-    toInsert = (int(ssn), str(requirements), str(froms), str(tos))
+    toInsert = (int(ssn), str(requirements), (froms[0]), (tos[0]))
+    print(toInsert)
     updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', './hospital_api/Links.db', toInsert)
     return JsonResponse(dataToSend, safe=False)
 
@@ -71,7 +72,8 @@ def inform(request):
     ssn = request.GET.getlist('ssn')
 
 
-    toInsert = (int(ssn), str(attributes), str(froms), str(tos))
+    toInsert = (int(ssn), str(attributes), (froms[0]), (tos[0]))
+    print(toInsert)
     updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', './hospital_api/Links.db', toInsert)
     return HttpResponse(200)
 

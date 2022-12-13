@@ -22,7 +22,7 @@ def makeDataFrameForUser(pii, diagnosis, medicines, habits, allergens, vs, treat
     frame = {'x': x, 'y': y, 'entity': entity, 'size': size, 'data': data}
     return frame
 
-userId = rn.randint(0,1000)
+userId = rn.randint(0, 1000)
 
 pii = getDataFromDB('./Data-Files/DB-Files/piiDb.db', 'select * from personal_info where id = ' + str(userId))
 diagnosis = getDataFromDB('./Data-Files/DB-Files/diagnosisDb.db', 'select * from diagnosis where id = ' + str(userId))

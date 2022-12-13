@@ -1,6 +1,8 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import sqlite3
+import random as rn
+import pandas as pd
 import plotly.express as px
 
 def createLinkingDatabase(queryCreation, dbPath):
@@ -10,13 +12,13 @@ def createLinkingDatabase(queryCreation, dbPath):
     connection.commit()
     connection.close()
 
-createLinkingDatabase('''CREATE TABLE linking(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                userId INTEGER,
-                attributes TEXT,
-                froms TEXT,
-                tos TEXT);
-                ''', './Hospital System/main_system/hospital_api/Links.db')
+# createLinkingDatabase('''CREATE TABLE linking(
+#                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+#                 userId INTEGER,
+#                 attributes TEXT,
+#                 froms TEXT,
+#                 tos TEXT);
+#                 ''', './Hospital System/main_system/hospital_api/Links.db')
 
 def getDataFromDB(dbName, query):
     connection = sqlite3.connect(dbName)
@@ -26,35 +28,68 @@ def getDataFromDB(dbName, query):
     connection.close()
     return rows
 
+def drawExternalPDGWithConnections():
+    ssn = 4903773748744614
 
-ssn = 4903773748744614
+    linkData = getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
 
-# linkData = getDataFromDB('./Data-Files/DB-Files/Links.db', 'select * from linking where userId = ' + str(ssn))
-# edges = []
-G = nx.DiGraph()
-# G.add_node('H')
-# G.add_node('MH')
-# G.add_node('P')
-# for i in linkData:
-#     G.add_edge(i[3][2:len(i[3])-2], i[4][2:len(i[4])-2], weight=5)
-    # edges.append((i[3][2:len(i[3])-2], i[4][2:len(i[4])-2]))
-# G.add_edges_from(edges)
-# print(linkData[0][1])
-# dict = {
-#     'Hospital':1,'MinistryOfHealth':2,'Paramedics':3
-# }
-# dict = {0: {'attr1': 20, 'attr2': 'nothing'}, 1: {'attr2': 3}, 2: {'attr1': 42}, 3: {'attr3': 'hello'}, 4: {'attr1': 54, 'attr3': '33'}}
-# nx.set_node_attributes(G, values=(dict))
-# plt.figure(figsize =(9, 9))
-# nx.draw_networkx(G, with_labels=True, node_color ='green')
+    dictForData = {}
+    for i in linkData:
+        if (i[3][2:len(i[3])-2], i[4][2:len(i[4])-2]) in dictForData:
+            a = dictForData[(i[3][2:len(i[3])-2], i[4][2:len(i[4])-2])]
+            a += i[2]
+            dictForData[(i[3][2:len(i[3])-2], i[4][2:len(i[4])-2])] = a
+            continue
+        dictForData[(i[3][2:len(i[3])-2], i[4][2:len(i[4])-2])] = i[2]
 
+    E = []
+    pos = {}
+    for key, values in dictForData.items():
+        E.append((key[0], key[1], values))
+        pos[key[0]] = [rn.randint(0,10), rn.randint(0,10)]
+        pos[key[1]] = [rn.randint(0,10), rn.randint(0,10)]
+    G = nx.DiGraph()
+    G.add_weighted_edges_from(E)
+    weight = nx.get_edge_attributes(G, 'weight')
+    nx.draw(G, pos=pos, with_labels=True, node_size=1000, node_color='r', edge_color='g', arrowsize=35)
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=weight)
+    plt.figure()
+    plt.show()
 
-# plt.figure()    
-# pos = nx.spring_layout(G)
-# weight_labels = nx.get_edge_attributes(G,'weight')
-# nx.draw(G,pos,font_color = 'white', node_shape = 's', with_labels = True,)
-# output = nx.draw_networkx_edge_labels(G,pos,edge_labels=weight_labels)
-# plt.show()
+def drawExternalPDGWithoutConnections():
+    ssn = 4903773748744614
+    linkData = getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
+    print(linkData)
+    x = []
+    y = []
+    for i in range(3): x.append(rn.randint(0,6))
+    for i in range(3): y.append(rn.randint(0,6))
 
-# plt.show()
-# plt.savefig("UserGraph.png")
+    dictForData = {}
+    for i in linkData:
+        if (i[3][2:len(i[3])-2], i[4][2:len(i[4])-2]) in dictForData:
+            a = dictForData[(i[3], i[4])]
+            a += i[2]
+            dictForData[(i[3], i[4])] = a
+            continue
+        dictForData[(i[3], i[4])] = i[2]
+    print(dictForData)
+    externalEntities = []
+    for key, value in dictForData.items():
+        externalEntities.append(key[0])
+        externalEntities.append(key[1])
+    externalEntities = list(set(externalEntities))
+    print(externalEntities)
+    attributesData = []
+    for i in externalEntities:
+        attributesData.append(getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', 'select attributes from linking where (userId = ' + str(ssn) + ") and (froms = '" + i + "' OR tos = '" + i + "')"))
+    
+    # attributesData = list(set(attributesData))
+    print(attributesData)
+
+    # select attributes from linking where userId = 4903773748744614 and froms = Paramedics and tos = Paramedics
+    # fig = px.scatter(dictForData, x="x", y="y", color="entity", hover_data={'x':False, 'y':False, 'entity':True, 'size': False, 'data':True})
+    # fig.show()
+
+# drawExternalPDGWithConnections()
+drawExternalPDGWithoutConnections()
