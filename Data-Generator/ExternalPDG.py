@@ -35,12 +35,12 @@ def drawExternalPDGWithConnections():
 
     dictForData = {}
     for i in linkData:
-        if (i[3][2:len(i[3])-2], i[4][2:len(i[4])-2]) in dictForData:
-            a = dictForData[(i[3][2:len(i[3])-2], i[4][2:len(i[4])-2])]
+        if (i[3], i[4]) in dictForData:
+            a = dictForData[(i[3], i[4])]
             a += i[2]
-            dictForData[(i[3][2:len(i[3])-2], i[4][2:len(i[4])-2])] = a
+            dictForData[(i[3], i[4])] = a
             continue
-        dictForData[(i[3][2:len(i[3])-2], i[4][2:len(i[4])-2])] = i[2]
+        dictForData[(i[3], i[4])] = i[2]
 
     E = []
     pos = {}
@@ -67,7 +67,7 @@ def drawExternalPDGWithoutConnections():
 
     dictForData = {}
     for i in linkData:
-        if (i[3][2:len(i[3])-2], i[4][2:len(i[4])-2]) in dictForData:
+        if (i[3], i[4]) in dictForData:
             a = dictForData[(i[3], i[4])]
             a += i[2]
             dictForData[(i[3], i[4])] = a
@@ -79,17 +79,19 @@ def drawExternalPDGWithoutConnections():
         externalEntities.append(key[0])
         externalEntities.append(key[1])
     externalEntities = list(set(externalEntities))
-    print(externalEntities)
     attributesData = []
     for i in externalEntities:
         attributesData.append(getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', 'select attributes from linking where (userId = ' + str(ssn) + ") and (froms = '" + i + "' OR tos = '" + i + "')"))
     
-    # attributesData = list(set(attributesData))
-    print(attributesData)
+    frame = {'x': x, 'y': y, 'externalEntities': externalEntities, 'attributesData': attributesData}
+    print(frame)
+    df = pd.DataFrame(frame)
+    fig = px.scatter(df, x="x", y="y", color="externalEntities", hover_data={'x': False, 'y': False, 'externalEntities':True, 'attributesData':True})
+    fig.update_traces(marker=dict(size=12,
+                              line=dict(width=2,
+                                        color='DarkSlateGrey')),
+                  selector=dict(mode='markers'))
+    fig.show()
 
-    # select attributes from linking where userId = 4903773748744614 and froms = Paramedics and tos = Paramedics
-    # fig = px.scatter(dictForData, x="x", y="y", color="entity", hover_data={'x':False, 'y':False, 'entity':True, 'size': False, 'data':True})
-    # fig.show()
-
-# drawExternalPDGWithConnections()
+drawExternalPDGWithConnections()
 drawExternalPDGWithoutConnections()

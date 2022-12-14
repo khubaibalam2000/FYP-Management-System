@@ -17,7 +17,7 @@ def makeDataFrameForUser(pii, diagnosis, medicines, habits, allergens, vs, treat
     for i in range(4): x.append(rn.randint(0,6))
     for i in range(4): y.append(rn.randint(0,6))
     entity = ['hospital', 'diagnose', 'prescriptions', 'treatments']
-    data = [str(pii), str(diagnosis), str(medicines)+str(habits)+str(allergens)+str(vs), str(treats)+str(surgeries)+str(immunizations)]
+    data = [str(pii)+str(vs), str(diagnosis), str(medicines)+str(habits)+str(allergens), str(treats)+str(surgeries)+str(immunizations)]
     size = [1, 2, 4, 3]
     frame = {'x': x, 'y': y, 'entity': entity, 'size': size, 'data': data}
     return frame

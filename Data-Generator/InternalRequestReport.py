@@ -46,7 +46,7 @@ def organizeDataForReport(pii, diagnosis, medicines, habits, allergens, vs, trea
     listImmuns.append(list(immunizations[0]))
 
 elems = []
-fileName = 'ReportSummary.pdf'
+fileName = 'InternalReportSummary.pdf'
 pdf = SimpleDocTemplate(
     fileName,
     pagesize=letter
@@ -130,6 +130,14 @@ p = Paragraph('Personal Data',
 elems.append(p)
 elems.append(Spacer(20,10))
 generateReportSummary(listPii)
+
+p = Paragraph('Vital Signs Data', 
+    ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+)
+elems.append(p)
+elems.append(Spacer(20,10))
+generateReportSummary(listVS)
+
 p = Paragraph('Diagnose Department', 
     ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
 )
@@ -162,15 +170,15 @@ generateReportSummary(listHabits)
 p = Paragraph('Allergens', 
     ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
 )
-elems.append(p)
-elems.append(Spacer(20,10))
-generateReportSummary(listAllergens)
-p = Paragraph('Vital Signs Data', 
-    ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
-)
-elems.append(p)
-elems.append(Spacer(20,10))
-generateReportSummary(listVS)
+# elems.append(p)
+# elems.append(Spacer(20,10))
+# generateReportSummary(listAllergens)
+# p = Paragraph('Vital Signs Data', 
+#     ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+# )
+# elems.append(p)
+# elems.append(Spacer(20,10))
+# generateReportSummary(listVS)
 p = Paragraph('Treatments Department', 
     ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
 )
