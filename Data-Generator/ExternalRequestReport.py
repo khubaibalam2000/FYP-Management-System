@@ -14,7 +14,7 @@ def getDataFromDB(dbName, query):
     return rows
     
 def exchangedData():
-    ssn = 4903773748744614
+    ssn = 30076841161403
 
     linkData = getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
 
@@ -45,7 +45,7 @@ def exchangedData():
     
 
 def holdingData():
-    ssn = 4903773748744614
+    ssn = 30076841161403
     linkData = getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
     x = []
     y = []

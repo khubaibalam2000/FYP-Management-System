@@ -170,15 +170,6 @@ generateReportSummary(listHabits)
 p = Paragraph('Allergens', 
     ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
 )
-# elems.append(p)
-# elems.append(Spacer(20,10))
-# generateReportSummary(listAllergens)
-# p = Paragraph('Vital Signs Data', 
-#     ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
-# )
-# elems.append(p)
-# elems.append(Spacer(20,10))
-# generateReportSummary(listVS)
 p = Paragraph('Treatments Department', 
     ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
 )

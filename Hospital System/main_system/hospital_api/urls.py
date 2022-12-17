@@ -9,6 +9,12 @@ urlpatterns = [
     path('personal/add/', personaldataview.add, name='personal.add'),
     path('personal/requestForData/', personaldataview.requestForData, name='personal.requestForData'),
     path('personal/inform/', personaldataview.inform, name='personal.inform'),
+    path('personal/epdgwithconnection/', personaldataview.generateExternalPDGWithConnections, name='personal.generateExternalPDGWithConnections'),
+    path('personal/epdgwithoutconnection/', personaldataview.generateExternalPDGWithoutConnections, name='personal.generateExternalPDGWithoutConnections'),
+    path('personal/ipdg/', personaldataview.internalPDG, name='personal.internalPDG'),
+    path('personal/eXdataReport/', personaldataview.eXdataReport, name='personal.eXdataReport'),
+    path('personal/eHdataReport/', personaldataview.eHdataReport, name='personal.eHdataReport'),
+    path('personal/ireport/', personaldataview.iReport, name='personal.iReport'),
 
     path('vitalsigns/', vitalsignsview.index, name='vitalsign.index'),
     path('vitalsigns/get/', vitalsignsview.get, name='vitalsign.get'),

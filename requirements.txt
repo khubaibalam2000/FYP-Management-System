@@ -1,0 +1,3 @@
+pip install kaleido
+pip install reportlab
+pip install django

@@ -20,6 +20,19 @@ def createLinkingDatabase(queryCreation, dbPath):
 #                 tos TEXT);
 #                 ''', './Hospital System/main_system/hospital_api/Links.db')
 
+
+# createLinkingDatabase('''CREATE TABLE data(
+#                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+#                 ssn INTEGER,
+#                 data TEXT);
+#                 ''', './Hospital System/main_system/ministry_of_health/datas.db')
+
+createLinkingDatabase('''CREATE TABLE data(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                ssn INTEGER,
+                data TEXT);
+                ''', './Hospital System/main_system/paramedics/datas.db')
+
 def getDataFromDB(dbName, query):
     connection = sqlite3.connect(dbName)
     cursor = connection.cursor()
@@ -28,8 +41,9 @@ def getDataFromDB(dbName, query):
     connection.close()
     return rows
 
+# getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', "delete from linking where userId = 30076841161403 and froms = 'MinistryOfHealth' and tos = 'Hospital'")
 def drawExternalPDGWithConnections():
-    ssn = 4903773748744614
+    ssn = 30076841161403
 
     linkData = getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
 
@@ -53,11 +67,10 @@ def drawExternalPDGWithConnections():
     weight = nx.get_edge_attributes(G, 'weight')
     nx.draw(G, pos=pos, with_labels=True, node_size=1000, node_color='r', edge_color='g', arrowsize=35)
     nx.draw_networkx_edge_labels(G, pos, edge_labels=weight)
-    plt.figure()
     plt.show()
 
 def drawExternalPDGWithoutConnections():
-    ssn = 4903773748744614
+    ssn = 30076841161403
     linkData = getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
     print(linkData)
     x = []
@@ -93,5 +106,5 @@ def drawExternalPDGWithoutConnections():
                   selector=dict(mode='markers'))
     fig.show()
 
-drawExternalPDGWithConnections()
-drawExternalPDGWithoutConnections()
+# drawExternalPDGWithConnections()
+# drawExternalPDGWithoutConnections()

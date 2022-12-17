@@ -24,4 +24,6 @@ urlpatterns = [
     path('diagnosis/', include('diagnosis.urls')),
     path('prescription/', include('prescription.urls')),
     path('treatment/', include('treatment.urls')),
+    path('moh/', include('ministry_of_health.urls')),
+    path('pm/', include('paramedics.urls')),
 ]

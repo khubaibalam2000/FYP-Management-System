@@ -3,13 +3,30 @@ from django.http import HttpResponse, JsonResponse
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+import random as rn
+import networkx as nx
 from .serializers import *
 from .models import *
+import matplotlib.pyplot as plt
 import sqlite3
 from diagnosis.models import Diagnosis
 from prescription.models import Prescription
 from treatment.models import Treatment
+import pandas as pd
+import plotly.express as px
+import plotly.io as pio
+from django.template import Context, loader
+from pathlib import Path
+from matplotlib.backends.backend_pdf import PdfPages
+from wsgiref.util import FileWrapper
+from reportlab.platypus import SimpleDocTemplate
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import TableStyle
+from reportlab.lib import colors
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.platypus import Table
+from reportlab.platypus import Spacer, Paragraph
 
 def index(request):
     if request.method != "GET":
@@ -71,7 +88,6 @@ def requestForData(request):
     prescriptionsDb = Prescription.objects.using('db_prescription').filter(id = id)
     treatmentsDb = Treatment.objects.using('db_treatment').filter(id = id)
     dataToSend = {}
-    print(diagnosisDb.get().diagnose)
     dataForHospitalPii = []
     dataForHospitalVs = []
     dataForDiagnosis = []
@@ -105,12 +121,383 @@ def inform(request):
     tos = request.GET.getlist('tos')
     ssn = request.GET['ssn']
 
-    toInsert = (int(ssn), str(attributes), (froms[0]), (tos[0]))
-    print(toInsert)
+    toInsert = int(ssn), str(attributes), (froms[0]), (tos[0])
     updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', './hospital_api/Links.db', toInsert)
     return HttpResponse(200)
 
 
-def updatedatadetails(request):
-    if request.method != 'POST':
-        return HttpResponse("Bad Request", status=status.HTTP_400_BAD_REQUEST)
+def getDataFromDB(dbName, query):
+    connection = sqlite3.connect(dbName)
+    cursor = connection.cursor()
+    rows = cursor.execute(query).fetchall()
+    connection.commit()
+    connection.close()
+    return rows
+
+def generateExternalPDGWithConnections(request):
+    ssn = 4903773748744614
+
+    linkData = getDataFromDB('./hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
+
+    dictForData = {}
+    for i in linkData:
+        if (i[3], i[4]) in dictForData:
+            a = dictForData[(i[3], i[4])]
+            a += i[2]
+            dictForData[(i[3], i[4])] = a
+            continue
+        dictForData[(i[3], i[4])] = i[2]
+
+    E = []
+    pos = {}
+    for key, values in dictForData.items():
+        E.append((key[0], key[1], values))
+        pos[key[0]] = [rn.randint(0,10), rn.randint(0,10)]
+        pos[key[1]] = [rn.randint(0,10), rn.randint(0,10)]
+    G = nx.DiGraph()
+    G.add_weighted_edges_from(E)
+    weight = nx.get_edge_attributes(G, 'weight')
+    nx.draw(G, pos=pos, with_labels=True, node_size=1000, node_color='r', edge_color='g', arrowsize=35)
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=weight)
+    
+    response = HttpResponse(content_type='image/png')
+    plt.savefig(response, format='png')
+    plt.clf()
+    return response
+
+def generateExternalPDGWithoutConnections(request):
+    ssn = 30076841161403
+    linkData = getDataFromDB('./hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
+    # print(linkData)
+    x = []
+    y = []
+    for i in range(3): x.append(rn.randint(0,6))
+    for i in range(3): y.append(rn.randint(0,6))
+
+    dictForData = {}
+    for i in linkData:
+        if (i[3], i[4]) in dictForData:
+            a = dictForData[(i[3], i[4])]
+            a += i[2]
+            dictForData[(i[3], i[4])] = a
+            continue
+        dictForData[(i[3], i[4])] = i[2]
+    # print(dictForData)
+    externalEntities = []
+    for key, value in dictForData.items():
+        externalEntities.append(key[0])
+        externalEntities.append(key[1])
+    externalEntities = list(set(externalEntities))
+    attributesData = []
+    for i in externalEntities:
+        attributesData.append(getDataFromDB('./hospital_api/Links.db', 'select attributes from linking where (userId = ' + str(ssn) + ") and (froms = '" + i + "' OR tos = '" + i + "')"))
+    
+    frame = {'x': x, 'y': y, 'externalEntities': externalEntities, 'attributesData': attributesData}
+    # print(frame)
+    df = pd.DataFrame(frame)
+    fig = px.scatter(df, x="x", y="y", color="externalEntities", hover_data={'x': False, 'y': False, 'externalEntities':True, 'attributesData':True})
+    fig.update_traces(marker=dict(size=12,
+                              line=dict(width=2,
+                                        color='DarkSlateGrey')),
+                  selector=dict(mode='markers'))
+
+    fig.write_html("./hospital_api/templates/epdgwithoutC.html")
+    
+    template = loader.get_template("./epdgwithoutC.html")
+    return HttpResponse(template.render())
+
+def makeDataFrameForUser(pii, diagnosis, medicines, habits, allergens, vs, treats, surgeries, immunizations):
+    x = []
+    y = []
+    for i in range(4): x.append(rn.randint(0,6))
+    for i in range(4): y.append(rn.randint(0,6))
+    entity = ['hospital', 'diagnose', 'prescriptions', 'treatments']
+    data = [str(pii)+str(vs), str(diagnosis), str(medicines)+str(habits)+str(allergens), str(treats)+str(surgeries)+str(immunizations)]
+    size = [1, 2, 4, 3]
+    frame = {'x': x, 'y': y, 'entity': entity, 'size': size, 'data': data}
+    return frame
+
+def internalPDG(request):
+    userId = request.GET['id']
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    path = str(BASE_DIR)
+    path = path[0:len(path)-27]
+    pii = getDataFromDB(path + './Data-Files/DB-Files/piiDb.db', 'select * from personal_info where id = ' + str(userId))
+    diagnosis = getDataFromDB(path + './Data-Files/DB-Files/diagnosisDb.db', 'select * from diagnosis where id = ' + str(userId))
+    medicines = getDataFromDB(path + './Data-Files/DB-Files/prescriptionsDb.db', 'select * from medicines where id = ' + str(userId))
+    habits = getDataFromDB(path + './Data-Files/DB-Files/habitsDb.db', 'select * from habits where id = ' + str(userId))
+    allergens = getDataFromDB(path + './Data-Files/DB-Files/allergyDb.db', 'select * from allergies where id = ' + str(userId))
+    vs = getDataFromDB(path + './Data-Files/DB-Files/vitalSignsDb.db', 'select * from vital_signs where id = ' + str(userId))
+    treats = getDataFromDB(path + './Data-Files/DB-Files/treatmentsDb.db', 'select * from treatments where id = ' + str(userId))
+    surgeries = getDataFromDB(path + './Data-Files/DB-Files/surgeryDb.db', 'select * from surgeries where id = ' + str(userId))
+    immunizations = getDataFromDB(path + './Data-Files/DB-Files/immunizationsDb.db', 'select * from immunizations where id = ' + str(userId))
+
+    dictForUser = makeDataFrameForUser(pii, diagnosis, medicines, habits, allergens, vs, treats, surgeries, immunizations)
+    df = pd.DataFrame(dictForUser)
+
+    fig = px.scatter(df, x="entity", y="y", color="entity", size='size', hover_data={'x':False, 'y':False, 'entity':True, 'size': False, 'data':True})
+    fig.write_html("./hospital_api/templates/ipdg.html")
+    
+    template = loader.get_template("./ipdg.html")
+    return HttpResponse(template.render())
+
+def eXdataReport(request):
+    ssn = request.GET['ssn']
+
+    linkData = getDataFromDB('./hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
+
+    dictForData = {}
+    for i in linkData:
+        if (i[3], i[4]) in dictForData:
+            a = dictForData[(i[3], i[4])]
+            a += i[2]
+            dictForData[(i[3], i[4])] = a
+            continue
+        dictForData[(i[3], i[4])] = i[2]
+    exchangers = []
+    data = []
+    for key, values in dictForData.items():
+        exchangers.append(key)
+        data.append(values)
+    frame = {'Exchanging Entites': exchangers, 'Exchanged Data': data}
+    df = pd.DataFrame(frame)
+
+    fig, ax = plt.subplots(figsize=(12,4))
+    ax.axis('tight')
+    ax.axis('off')
+    the_table = ax.table(cellText=df.values,colLabels=df.columns,loc='center')
+
+    pp = PdfPages("ExternalExchangedData.pdf")
+    pp.savefig(fig, bbox_inches='tight')
+    pp.close()
+
+    short_report = open("ExternalExchangedData.pdf", 'rb')
+    response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
+    return response
+
+def eHdataReport(request):
+    ssn = request.GET['ssn']
+
+    linkData = getDataFromDB('./hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
+    x = []
+    y = []
+
+    dictForData = {}
+    for i in linkData:
+        if (i[3], i[4]) in dictForData:
+            a = dictForData[(i[3], i[4])]
+            a += i[2]
+            dictForData[(i[3], i[4])] = a
+            continue
+        dictForData[(i[3], i[4])] = i[2]
+    externalEntities = []
+    for key, value in dictForData.items():
+        externalEntities.append(key[0])
+        externalEntities.append(key[1])
+    externalEntities = list(set(externalEntities))
+    attributesData = []
+    for i in externalEntities:
+        attributesData.append(getDataFromDB('./hospital_api/Links.db', 'select attributes from linking where (userId = ' + str(ssn) + ") and (froms = '" + i + "' OR tos = '" + i + "')"))
+    
+    frame = {'externalEntities': externalEntities, 'attributesData': attributesData}
+    df = pd.DataFrame(frame)
+    
+    fig, ax = plt.subplots(figsize=(12,4))
+    ax.axis('tight')
+    ax.axis('off')
+    the_table = ax.table(cellText=df.values,colLabels=df.columns,loc='center')
+
+    pp = PdfPages("HoldingDataEntities.pdf")
+    pp.savefig(fig, bbox_inches='tight')
+    pp.close()
+
+    short_report = open("HoldingDataEntities.pdf", 'rb')
+    response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
+    return response
+
+def organizeDataForReport(pii, diagnosis, medicines, habits, allergens, vs, treats, surgeries, immunizations, listPii, listDiag, listMeds, listHabits, listAllergens, listVS, listTreats, listSurgery, listImmuns):
+    listPii.append(['id', 'name', 'DOB', 'city', 'province', 'gender', 'email', 'phone', 'ssn'])
+    listPii.append(list(pii[0]))
+
+    listDiag.append(['id', 'diagnose'])
+    listDiag.append(list(diagnosis[0]))
+
+    listMeds.append(['id', 'medicines'])
+    listMeds.append(list(medicines[0]))
+
+    listHabits.append(['id', 'alcoholic', 'smoker', 'veg', 'soft_drink', 'exercise'])
+    listHabits.append(list(habits[0]))
+
+    listAllergens.append(['id', 'allergens'])
+    listAllergens.append(list(allergens[0]))
+
+    listVS.append(['id', 'Heart_Rate', 'Blood_Pressure', 'Respiration_Rate', 'Oxygen_Saturation', 'Temperature'])
+    listVS.append(list(vs[0]))
+
+    listTreats.append(['id', 'treatments'])
+    listTreats.append(list(treats[0]))
+
+    listSurgery.append(['id', 'surgery'])
+    listSurgery.append(list(surgeries[0]))
+
+    listImmuns.append(['id', 'immuns'])
+    listImmuns.append(list(immunizations[0]))
+
+elems = []
+fileName = 'InternalReportSummary.pdf'
+pdf = SimpleDocTemplate(
+    fileName,
+    pagesize=letter
+)
+
+def generateReportSummary(data):
+    table = Table(data)
+    # add style
+    style = TableStyle([
+        ('BACKGROUND', (0,0), (len(data[0]),0), colors.green),
+        ('TEXTCOLOR',(0,0),(-1,0),colors.whitesmoke),
+
+        ('ALIGN',(0,0),(-1,-1),'CENTER'),
+
+        ('FONTNAME', (0,0), (-1,0), 'Courier-Bold'),
+        ('FONTSIZE', (0,0), (-1,0), 9),
+
+        ('BOTTOMPADDING', (0,0), (-1,0), 12),
+
+        ('BACKGROUND',(0,1),(-1,-1),colors.beige),
+    ])
+    table.setStyle(style)
+
+    # 2) Alternate backgroud color
+    rowNumb = len(data)
+    for i in range(1, rowNumb):
+        if i % 2 == 0:
+            bc = colors.burlywood
+        else:
+            bc = colors.beige
+        
+        ts = TableStyle(
+            [('BACKGROUND', (0,i),(-1,i), bc)]
+        )
+        table.setStyle(ts)
+
+    # 3) Add borders
+    ts = TableStyle(
+        [
+        ('BOX',(0,0),(-1,-1),2,colors.black),
+
+        ('LINEBEFORE',(2,1),(2,-1),2,colors.red),
+        ('LINEABOVE',(0,2),(-1,2),2,colors.green),
+
+        ('GRID',(0,1),(-1,-1),2,colors.black),
+        ]
+    )
+    table.setStyle(ts)
+    elems.append(table)
+    line = Spacer(0,20)
+    elems.append(line)
+
+def iReport(request):
+
+    userId = request.GET['id']
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    path = str(BASE_DIR)
+    path = path[0:len(path)-27]
+    pii = getDataFromDB(path + './Data-Files/DB-Files/piiDb.db', 'select * from personal_info where id = ' + str(userId))
+    diagnosis = getDataFromDB(path + './Data-Files/DB-Files/diagnosisDb.db', 'select * from diagnosis where id = ' + str(userId))
+    medicines = getDataFromDB(path + './Data-Files/DB-Files/prescriptionsDb.db', 'select * from medicines where id = ' + str(userId))
+    habits = getDataFromDB(path + './Data-Files/DB-Files/habitsDb.db', 'select * from habits where id = ' + str(userId))
+    allergens = getDataFromDB(path + './Data-Files/DB-Files/allergyDb.db', 'select * from allergies where id = ' + str(userId))
+    vs = getDataFromDB(path + './Data-Files/DB-Files/vitalSignsDb.db', 'select * from vital_signs where id = ' + str(userId))
+    treats = getDataFromDB(path + './Data-Files/DB-Files/treatmentsDb.db', 'select * from treatments where id = ' + str(userId))
+    surgeries = getDataFromDB(path + './Data-Files/DB-Files/surgeryDb.db', 'select * from surgeries where id = ' + str(userId))
+    immunizations = getDataFromDB(path + './Data-Files/DB-Files/immunizationsDb.db', 'select * from immunizations where id = ' + str(userId))
+
+
+    listPii, listDiag, listMeds, listHabits, listAllergens, listVS, listTreats, listSurgery, listImmuns = [], [], [], [], [], [], [], [], []
+    organizeDataForReport(pii, diagnosis, medicines, habits, allergens, vs, treats, surgeries, immunizations, listPii, listDiag, listMeds, listHabits, listAllergens, listVS, listTreats, listSurgery, listImmuns)
+
+    p = Paragraph('Report Summary', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=30)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,40))
+    p = Paragraph('Hospital', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    p = Paragraph('Personal Data', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    generateReportSummary(listPii)
+
+    p = Paragraph('Vital Signs Data', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    generateReportSummary(listVS)
+
+    p = Paragraph('Diagnose Department', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    p = Paragraph('Diagnosis Data', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    generateReportSummary(listDiag)
+    p = Paragraph('Prescriptions Department', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    p = Paragraph('Medicines Data', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    generateReportSummary(listMeds)
+    p = Paragraph('Habits', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    generateReportSummary(listHabits)
+    p = Paragraph('Allergens', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+    )
+    elems.append(Spacer(20,80))
+    p = Paragraph('Treatments Department', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    p = Paragraph('Treatments', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    generateReportSummary(listTreats)
+    p = Paragraph('Surgeries', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    generateReportSummary(listSurgery)
+    p = Paragraph('Immunizations', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,10))
+    generateReportSummary(listImmuns)
+    pdf.build(elems)
+
+    short_report = open("InternalReportSummary.pdf", 'rb')
+    response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
+    return response
