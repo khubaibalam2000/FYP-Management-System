@@ -51,8 +51,8 @@ cd "Hospital System/main_system"
     http://127.0.0.1:8000/datadetails/personal/ireport/?id=300
   
 ## 9. /moh/requestData (GET API: gets json):
-  parameters: ssn and attributes (attributes parameter can be passed multiple times)
-  http://127.0.0.1:8000/moh/requestData/?ssn=30076841161403&attributes=city&attributes=province
+    parameters: ssn and attributes (attributes parameter can be passed multiple times)
+    http://127.0.0.1:8000/moh/requestData/?ssn=30076841161403&attributes=city&attributes=province
   
 ## 10. /pm/requestMOHForData (GET API: gets json):
     parameters: ssn and attributes (attributes parameter can be passed multiple times)
