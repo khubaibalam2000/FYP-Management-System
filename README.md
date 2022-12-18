@@ -31,6 +31,7 @@ cd "Hospital System/main_system"
     
 ## 3. /datadetails/personal/epdgwithconnection (GET API: gets image png):
     parameters: ssn
+    Example Link:
     http://127.0.0.1:8000/datadetails/personal/epdgwithconnection/?ssn=4903773748744614
     
 ## 4. /datadetails/personal/epdgwithoutconnection (GET API: gets .html file):
