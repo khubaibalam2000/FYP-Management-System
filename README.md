@@ -7,7 +7,7 @@ PrivacyOps in Smart Cities, FYP code repository.
 1. Clone the Repository
 2. Go to the folder ./FYP-Management-System
 3. Run "pip install -r requirements.txt"
-4. Switch to PDG=and-Reports branch.
+4. Switch to 'PDG-and-Reports' branch.
 5. Go the ./FYP-Management-System/Hospital System/main_system, and then run 'python manage.py runserver'.
 
 # How to Merge Tables into db:
