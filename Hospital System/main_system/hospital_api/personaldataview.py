@@ -27,6 +27,7 @@ from reportlab.lib import colors
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import Table
 from reportlab.platypus import Spacer, Paragraph
+import re
 
 def index(request):
     if request.method != "GET":
@@ -117,11 +118,11 @@ def inform(request):
         return HttpResponse("Bad Request", status=status.HTTP_400_BAD_REQUEST)
     
     attributes = request.GET.getlist('attributes')
-    froms = request.GET.getlist('froms')
-    tos = request.GET.getlist('tos')
+    froms = request.GET['froms']
+    tos = request.GET['tos']
     ssn = request.GET['ssn']
 
-    toInsert = int(ssn), str(attributes), (froms[0]), (tos[0])
+    toInsert = int(ssn), str(attributes), (froms), (tos)
     updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', './hospital_api/Links.db', toInsert)
     return HttpResponse(200)
 
@@ -135,7 +136,7 @@ def getDataFromDB(dbName, query):
     return rows
 
 def generateExternalPDGWithConnections(request):
-    ssn = 4903773748744614
+    ssn = request.GET['ssn']
 
     linkData = getDataFromDB('./hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
 
@@ -165,8 +166,14 @@ def generateExternalPDGWithConnections(request):
     plt.clf()
     return response
 
+
+# [("['name', 'city', 'province']",), ("['diagnose']",), ("['name', 'city']",)], [("['city', 'province', 'treatment']",), ('[]',), ("['diagnose']",), ('[]',), 
+# ("['name', 'city']",), ("['diagnose']",), ('[]',), ("['diagnose']",), ('[]',), ("['diagnose']",)], [("['name', 'city', 'province']",), ("['diagnose']",), 
+# ("['city', 'province', 'treatment']",), ('[]',), ("['diagnose']",), ('[]',), ("['diagnose']",), ('[]',), ("['diagnose']",), ('[]',), ("['diagnose']",)]
+
 def generateExternalPDGWithoutConnections(request):
-    ssn = 30076841161403
+    ssn = request.GET['ssn']
+    
     linkData = getDataFromDB('./hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
     # print(linkData)
     x = []
@@ -191,11 +198,19 @@ def generateExternalPDGWithoutConnections(request):
     attributesData = []
     for i in externalEntities:
         attributesData.append(getDataFromDB('./hospital_api/Links.db', 'select attributes from linking where (userId = ' + str(ssn) + ") and (froms = '" + i + "' OR tos = '" + i + "')"))
-    
-    frame = {'x': x, 'y': y, 'externalEntities': externalEntities, 'attributesData': attributesData}
+    print(externalEntities, attributesData, type(attributesData[0]))
+    fAtt = []
+    for i in attributesData:
+        for j in i:
+            for k in j:
+                print(k)
+                print(re.findall(r"'(.*?)'", k))
+                fAtt.append(re.findall(r"'(.*?)'", k))
+    print('############ - fatt', fAtt)
+    frame = {'x': x, 'y': y, 'External Entity': externalEntities, 'Attributes': attributesData}
     # print(frame)
     df = pd.DataFrame(frame)
-    fig = px.scatter(df, x="x", y="y", color="externalEntities", hover_data={'x': False, 'y': False, 'externalEntities':True, 'attributesData':True})
+    fig = px.scatter(df, x="x", y="y", color="External Entity", hover_data={'x': False, 'y': False, 'External Entity':True, 'Attributes':True})
     fig.update_traces(marker=dict(size=12,
                               line=dict(width=2,
                                         color='DarkSlateGrey')),

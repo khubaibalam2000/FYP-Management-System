@@ -14,7 +14,6 @@ def updateDatabase(queryOfLink, dbPath, toInsert):
 # Create your views here.
 def requestMOHForData(request):
     attributes = request.GET.getlist('attributes')
-
     dataToGet = {}
     dataToGet['ssn'] = str(request.GET['ssn'])
     dataToGet['froms'] = 'MinistryOfHealth'
@@ -25,7 +24,9 @@ def requestMOHForData(request):
             dataToGet['attributes'].append(i)
             continue
         dataToGet['attributes'] = [i]
+    print(dataToGet)
     response = requests.get('http://127.0.0.1:8000/moh/sendToParamedics', params = dataToGet)
+    print('###########################################')
     data = response.json()
     stringData = json.dumps(data)
     toInsert = request.GET['ssn'], stringData

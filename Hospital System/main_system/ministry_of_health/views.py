@@ -66,10 +66,12 @@ def sendToParamedics(request):
             for key, values in j.items():
                 if i == key:
                     checkAttributes.append(i)
+    
     checkAttributes = list(set(checkAttributes))
     requestFromHospital = []
-    if i in attributes:
+    for i in attributes:
         if i not in checkAttributes:
+            print(i)
             requestFromHospital.append(i)
             # return HttpResponse('We do not have that data')
     dataFromHospital = {}
@@ -90,8 +92,20 @@ def sendToParamedics(request):
             for key, values in j.items():
                 if i == key:
                     dataToSend[i] = values
+    dictForInformHospital = {}
     if requestFromHospital:
         for key, values in data.items():
+            dictForInformHospital[key] = values
             dataToSend[key] = values
-    response = requests.get('http://127.0.0.1:8000/datadetails/personal/inform', params = dataToGet)
+    dictForInformHospital['ssn'] = request.GET['ssn']
+    dictForInformHospital['froms'] = 'MinistryOfHealth'
+    dictForInformHospital['tos'] = 'Paramedics'
+    for i in checkAttributes:
+        if 'attributes' in dictForInformHospital.keys():
+            dictForInformHospital['attributes'].append(i)
+            continue
+        dictForInformHospital['attributes'] = [i]
+    print('################## - checkAttributes', checkAttributes)
+    if checkAttributes:
+        response = requests.get('http://127.0.0.1:8000/datadetails/personal/inform', params = dictForInformHospital)
     return JsonResponse(dataToSend)
