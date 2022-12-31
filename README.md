@@ -27,8 +27,8 @@ cd "Hospital System/main_system"
 ## 2. /datadetails/personal/inform in hospital_api (GET API: gets json):
     parameters: ssn, froms, tos, attributes (attributes parameter can be passed multiple times)
     Example Link:
-    http://127.0.0.1:8000/datadetails/personal/requestForData/?ssn=4903773748744614&froms=Hospital&tos=Paramedics&attributes=name&attributes=city&attributes=province
-    http://127.0.0.1:8000/datadetails/personal/requestForData/?ssn=4903773748744614&froms=Hospital&tos=MinistryOfHealth&attributes=name&attributes=province
+    http://127.0.0.1:8000/datadetails/personal/inform/?ssn=4903773748744614&froms=Hospital&tos=Paramedics&attributes=name&attributes=city&attributes=province
+    http://127.0.0.1:8000/datadetails/personal/inform/?ssn=4903773748744614&froms=Hospital&tos=MinistryOfHealth&attributes=name&attributes=province
     
 ## 3. /datadetails/personal/epdgwithconnection (GET API: gets image png):
     parameters: ssn
