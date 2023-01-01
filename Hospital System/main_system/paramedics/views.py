@@ -24,9 +24,7 @@ def requestMOHForData(request):
             dataToGet['attributes'].append(i)
             continue
         dataToGet['attributes'] = [i]
-    print(dataToGet)
     response = requests.get('http://127.0.0.1:8000/moh/sendToParamedics', params = dataToGet)
-    print('###########################################')
     data = response.json()
     stringData = json.dumps(data)
     toInsert = request.GET['ssn'], stringData

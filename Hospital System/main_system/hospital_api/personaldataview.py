@@ -3,7 +3,6 @@ from django.http import HttpResponse, JsonResponse
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from matplotlib.backends.backend_agg import FigureCanvasAgg
 import random as rn
 import networkx as nx
 from .serializers import *
@@ -15,8 +14,7 @@ from prescription.models import Prescription
 from treatment.models import Treatment
 import pandas as pd
 import plotly.express as px
-import plotly.io as pio
-from django.template import Context, loader
+from django.template import loader
 from pathlib import Path
 from matplotlib.backends.backend_pdf import PdfPages
 from wsgiref.util import FileWrapper
@@ -152,7 +150,10 @@ def generateExternalPDGWithConnections(request):
     E = []
     pos = {}
     for key, values in dictForData.items():
-        E.append((key[0], key[1], values))
+        inList = []
+        inList.extend(re.findall(r"'(.*?)'", values))
+        inList = list(set(inList))
+        E.append((key[0], key[1], inList))
         pos[key[0]] = [rn.randint(0,10), rn.randint(0,10)]
         pos[key[1]] = [rn.randint(0,10), rn.randint(0,10)]
     G = nx.DiGraph()
@@ -162,14 +163,10 @@ def generateExternalPDGWithConnections(request):
     nx.draw_networkx_edge_labels(G, pos, edge_labels=weight)
     
     response = HttpResponse(content_type='image/png')
+    plt.gcf().set_size_inches(20, 10)
     plt.savefig(response, format='png')
     plt.clf()
     return response
-
-
-# [("['name', 'city', 'province']",), ("['diagnose']",), ("['name', 'city']",)], [("['city', 'province', 'treatment']",), ('[]',), ("['diagnose']",), ('[]',), 
-# ("['name', 'city']",), ("['diagnose']",), ('[]',), ("['diagnose']",), ('[]',), ("['diagnose']",)], [("['name', 'city', 'province']",), ("['diagnose']",), 
-# ("['city', 'province', 'treatment']",), ('[]',), ("['diagnose']",), ('[]',), ("['diagnose']",), ('[]',), ("['diagnose']",), ('[]',), ("['diagnose']",)]
 
 def generateExternalPDGWithoutConnections(request):
     ssn = request.GET['ssn']
@@ -189,26 +186,35 @@ def generateExternalPDGWithoutConnections(request):
             dictForData[(i[3], i[4])] = a
             continue
         dictForData[(i[3], i[4])] = i[2]
-    # print(dictForData)
     externalEntities = []
     for key, value in dictForData.items():
         externalEntities.append(key[0])
         externalEntities.append(key[1])
     externalEntities = list(set(externalEntities))
     attributesData = []
+
     for i in externalEntities:
+        if i == 'Hospital':
+            attributesData.append(['name', 'dob', 'city', 'province', 'gender', 'email', 'phone', 'ssn', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'temperature', 'diagnose', 'medicine', 'treatment'])
+            continue
         attributesData.append(getDataFromDB('./hospital_api/Links.db', 'select attributes from linking where (userId = ' + str(ssn) + ") and (froms = '" + i + "' OR tos = '" + i + "')"))
-    print(externalEntities, attributesData, type(attributesData[0]))
+    
+    print(attributesData)
     fAtt = []
     for i in attributesData:
+        inList = []
         for j in i:
             for k in j:
-                print(k)
-                print(re.findall(r"'(.*?)'", k))
-                fAtt.append(re.findall(r"'(.*?)'", k))
-    print('############ - fatt', fAtt)
-    frame = {'x': x, 'y': y, 'External Entity': externalEntities, 'Attributes': attributesData}
-    # print(frame)
+                inList.extend(re.findall(r"'(.*?)'", k))
+        inList = list(set(inList))
+        fAtt.append(inList)
+
+    for i in fAtt:
+        if not i:
+            idx = fAtt.index(i)
+            fAtt[idx] = ['name', 'dob', 'city', 'province', 'gender', 'email', 'phone', 'ssn', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'temperature', 'diagnose', 'medicine', 'treatment']
+
+    frame = {'x': x, 'y': y, 'External Entity': externalEntities, 'Attributes': fAtt}
     df = pd.DataFrame(frame)
     fig = px.scatter(df, x="x", y="y", color="External Entity", hover_data={'x': False, 'y': False, 'External Entity':True, 'Attributes':True})
     fig.update_traces(marker=dict(size=12,
@@ -260,7 +266,9 @@ def eXdataReport(request):
     ssn = request.GET['ssn']
 
     linkData = getDataFromDB('./hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
-
+    # print(linkData)
+    if not linkData:
+        return HttpResponse('This subjects data is not shared with anyone')
     dictForData = {}
     for i in linkData:
         if (i[3], i[4]) in dictForData:
@@ -271,17 +279,22 @@ def eXdataReport(request):
         dictForData[(i[3], i[4])] = i[2]
     exchangers = []
     data = []
+
     for key, values in dictForData.items():
+        inList = []
         exchangers.append(key)
-        data.append(values)
+        inList.extend(re.findall(r"'(.*?)'", values))
+        inList = list(set(inList))
+        data.append(inList)
     frame = {'Exchanging Entites': exchangers, 'Exchanged Data': data}
     df = pd.DataFrame(frame)
 
     fig, ax = plt.subplots(figsize=(12,4))
     ax.axis('tight')
     ax.axis('off')
-    the_table = ax.table(cellText=df.values,colLabels=df.columns,loc='center')
-
+    the_table = ax.table(cellText=df.values,colLabels=df.columns,loc='center', colColours=['green', 'green'], cellLoc='center')
+    the_table[(2,0)].set_facecolor('#D3D3D3')
+    the_table[(2,1)].set_facecolor('#D3D3D3')
     pp = PdfPages("ExternalExchangedData.pdf")
     pp.savefig(fig, bbox_inches='tight')
     pp.close()
@@ -312,15 +325,35 @@ def eHdataReport(request):
     externalEntities = list(set(externalEntities))
     attributesData = []
     for i in externalEntities:
+        if i == 'Hospital':
+            attributesData.append(['name', 'dob', 'city', 'province', 'gender', 'email', 'phone', 'ssn', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'temperature', 'diagnose', 'medicine', 'treatment'])
+            continue
         attributesData.append(getDataFromDB('./hospital_api/Links.db', 'select attributes from linking where (userId = ' + str(ssn) + ") and (froms = '" + i + "' OR tos = '" + i + "')"))
     
-    frame = {'externalEntities': externalEntities, 'attributesData': attributesData}
+    fAtt = []
+    for i in attributesData:
+        inList = []
+        for j in i:
+            for k in j:
+                inList.extend(re.findall(r"'(.*?)'", k))
+        inList = list(set(inList))
+        fAtt.append(inList)
+
+    for i in fAtt:
+            if not i:
+                idx = fAtt.index(i)
+                fAtt[idx] = ['name', 'dob', 'city', 'province', 'gender', 'email', 'phone', 'ssn', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'temperature', 'diagnose', 'medicine', 'treatment']
+
+
+    frame = {'External Entity': externalEntities, 'Attribute': fAtt}
     df = pd.DataFrame(frame)
     
-    fig, ax = plt.subplots(figsize=(12,4))
+    fig, ax = plt.subplots(figsize=(25, 4))
     ax.axis('tight')
     ax.axis('off')
-    the_table = ax.table(cellText=df.values,colLabels=df.columns,loc='center')
+    the_table = ax.table(cellText=df.values,colLabels=df.columns,loc='center', cellLoc='center', colColours=['green', 'green'], colWidths=[0.1, 1])
+    the_table[(2,0)].set_facecolor('#D3D3D3')
+    the_table[(2,1)].set_facecolor('#D3D3D3')
 
     pp = PdfPages("HoldingDataEntities.pdf")
     pp.savefig(fig, bbox_inches='tight')

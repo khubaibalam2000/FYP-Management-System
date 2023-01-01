@@ -71,7 +71,6 @@ def sendToParamedics(request):
     requestFromHospital = []
     for i in attributes:
         if i not in checkAttributes:
-            print(i)
             requestFromHospital.append(i)
             # return HttpResponse('We do not have that data')
     dataFromHospital = {}
@@ -105,7 +104,6 @@ def sendToParamedics(request):
             dictForInformHospital['attributes'].append(i)
             continue
         dictForInformHospital['attributes'] = [i]
-    print('################## - checkAttributes', checkAttributes)
     if checkAttributes:
         response = requests.get('http://127.0.0.1:8000/datadetails/personal/inform', params = dictForInformHospital)
     return JsonResponse(dataToSend)
