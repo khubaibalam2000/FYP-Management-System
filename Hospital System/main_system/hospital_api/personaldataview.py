@@ -7,6 +7,8 @@ import random as rn
 import networkx as nx
 from .serializers import *
 from .models import *
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import sqlite3
 from diagnosis.models import Diagnosis
@@ -240,6 +242,8 @@ def makeDataFrameForUser(pii, diagnosis, medicines, habits, allergens, vs, treat
 
 def internalPDG(request):
     userId = request.GET['id']
+    if int(userId) < 1 or int(userId) > 999:
+        return HttpResponse("We do not have that person data")
     BASE_DIR = Path(__file__).resolve().parent.parent
     path = str(BASE_DIR)
     path = path[0:len(path)-27]
@@ -491,6 +495,8 @@ def generateReportSummary(data):
 def iReport(request):
 
     userId = request.GET['id']
+    if int(userId) < 1 or int(userId) > 999:
+        return HttpResponse("We do not have that person data")
     BASE_DIR = Path(__file__).resolve().parent.parent
     path = str(BASE_DIR)
     path = path[0:len(path)-27]
@@ -593,5 +599,175 @@ def iReport(request):
     response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
     return response
 
-def sendBreachNotification(request):
-    pass
+
+def organizeDataForDataBreachReport(pii, vs, diagnosis, medicines, treats, listPii, listVS, listDiag, listMeds, listTreats):
+    # print(pii[0], vs[0])
+    if pii:
+        listPii.append(['id', 'name', 'DOB', 'city', 'province', 'gender', 'email', 'phone', 'ssn']) 
+        listPii.append(list(pii[0]))
+
+    if vs:
+        listVS.append(['id', 'Heart_Rate', 'Blood_Pressure', 'Respiration_Rate', 'Oxygen_Saturation', 'Temperature'])
+        listVS.append(list(vs[0]))
+
+    if diagnosis:
+        listDiag.append(['id', 'diagnose'])
+        listDiag.append(list(diagnosis[0]))
+
+    if medicines:
+        listMeds.append(['id', 'medicines'])
+        listMeds.append(list(medicines[0]))
+
+    if treats:
+        listTreats.append(['id', 'treatments'])
+        listTreats.append(list(treats[0]))
+
+
+elems = []
+fileName = 'DataBreachReport.pdf'
+pdf = SimpleDocTemplate(
+    fileName,
+    pagesize=letter
+)
+
+
+def generateReportSummaryForDataBreach(data):
+    table = Table(data)
+    # add style
+    style = TableStyle([
+        ('BACKGROUND', (0,0), (len(data[0]),0), colors.blue),
+        ('TEXTCOLOR',(0,0),(-1,0),colors.white),
+
+        ('ALIGN',(0,0),(-1,-1),'CENTER'),
+
+        ('FONTNAME', (0,0), (-1,0), 'Courier-Bold'),
+        ('FONTSIZE', (0,0), (-1,0), 9),
+
+        ('BOTTOMPADDING', (0,0), (-1,0), 12),
+
+        ('BACKGROUND',(0,1),(-1,-1),colors.white),
+    ])
+    table.setStyle(style)
+
+    # 2) Alternate backgroud color
+    rowNumb = len(data)
+    for i in range(1, rowNumb):
+        if i % 2 == 0:
+            bc = colors.white
+        else:
+            bc = colors.white
+        
+        ts = TableStyle(
+            [('BACKGROUND', (0,i),(-1,i), bc)]
+        )
+        table.setStyle(ts)
+
+    # 3) Add borders
+    ts = TableStyle(
+        [
+        ('BOX',(0,0),(-1,-1),2,colors.black),
+
+        ('LINEBEFORE',(2,1),(2,-1),2,colors.white),
+        ('LINEABOVE',(0,2),(-1,2),2,colors.green),
+
+        ('GRID',(0,1),(-1,-1),2,colors.black),
+        ]
+    )
+    table.setStyle(ts)
+    elems.append(table)
+    line = Spacer(0,20)
+    elems.append(line)
+
+def dataBreachReport(request):
+    ssn = request.GET['ssn']
+    departments = request.GET.getlist('departments')
+    
+    userIdForDataExtraction = getDataFromDB('./db.sqlite3', 'select id from personal_info where ssn = ' + str(ssn))
+    userIdForDataExtraction = userIdForDataExtraction[0][0]
+
+    hospitalPiiAttributes, hospitalVsAttributes, diagnosisAttributes, prescriptionsAttributes, treatmentsAttributes = [], [], [], [], []
+    listPii, listVs, listDiagnosis, listPrescriptions, listTreatments = [], [], [], [], []
+    for i in departments:
+        if i == 'Hospital' or i == 'hospital' or i == 'HOSPITAL':
+            hospitalPiiAttributes = getDataFromDB('./db.sqlite3', 'select * from personal_info where id = ' + str(userIdForDataExtraction))
+            hospitalVsAttributes = getDataFromDB('./db.sqlite3', 'select * from vital_signs where id = ' + str(userIdForDataExtraction))
+        elif i == 'Diagnosis' or i == 'diagnosis' or i == 'DIAGNOSIS':
+            diagnosisAttributes = getDataFromDB('./diagnosis/diagnosisDb.sqlite3', 'select * from diagnosis where id = ' + str(userIdForDataExtraction))
+        elif i == 'Prescriptions' or i == 'prescriptions' or i == 'PRESCRIPTION':
+            prescriptionsAttributes = getDataFromDB('./prescription/prescriptionsDb.sqlite3', 'select * from medicines where id = ' + str(userIdForDataExtraction))
+        elif i == 'Treatments' or i == 'treatments' or i == 'TREATMENTS':
+            treatmentsAttributes = getDataFromDB('./treatment/treatmentsDb.sqlite3', 'select * from treatments where id = ' + str(userIdForDataExtraction))
+    
+    organizeDataForDataBreachReport(hospitalPiiAttributes, hospitalVsAttributes, diagnosisAttributes, prescriptionsAttributes, treatmentsAttributes, listPii, listVs, listDiagnosis, listPrescriptions, listTreatments)
+
+    p = Paragraph('Data Breach Report', 
+        ParagraphStyle('okay', fontName='Helvetica', fontSize=30)
+    )
+    elems.append(p)
+    elems.append(Spacer(20,40))
+
+    if hospitalPiiAttributes:
+        p = Paragraph('Hospital', 
+            ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
+        )
+        elems.append(p)
+        elems.append(Spacer(20,10))
+
+        p = Paragraph('Personal Data', 
+            ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+        )
+        elems.append(p)
+        elems.append(Spacer(20,10))
+        generateReportSummaryForDataBreach(listPii)
+
+        p = Paragraph('Vital Signs Data', 
+            ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+        )
+        elems.append(p)
+        elems.append(Spacer(20,10))
+        generateReportSummaryForDataBreach(listVs)
+
+    if diagnosisAttributes:
+        p = Paragraph('Diagnose Department', 
+            ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
+        )
+        elems.append(p)
+        elems.append(Spacer(20,10))
+        p = Paragraph('Diagnosis Data', 
+            ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+        )
+        elems.append(p)
+        elems.append(Spacer(20,10))
+        generateReportSummaryForDataBreach(listDiagnosis)
+
+    if prescriptionsAttributes:
+        p = Paragraph('Prescriptions Department', 
+            ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
+        )
+        elems.append(p)
+        elems.append(Spacer(20,10))
+        p = Paragraph('Medicines Data', 
+            ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+        )
+        elems.append(p)
+        elems.append(Spacer(20,10))
+        generateReportSummaryForDataBreach(listPrescriptions)
+        
+
+    if treatmentsAttributes:
+        p = Paragraph('Treatments Department', 
+            ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
+        )
+        elems.append(p)
+        elems.append(Spacer(20,10))
+        p = Paragraph('Treatments', 
+            ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
+        )
+        elems.append(p)
+        elems.append(Spacer(20,10))
+        generateReportSummaryForDataBreach(listTreatments)
+    pdf.build(elems)
+
+    short_report = open("DataBreachReport.pdf", 'rb')
+    response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
+    return response
