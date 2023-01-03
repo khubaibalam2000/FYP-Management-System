@@ -410,33 +410,26 @@ def eHdataReport(request):
     response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
     return response
 
-def organizeDataForReport(pii, diagnosis, medicines, vs, treats, listPii, listDiag, listMeds, listVS, listTreats):
-    listPii.append(['id', 'name', 'DOB', 'city', 'province', 'gender', 'email', 'phone', 'ssn'])
-    listPii.append(list(pii[0]))
+def organizeDataForReport(pii, vs, diagnosis, medicines,  treats, listPii, listVS, listDiag, listMeds, listTreats):
+    if pii:
+        listPii.append(['id', 'name', 'DOB', 'city', 'province', 'gender', 'email', 'phone', 'ssn'])
+        listPii.append(list(pii[0]))
 
-    listDiag.append(['id', 'diagnose'])
-    listDiag.append(list(diagnosis[0]))
+    if vs:
+        listVS.append(['id', 'Heart_Rate', 'Blood_Pressure', 'Respiration_Rate', 'Oxygen_Saturation', 'Temperature'])
+        listVS.append(list(vs[0]))
 
-    listMeds.append(['id', 'medicines'])
-    listMeds.append(list(medicines[0]))
+    if diagnosis:
+        listDiag.append(['id', 'diagnose'])
+        listDiag.append(list(diagnosis[0]))
 
-    # listHabits.append(['id', 'alcoholic', 'smoker', 'veg', 'soft_drink', 'exercise'])
-    # listHabits.append(list(habits[0]))
+    if medicines:
+        listMeds.append(['id', 'medicines'])
+        listMeds.append(list(medicines[0]))
 
-    # listAllergens.append(['id', 'allergens'])
-    # listAllergens.append(list(allergens[0]))
-
-    listVS.append(['id', 'Heart_Rate', 'Blood_Pressure', 'Respiration_Rate', 'Oxygen_Saturation', 'Temperature'])
-    listVS.append(list(vs[0]))
-
-    listTreats.append(['id', 'treatments'])
-    listTreats.append(list(treats[0]))
-
-    # listSurgery.append(['id', 'surgery'])
-    # listSurgery.append(list(surgeries[0]))
-
-    # listImmuns.append(['id', 'immuns'])
-    # listImmuns.append(list(immunizations[0]))
+    if treats:
+        listTreats.append(['id', 'treatments'])
+        listTreats.append(list(treats[0]))
 
 elems = []
 fileName = 'InternalReportSummary.pdf'
@@ -500,41 +493,16 @@ def iReport(request):
     BASE_DIR = Path(__file__).resolve().parent.parent
     path = str(BASE_DIR)
     path = path[0:len(path)-27]
-    # pii = getDataFromDB(path + './Data-Files/DB-Files/piiDb.db', 'select * from personal_info where id = ' + str(userId))
-    # diagnosis = getDataFromDB(path + './Data-Files/DB-Files/diagnosisDb.db', 'select * from diagnosis where id = ' + str(userId))
-    # medicines = getDataFromDB(path + './Data-Files/DB-Files/prescriptionsDb.db', 'select * from medicines where id = ' + str(userId))
-    # habits = getDataFromDB(path + './Data-Files/DB-Files/habitsDb.db', 'select * from habits where id = ' + str(userId))
-    # allergens = getDataFromDB(path + './Data-Files/DB-Files/allergyDb.db', 'select * from allergies where id = ' + str(userId))
-    # vs = getDataFromDB(path + './Data-Files/DB-Files/vitalSignsDb.db', 'select * from vital_signs where id = ' + str(userId))
-    # treats = getDataFromDB(path + './Data-Files/DB-Files/treatmentsDb.db', 'select * from treatments where id = ' + str(userId))
-    # surgeries = getDataFromDB(path + './Data-Files/DB-Files/surgeryDb.db', 'select * from surgeries where id = ' + str(userId))
-    # immunizations = getDataFromDB(path + './Data-Files/DB-Files/immunizationsDb.db', 'select * from immunizations where id = ' + str(userId))
 
-    
-    # userIdForDataExtraction = getDataFromDB('./db.sqlite3', 'select id from personal_info where ssn = ' + str(ssn))
-    # userIdForDataExtraction = userIdForDataExtraction[0][0]
-    print('####################', userId)
     pii, vs, diagnosis, medicines, treats = [], [], [], [], []
-    # listPii, listVS, listDiagnosis, listPrescriptions, listTreatments = [], [], [], [], []
-    # for i in departments:
-        # if i == 'Hospital' or i == 'hospital' or i == 'HOSPITAL':
     pii = getDataFromDB('./db.sqlite3', 'select * from personal_info where id = ' + str(userId))
     vs = getDataFromDB('./db.sqlite3', 'select * from vital_signs where id = ' + str(userId))
-        # elif i == 'Diagnosis' or i == 'diagnosis' or i == 'DIAGNOSIS':
     diagnosis = getDataFromDB('./diagnosis/diagnosisDb.sqlite3', 'select * from diagnosis where id = ' + str(userId))
-        # elif i == 'Prescriptions' or i == 'prescriptions' or i == 'PRESCRIPTIONS':
     medicines = getDataFromDB('./prescription/prescriptionsDb.sqlite3', 'select * from medicines where id = ' + str(userId))
-        # elif i == 'Treatments' or i == 'treatments' or i == 'TREATMENTS':
     treats = getDataFromDB('./treatment/treatmentsDb.sqlite3', 'select * from treatments where id = ' + str(userId))
     
-    print('####################', userId)
-    # organizeDataForDataBreachReport(hospitalPiiAttributes, hospitalVsAttributes, diagnosisAttributes, prescriptionsAttributes, treatmentsAttributes, listPii, listVS, listDiag, listPrescriptions, listTreatments)
-
-
-
     listPii, listDiag, listMeds, listVS, listTreats = [], [], [], [], []
-    # organizeDataForReport(pii, diagnosis, medicines, habits, allergens, vs, treats, surgeries, immunizations, listPii, listDiag, listMeds, listHabits, listAllergens, listVS, listTreats, listSurgery, listImmuns)
-    organizeDataForReport(pii, diagnosis, medicines, vs, treats, listPii,  listDiag, listMeds, listVS, listTreats)
+    organizeDataForReport(pii, vs, diagnosis, medicines,  treats, listPii, listVS, listDiag, listMeds,  listTreats)
     print(listPii, listVS, listDiag, listMeds, listTreats)
     p = Paragraph('Report Summary', 
         ParagraphStyle('okay', fontName='Helvetica', fontSize=30)
@@ -582,16 +550,6 @@ def iReport(request):
     elems.append(p)
     elems.append(Spacer(20,10))
     generateReportSummary(listMeds)
-    # p = Paragraph('Habits', 
-    #     ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
-    # )
-    # elems.append(p)
-    # elems.append(Spacer(20,10))
-    # generateReportSummary(listHabits)
-    # p = Paragraph('Allergens', 
-    #     ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
-    # )
-    # elems.append(Spacer(20,80))
     p = Paragraph('Treatments Department', 
         ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
     )
@@ -603,47 +561,11 @@ def iReport(request):
     elems.append(p)
     elems.append(Spacer(20,10))
     generateReportSummary(listTreats)
-    # p = Paragraph('Surgeries', 
-    #     ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
-    # )
-    # elems.append(p)
-    # elems.append(Spacer(20,10))
-    # generateReportSummary(listSurgery)
-    # p = Paragraph('Immunizations', 
-    #     ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
-    # )
-    # elems.append(p)
-    # elems.append(Spacer(20,10))
-    # generateReportSummary(listImmuns)
     pdf.build(elems)
 
     short_report = open("InternalReportSummary.pdf", 'rb')
     response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
     return response
-
-
-def organizeDataForDataBreachReport(pii, vs, diagnosis, medicines, treats, listPii, listVS, listDiag, listMeds, listTreats):
-    # print(pii[0], vs[0])
-    if pii:
-        listPii.append(['id', 'name', 'DOB', 'city', 'province', 'gender', 'email', 'phone', 'ssn']) 
-        listPii.append(list(pii[0]))
-
-    if vs:
-        listVS.append(['id', 'Heart_Rate', 'Blood_Pressure', 'Respiration_Rate', 'Oxygen_Saturation', 'Temperature'])
-        listVS.append(list(vs[0]))
-
-    if diagnosis:
-        listDiag.append(['id', 'diagnose'])
-        listDiag.append(list(diagnosis[0]))
-
-    if medicines:
-        listMeds.append(['id', 'medicines'])
-        listMeds.append(list(medicines[0]))
-
-    if treats:
-        listTreats.append(['id', 'treatments'])
-        listTreats.append(list(treats[0]))
-
 
 elems2 = []
 fileName2 = 'DataBreachReport.pdf'
@@ -717,7 +639,7 @@ def dataBreachReport(request):
         elif i == 'Treatments' or i == 'treatments' or i == 'TREATMENTS':
             treatmentsAttributes = getDataFromDB('./treatment/treatmentsDb.sqlite3', 'select * from treatments where id = ' + str(userId))
     
-    organizeDataForDataBreachReport(hospitalPiiAttributes, hospitalVsAttributes, diagnosisAttributes, prescriptionsAttributes, treatmentsAttributes, listPii, listVs, listDiagnosis, listPrescriptions, listTreatments)
+    organizeDataForReport(hospitalPiiAttributes, hospitalVsAttributes, diagnosisAttributes, prescriptionsAttributes, treatmentsAttributes, listPii, listVs, listDiagnosis, listPrescriptions, listTreatments)
 
     p = Paragraph('Data Breach Report', 
         ParagraphStyle('okay', fontName='Helvetica', fontSize=30)
