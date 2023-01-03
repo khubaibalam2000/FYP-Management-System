@@ -221,7 +221,7 @@ def generateExternalPDGWithoutConnections(request):
                               line=dict(width=2,
                                         color='DarkSlateGrey')),
                   selector=dict(mode='markers'))
-
+    
     fig.write_html("./hospital_api/templates/epdgwithoutC.html")
     
     template = loader.get_template("./epdgwithoutC.html")
@@ -324,9 +324,53 @@ def eHdataReport(request):
         externalEntities.append(key[1])
     externalEntities = list(set(externalEntities))
     attributesData = []
+
+    userIdForDataExtraction = getDataFromDB('./db.sqlite3', 'select id from personal_info where ssn = ' + str(ssn))
+    userIdForDataExtraction = userIdForDataExtraction[0][0]
+
+    hospitalPiiAttributes = getDataFromDB('./db.sqlite3', 'select * from personal_info where id = ' + str(userIdForDataExtraction))
+    hospitalVsAttributes = getDataFromDB('./db.sqlite3', 'select * from vital_signs where id = ' + str(userIdForDataExtraction))
+    diagnosisAttributes = getDataFromDB('./diagnosis/diagnosisDb.sqlite3', 'select * from diagnosis where id = ' + str(userIdForDataExtraction))
+    prescriptionsAttributes = getDataFromDB('./prescription/prescriptionsDb.sqlite3', 'select * from medicines where id = ' + str(userIdForDataExtraction))
+    treatmentsAttributes = getDataFromDB('./treatment/treatmentsDb.sqlite3', 'select * from treatments where id = ' + str(userIdForDataExtraction))
+
+    
+    hospitalPiiColumns = ['id', 'name', 'dob', 'city', 'province', 'gender', 'email', 'phone', 'ssn']
+    hospitalVsColumns = ['id', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'temperature']
+    diagnosisColumns = ['id', 'diagnose']
+    prescriptionColumns = ['id', 'medicine']
+    treatmentColumns = ['id', 'treatment']
+
+    hospitalPiiMapper = {}
+    hospitalVsMapper = {}
+    diagnosisMapper = {}
+    prescriptionMapper = {}
+    treatmentMapper = {}
+
+    for idx, value in enumerate(hospitalPiiColumns): hospitalPiiMapper[value] = hospitalPiiAttributes[0][idx]
+    for idx, value in enumerate(hospitalVsColumns): hospitalVsMapper[value] = hospitalVsAttributes[0][idx]
+    for idx, value in enumerate(diagnosisColumns): diagnosisMapper[value] = diagnosisAttributes[0][idx]
+    for idx, value in enumerate(prescriptionColumns): prescriptionMapper[value] = prescriptionsAttributes[0][idx]
+    for idx, value in enumerate(treatmentColumns): treatmentMapper[value] = treatmentsAttributes[0][idx]
+    
+    listForHospital = []
+    for key, value in hospitalPiiMapper.items(): 
+        if value != 'None': listForHospital.append(key)
+    for key, value in hospitalVsMapper.items(): 
+        if value != 'None': listForHospital.append(key)
+    for key, value in diagnosisMapper.items(): 
+        if value != 'None': listForHospital.append(key)
+    for key, value in prescriptionMapper.items(): 
+        if value != 'None': listForHospital.append(key)
+    for key, value in treatmentMapper.items(): 
+        if value != 'None': listForHospital.append(key)
+    
+    while 'id' in listForHospital:
+        listForHospital.remove('id')
+
     for i in externalEntities:
         if i == 'Hospital':
-            attributesData.append(['name', 'dob', 'city', 'province', 'gender', 'email', 'phone', 'ssn', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'temperature', 'diagnose', 'medicine', 'treatment'])
+            attributesData.append(listForHospital)
             continue
         attributesData.append(getDataFromDB('./hospital_api/Links.db', 'select attributes from linking where (userId = ' + str(ssn) + ") and (froms = '" + i + "' OR tos = '" + i + "')"))
     
@@ -342,8 +386,7 @@ def eHdataReport(request):
     for i in fAtt:
             if not i:
                 idx = fAtt.index(i)
-                fAtt[idx] = ['name', 'dob', 'city', 'province', 'gender', 'email', 'phone', 'ssn', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'temperature', 'diagnose', 'medicine', 'treatment']
-
+                fAtt[idx] = listForHospital
 
     frame = {'External Entity': externalEntities, 'Attribute': fAtt}
     df = pd.DataFrame(frame)
@@ -549,3 +592,6 @@ def iReport(request):
     short_report = open("InternalReportSummary.pdf", 'rb')
     response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
     return response
+
+def sendBreachNotification(request):
+    pass
