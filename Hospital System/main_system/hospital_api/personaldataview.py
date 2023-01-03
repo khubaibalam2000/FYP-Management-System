@@ -513,7 +513,7 @@ def iReport(request):
     
     # userIdForDataExtraction = getDataFromDB('./db.sqlite3', 'select id from personal_info where ssn = ' + str(ssn))
     # userIdForDataExtraction = userIdForDataExtraction[0][0]
-    print('####################',userId)
+    print('####################', userId)
     pii, vs, diagnosis, medicines, treats = [], [], [], [], []
     # listPii, listVS, listDiagnosis, listPrescriptions, listTreatments = [], [], [], [], []
     # for i in departments:
@@ -527,6 +527,7 @@ def iReport(request):
         # elif i == 'Treatments' or i == 'treatments' or i == 'TREATMENTS':
     treats = getDataFromDB('./treatment/treatmentsDb.sqlite3', 'select * from treatments where id = ' + str(userId))
     
+    print('####################', userId)
     # organizeDataForDataBreachReport(hospitalPiiAttributes, hospitalVsAttributes, diagnosisAttributes, prescriptionsAttributes, treatmentsAttributes, listPii, listVS, listDiag, listPrescriptions, listTreatments)
 
 
@@ -534,7 +535,8 @@ def iReport(request):
     listPii, listDiag, listMeds, listVS, listTreats = [], [], [], [], []
     # organizeDataForReport(pii, diagnosis, medicines, habits, allergens, vs, treats, surgeries, immunizations, listPii, listDiag, listMeds, listHabits, listAllergens, listVS, listTreats, listSurgery, listImmuns)
     organizeDataForReport(pii, diagnosis, medicines, vs, treats, listPii,  listDiag, listMeds, listVS, listTreats)
-    p = Paragraph('Report Summary Yes', 
+    print(listPii, listVS, listDiag, listMeds, listTreats)
+    p = Paragraph('Report Summary', 
         ParagraphStyle('okay', fontName='Helvetica', fontSize=30)
     )
     elems.append(p)
@@ -643,10 +645,10 @@ def organizeDataForDataBreachReport(pii, vs, diagnosis, medicines, treats, listP
         listTreats.append(list(treats[0]))
 
 
-elems = []
-fileName = 'DataBreachReport.pdf'
-pdf = SimpleDocTemplate(
-    fileName,
+elems2 = []
+fileName2 = 'DataBreachReport.pdf'
+pdf2 = SimpleDocTemplate(
+    fileName2,
     pagesize=letter
 )
 
@@ -694,9 +696,9 @@ def generateReportSummaryForDataBreach(data):
         ]
     )
     table.setStyle(ts)
-    elems.append(table)
+    elems2.append(table)
     line = Spacer(0,20)
-    elems.append(line)
+    elems2.append(line)
 
 def dataBreachReport(request):
     userId = request.GET['id']
@@ -720,54 +722,54 @@ def dataBreachReport(request):
     p = Paragraph('Data Breach Report', 
         ParagraphStyle('okay', fontName='Helvetica', fontSize=30)
     )
-    elems.append(p)
-    elems.append(Spacer(20,40))
+    elems2.append(p)
+    elems2.append(Spacer(20,40))
 
     if hospitalPiiAttributes:
         p = Paragraph('Hospital', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
         )
-        elems.append(p)
-        elems.append(Spacer(20,10))
+        elems2.append(p)
+        elems2.append(Spacer(20,10))
 
         p = Paragraph('Personal Data', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
         )
-        elems.append(p)
-        elems.append(Spacer(20,10))
+        elems2.append(p)
+        elems2.append(Spacer(20,10))
         generateReportSummaryForDataBreach(listPii)
 
         p = Paragraph('Vital Signs Data', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
         )
-        elems.append(p)
-        elems.append(Spacer(20,10))
+        elems2.append(p)
+        elems2.append(Spacer(20,10))
         generateReportSummaryForDataBreach(listVs)
 
     if diagnosisAttributes:
         p = Paragraph('Diagnose Department', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
         )
-        elems.append(p)
-        elems.append(Spacer(20,10))
+        elems2.append(p)
+        elems2.append(Spacer(20,10))
         p = Paragraph('Diagnosis Data', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
         )
-        elems.append(p)
-        elems.append(Spacer(20,10))
+        elems2.append(p)
+        elems2.append(Spacer(20,10))
         generateReportSummaryForDataBreach(listDiagnosis)
 
     if prescriptionsAttributes:
         p = Paragraph('Prescriptions Department', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
         )
-        elems.append(p)
-        elems.append(Spacer(20,10))
+        elems2.append(p)
+        elems2.append(Spacer(20,10))
         p = Paragraph('Medicines Data', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
         )
-        elems.append(p)
-        elems.append(Spacer(20,10))
+        elems2.append(p)
+        elems2.append(Spacer(20,10))
         generateReportSummaryForDataBreach(listPrescriptions)
         
 
@@ -775,15 +777,16 @@ def dataBreachReport(request):
         p = Paragraph('Treatments Department', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
         )
-        elems.append(p)
-        elems.append(Spacer(20,10))
+        elems2.append(p)
+        elems2.append(Spacer(20,10))
         p = Paragraph('Treatments', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=15)
         )
-        elems.append(p)
-        elems.append(Spacer(20,10))
+        elems2.append(p)
+        elems2.append(Spacer(20,10))
         generateReportSummaryForDataBreach(listTreatments)
-    pdf.build(elems)
+
+    pdf2.build(elems2)
 
     short_report = open("DataBreachReport.pdf", 'rb')
     response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
