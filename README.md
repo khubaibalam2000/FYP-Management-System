@@ -75,7 +75,7 @@ cd "Hospital System/main_system"
     http://127.0.0.1:8000/moh/requestData/?ssn=30076841161403&attributes=city&attributes=province
   
 ## 10. /pm/requestMOHForData (GET API: gets json):
-    Function: Paramedics requests data from hospital by using this API.
+    Function: Paramedics requests data from ministry of health by using this API.
     parameters: ssn and attributes (attributes parameter can be passed multiple times)
     Example Link:
     http://127.0.0.1:8000/pm/requestMOHForData/?ssn=30076841161403&attributes=city&attributes=province&attributes=name&attributes=diagnose
