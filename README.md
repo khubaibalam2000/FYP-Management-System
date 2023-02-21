@@ -86,3 +86,145 @@ cd "Hospital System/main_system"
     parameters: id and departments (departments parameter can be passed multiple times)
     Example Link:
     http://127.0.0.1:8000/datadetails/personal/databreach/?id=400&departments=hospital&departments=diagnosis&departments=prescriptions
+
+## Request Body for Policies:
+{
+    "ssn": 4903773748744614,
+    "attributes": [
+        {
+            "entity": "name",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "dob",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "city",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "province",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "no",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "gender",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "email",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "phone",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "heart_rate",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "blood_pressure",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "respiration_rate",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "oxygen_saturation",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "temperature",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "diagnose",
+            "sharing": "no",
+            "duration": "0",
+            "sharing_entities": {
+                "moh": "no",
+                "paramedics": "no"
+            }
+        },
+        {
+            "entity": "dob",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "treatment",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        }
+    ]
+}
