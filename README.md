@@ -88,6 +88,7 @@ cd "Hospital System/main_system"
     http://127.0.0.1:8000/datadetails/personal/databreach/?id=400&departments=hospital&departments=diagnosis&departments=prescriptions
 
 ## Request Body for Policies:
+```
 {
     "ssn": 4903773748744614,
     "attributes": [
@@ -228,3 +229,4 @@ cd "Hospital System/main_system"
         }
     ]
 }
+```
