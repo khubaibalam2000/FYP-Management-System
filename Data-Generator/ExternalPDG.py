@@ -24,7 +24,9 @@ def createLinkingDatabase(queryCreation, dbPath):
 # createLinkingDatabase('''CREATE TABLE data(
 #                 id INTEGER PRIMARY KEY AUTOINCREMENT,
 #                 ssn INTEGER,
-#                 data TEXT);
+#                 data TEXT,
+#                 policy TEXT,
+#                 received_at DATE);
 #                 ''', './Hospital System/main_system/ministry_of_health/datas.db')
 
 # createLinkingDatabase('''CREATE TABLE data(
@@ -32,6 +34,12 @@ def createLinkingDatabase(queryCreation, dbPath):
 #                 ssn INTEGER,
 #                 data TEXT);
 #                 ''', './Hospital System/main_system/paramedics/datas.db')
+
+# createLinkingDatabase('''CREATE TABLE policy(
+#                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+#                 ssn INTEGER,
+#                 txid TEXT);
+#                 ''', './Hospital System/main_system/hospital_api/policy.db')
 
 def getDataFromDB(dbName, query):
     connection = sqlite3.connect(dbName)
@@ -42,7 +50,9 @@ def getDataFromDB(dbName, query):
     return rows
 
 # 30076841161403
-# getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', "delete from linking where userId = 4903773748744614")
+# getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', "delete from linking where userId = 30076841161403")
+# getDataFromDB('./Hospital System/main_system/ministry_of_health/datas.db', "drop table data")
+# getDataFromDB('./Hospital System/main_system/ministry_of_health/datas.db', "delete from data where ssn = 4903773748744614")
 
 def drawExternalPDGWithConnections():
     ssn = 30076841161403

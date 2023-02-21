@@ -16,6 +16,8 @@ urlpatterns = [
     path('personal/eHdataReport/', personaldataview.eHdataReport, name='personal.eHdataReport'),
     path('personal/ireport/', personaldataview.iReport, name='personal.iReport'),
     path('personal/databreach/', personaldataview.dataBreachReport, name='personal.dataBreachReport'),
+    path('personal/policies/', personaldataview.storePoliciesOnMultiChain, name='personal.storePoliciesOnMultiChain'),
+    path('personal/checkpolicy/', personaldataview.checkPoliciesOnMultiChain, name='personal.checkPoliciesOnMultiChain'),
 
     path('vitalsigns/', vitalsignsview.index, name='vitalsign.index'),
     path('vitalsigns/get/', vitalsignsview.get, name='vitalsign.get'),

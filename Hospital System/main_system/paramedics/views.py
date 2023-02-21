@@ -14,6 +14,25 @@ def updateDatabase(queryOfLink, dbPath, toInsert):
 # Create your views here.
 def requestMOHForData(request):
     attributes = request.GET.getlist('attributes')
+    
+    # check for policies
+    policyFilters = {}
+    policyFilters['ssn'] = str(request.GET['ssn'])
+    policyFilters['entity'] = 'paramedics'
+    for i in attributes:
+            if 'attributes' in policyFilters.keys():
+                policyFilters['attributes'].append(i)
+                continue
+            policyFilters['attributes'] = [i]
+
+    response = requests.get('http://127.0.0.1:8000/datadetails/personal/checkpolicy', params = policyFilters)
+    print(response.json())
+    data = response.json()
+    print(data)
+    attributes = data['attributes']
+    policies = data['policy_days']
+    print(policies)
+
     dataToGet = {}
     dataToGet['ssn'] = str(request.GET['ssn'])
     dataToGet['froms'] = 'MinistryOfHealth'

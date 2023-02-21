@@ -4,11 +4,16 @@ from rest_framework.decorators import api_view
 import requests
 import sqlite3
 import json
+from datetime import datetime
+from jsonmerge import merge
 
-def updateDatabase(queryOfLink, dbPath, toInsert):
+def updateDatabase(queryOfLink, dbPath, toInsert=None):
     connection = sqlite3.connect(dbPath)
     cursor = connection.cursor()
-    cursor.execute(queryOfLink, toInsert)
+    if toInsert:
+        cursor.execute(queryOfLink, toInsert)
+    else: 
+        cursor.execute(queryOfLink)
     connection.commit()
     connection.close()
 
@@ -25,6 +30,22 @@ def requestData(request):
 
     attributes = request.GET.getlist('attributes')
 
+    # check for policies
+    policyFilters = {}
+    policyFilters['ssn'] = str(request.GET['ssn'])
+    policyFilters['entity'] = 'moh'
+    for i in attributes:
+            if 'attributes' in policyFilters.keys():
+                policyFilters['attributes'].append(i)
+                continue
+            policyFilters['attributes'] = [i]
+
+    response = requests.get('http://127.0.0.1:8000/datadetails/personal/checkpolicy', params = policyFilters)
+    data = response.json()
+    attributes = data['attributes']
+    policies = data['policy_days']
+    # print(policies)
+
     dataToGet = {}
     dataToGet['ssn'] = str(request.GET['ssn'])
     dataToGet['froms'] = 'Hospital'
@@ -36,13 +57,36 @@ def requestData(request):
         dataToGet['attributes'] = [i]
     response = requests.get('http://127.0.0.1:8000/datadetails/personal/requestForData', params = dataToGet)
     data = response.json()
-    stringData = json.dumps(data)
-    toInsert = request.GET['ssn'], stringData
-    updateDatabase('INSERT INTO data(ssn, data) VALUES(?,?)', './ministry_of_health/datas.db', toInsert)
+    
+    if getDataFromDB('./ministry_of_health/datas.db', 'select data from data where ssn = ' + str(request.GET['ssn'])):
+
+        # update data
+        old_data = getDataFromDB('./ministry_of_health/datas.db', 'select data from data where ssn = ' + str(request.GET['ssn']))
+        print(old_data[0][0])
+        old_data_json = json.loads(old_data[0][0])
+        result = merge(data, old_data_json)
+        print(result)
+        stringifyResultData = json.dumps(result).replace("'", "")
+        updateDatabase("update data set data = '" + stringifyResultData + "' where ssn = " + request.GET['ssn'], './ministry_of_health/datas.db')
+
+        # update policies
+        old_policy = getDataFromDB('./ministry_of_health/datas.db', 'select policy from data where ssn = ' + str(request.GET['ssn']))
+        print(old_policy[0][0])
+        old_policy_json = json.loads(old_policy[0][0])
+        resultPolicy = merge(policies, old_policy_json)
+        print(resultPolicy)
+        stringifyResultPolicy = json.dumps(resultPolicy).replace("'", "")
+        updateDatabase("update data set policy = '" + stringifyResultPolicy + "' where ssn = " + request.GET['ssn'], './ministry_of_health/datas.db')
+    else:
+        stringData = json.dumps(data)
+        receive_time = datetime.now()
+        toInsert = request.GET['ssn'], stringData, json.dumps(policies), receive_time
+        updateDatabase('INSERT INTO data(ssn, data, policy, received_at) VALUES(?,?,?,?)', './ministry_of_health/datas.db', toInsert)
     return JsonResponse(data)
 
 def sendToParamedics(request):
     attributes = request.GET.getlist('attributes')
+
     dataToGet = {}
     dataToGet['ssn'] = request.GET['ssn']
     dataToGet['froms'] = 'MinistryOfHealth'
@@ -107,3 +151,9 @@ def sendToParamedics(request):
     if checkAttributes:
         response = requests.get('http://127.0.0.1:8000/datadetails/personal/inform', params = dictForInformHospital)
     return JsonResponse(dataToSend)
+
+def deleteDataBasedOnPolicy(request):
+
+
+
+    return HttpResponse(200)

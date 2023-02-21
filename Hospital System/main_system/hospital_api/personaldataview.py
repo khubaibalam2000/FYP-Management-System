@@ -28,6 +28,9 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import Table
 from reportlab.platypus import Spacer, Paragraph
 import re
+import json
+from . import multichain
+from Savoir import Savoir
 
 def index(request):
     if request.method != "GET":
@@ -77,6 +80,7 @@ def requestForData(request):
     treatments = ['treatment']
 
     attributes = request.GET.getlist('attributes')
+
     froms = request.GET.getlist('froms')
     tos = request.GET.getlist('tos')
     ssn = request.GET['ssn']
@@ -126,6 +130,16 @@ def inform(request):
     updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', './hospital_api/Links.db', toInsert)
     return HttpResponse(200)
 
+
+def updateDatabase(queryOfLink, dbPath, toInsert=None):
+    connection = sqlite3.connect(dbPath)
+    cursor = connection.cursor()
+    if toInsert:
+        cursor.execute(queryOfLink, toInsert)
+    else: 
+        cursor.execute(queryOfLink)
+    connection.commit()
+    connection.close()
 
 def getDataFromDB(dbName, query):
     connection = sqlite3.connect(dbName)
@@ -201,7 +215,6 @@ def generateExternalPDGWithoutConnections(request):
             continue
         attributesData.append(getDataFromDB('./hospital_api/Links.db', 'select attributes from linking where (userId = ' + str(ssn) + ") and (froms = '" + i + "' OR tos = '" + i + "')"))
     
-    print(attributesData)
     fAtt = []
     for i in attributesData:
         inList = []
@@ -360,13 +373,13 @@ def eHdataReport(request):
     listForHospital = []
     for key, value in hospitalPiiMapper.items(): 
         if value != 'None': listForHospital.append(key)
-    for key, value in hospitalVsMapper.items(): 
+    for key, value in hospitalVsMapper.items():
         if value != 'None': listForHospital.append(key)
-    for key, value in diagnosisMapper.items(): 
+    for key, value in diagnosisMapper.items():
         if value != 'None': listForHospital.append(key)
-    for key, value in prescriptionMapper.items(): 
+    for key, value in prescriptionMapper.items():
         if value != 'None': listForHospital.append(key)
-    for key, value in treatmentMapper.items(): 
+    for key, value in treatmentMapper.items():
         if value != 'None': listForHospital.append(key)
     
     while 'id' in listForHospital:
@@ -624,6 +637,8 @@ def generateReportSummaryForDataBreach(data):
 
 def dataBreachReport(request):
     userId = request.GET['id']
+    if int(userId) < 1 or int(userId) > 999:
+        return HttpResponse("We do not have that person data")
     departments = request.GET.getlist('departments')
 
     hospitalPiiAttributes, hospitalVsAttributes, diagnosisAttributes, prescriptionsAttributes, treatmentsAttributes = [], [], [], [], []
@@ -713,3 +728,58 @@ def dataBreachReport(request):
     short_report = open("DataBreachReport.pdf", 'rb')
     response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
     return response
+
+def storePoliciesOnMultiChain(request):
+    rpchost = '127.0.0.1'
+    rpcport = '6446'
+    rpcuser = 'multichainrpc'
+    rpcpassword = 'GJcB9QzPEMzpKb6j4L6SmPCX1Y62jjeXHGXS2xCVpiVF'
+    chainname = 'chain1'
+    mc = Savoir(rpcuser, rpcpassword, rpchost, rpcport, chainname)
+    policy_json = json.loads(request.body)
+    # txid = mc.create('stream', 'stream21', True)
+    ssn = policy_json['ssn']
+    txid = mc.publish("stream21", "key1", {"json" : policy_json})
+    print(txid)
+    mc.subscribe('stream21')
+    print(mc.liststreamtxitems('stream21', txid))
+
+    if getDataFromDB('./hospital_api/policy.db', 'select * from policy where ssn = ' + str(ssn)):
+        updateDatabase("update policy set txid = '" + txid + "' where ssn = " + str(ssn), './hospital_api/policy.db')
+    else:
+        toInsert = (ssn, txid)
+        updateDatabase('insert into policy(ssn, txid) VALUES(?,?)', './hospital_api/policy.db', toInsert)
+
+    return HttpResponse(200)
+
+def checkPoliciesOnMultiChain(request):
+    ssn = request.GET['ssn']
+    attributes = request.GET.getlist('attributes')
+
+    txid = getDataFromDB('./hospital_api/policy.db', 'select txid from policy where ssn = ' + str(ssn))[0][0]
+    
+    rpchost = '127.0.0.1'
+    rpcport = '6446'
+    rpcuser = 'multichainrpc'
+    rpcpassword = 'GJcB9QzPEMzpKb6j4L6SmPCX1Y62jjeXHGXS2xCVpiVF'
+    chainname = 'chain1'
+    mc = Savoir(rpcuser, rpcpassword, rpchost, rpcport, chainname)
+    # txid = mc.create('stream', 'stream21', True)
+    mc.subscribe('stream21')
+    chainData = mc.liststreamtxitems('stream21', txid)[0]['data']['json']['attributes']
+    # print(chainData)
+
+    modifiedAttributes = []
+    dictOfPolicyDays = {}
+    for i in chainData:
+        if i['entity'] in attributes:
+            if i['sharing'] == 'yes' and i['sharing_entities'][request.GET['entity']] == 'yes':
+                modifiedAttributes.append(i['entity'])
+                dictOfPolicyDays[i['entity']] = i['duration']
+    # print(modifiedAttributes, dictOfPolicyDays)
+
+    dataWithPolicies = {}
+    dataWithPolicies['attributes'] = modifiedAttributes
+    dataWithPolicies['policy_days'] = dictOfPolicyDays
+    # print(dataWithPolicies)
+    return JsonResponse(dataWithPolicies)
