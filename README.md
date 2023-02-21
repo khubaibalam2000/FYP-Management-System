@@ -210,7 +210,7 @@ cd "Hospital System/main_system"
             }
         },
         {
-            "entity": "dob",
+            "entity": "medicine",
             "sharing": "yes",
             "duration": "10",
             "sharing_entities": {
