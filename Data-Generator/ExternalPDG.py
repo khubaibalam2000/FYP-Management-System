@@ -26,7 +26,7 @@ def createLinkingDatabase(queryCreation, dbPath):
 #                 ssn INTEGER,
 #                 data TEXT,
 #                 policy TEXT,
-#                 received_at DATE);
+#                 received_at TEXT);
 #                 ''', './Hospital System/main_system/ministry_of_health/datas.db')
 
 # createLinkingDatabase('''CREATE TABLE data(
@@ -52,7 +52,7 @@ def getDataFromDB(dbName, query):
 # 30076841161403
 # getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', "delete from linking where userId = 30076841161403")
 # getDataFromDB('./Hospital System/main_system/ministry_of_health/datas.db', "drop table data")
-# getDataFromDB('./Hospital System/main_system/ministry_of_health/datas.db', "delete from data where ssn = 4903773748744614")
+getDataFromDB('./Hospital System/main_system/ministry_of_health/datas.db', "delete from data where ssn = 4903773748744614")
 
 def drawExternalPDGWithConnections():
     ssn = 30076841161403

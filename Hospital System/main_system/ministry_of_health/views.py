@@ -6,6 +6,7 @@ import sqlite3
 import json
 from datetime import datetime
 from jsonmerge import merge
+from datetime import timedelta
 
 def updateDatabase(queryOfLink, dbPath, toInsert=None):
     connection = sqlite3.connect(dbPath)
@@ -46,6 +47,7 @@ def requestData(request):
     policies = data['policy_days']
     # print(policies)
 
+    # data
     dataToGet = {}
     dataToGet['ssn'] = str(request.GET['ssn'])
     dataToGet['froms'] = 'Hospital'
@@ -57,15 +59,20 @@ def requestData(request):
         dataToGet['attributes'] = [i]
     response = requests.get('http://127.0.0.1:8000/datadetails/personal/requestForData', params = dataToGet)
     data = response.json()
-    
+
+    # time json
+    time = {}
+    for i in attributes:
+        time[i] = datetime.now()
+    # print(str(time))
     if getDataFromDB('./ministry_of_health/datas.db', 'select data from data where ssn = ' + str(request.GET['ssn'])):
 
         # update data
         old_data = getDataFromDB('./ministry_of_health/datas.db', 'select data from data where ssn = ' + str(request.GET['ssn']))
-        print(old_data[0][0])
+        # print(old_data[0][0])
         old_data_json = json.loads(old_data[0][0])
         result = merge(data, old_data_json)
-        print(result)
+        # print(result)
         stringifyResultData = json.dumps(result).replace("'", "")
         updateDatabase("update data set data = '" + stringifyResultData + "' where ssn = " + request.GET['ssn'], './ministry_of_health/datas.db')
 
@@ -74,13 +81,22 @@ def requestData(request):
         print(old_policy[0][0])
         old_policy_json = json.loads(old_policy[0][0])
         resultPolicy = merge(policies, old_policy_json)
-        print(resultPolicy)
+        # print(resultPolicy)
         stringifyResultPolicy = json.dumps(resultPolicy).replace("'", "")
         updateDatabase("update data set policy = '" + stringifyResultPolicy + "' where ssn = " + request.GET['ssn'], './ministry_of_health/datas.db')
+
+        # update times
+        old_time = getDataFromDB('./ministry_of_health/datas.db', 'select received_at from data where ssn = ' + str(request.GET['ssn']))
+        print(old_time[0][0])
+        old_time_json = json.loads(old_time[0][0])
+        resultTime = merge(time, old_time_json)
+        # print(resultPolicy)
+        stringifyResultTime = json.dumps(resultTime, default=str)
+        # stringifyResultTime = json.dumps(resultTime).replace("'", "")
+        updateDatabase("update data set received_at = '" + stringifyResultTime + "' where ssn = " + request.GET['ssn'], './ministry_of_health/datas.db')
     else:
         stringData = json.dumps(data)
-        receive_time = datetime.now()
-        toInsert = request.GET['ssn'], stringData, json.dumps(policies), receive_time
+        toInsert = request.GET['ssn'], stringData, json.dumps(policies), json.dumps(time, default=str)
         updateDatabase('INSERT INTO data(ssn, data, policy, received_at) VALUES(?,?,?,?)', './ministry_of_health/datas.db', toInsert)
     return JsonResponse(data)
 
@@ -153,7 +169,21 @@ def sendToParamedics(request):
     return JsonResponse(dataToSend)
 
 def deleteDataBasedOnPolicy(request):
-
-
+    result = getDataFromDB('./ministry_of_health/datas.db', 'select data, policy, received_at from data where ssn = ' + str(request.GET['ssn']))
+    print(result)
+    data = json.loads(result[0][0])
+    policy = json.loads(result[0][1])
+    time = json.loads(result[0][2])
+    print(data, policy, time)
+    for key, value in list(data.items()):
+        when_to_delete = datetime.strptime(time[key], '%Y-%m-%d %H:%M:%S.%f') + timedelta(days = int(policy[key]))
+        print(when_to_delete)
+        if when_to_delete < datetime.now():
+            data.pop(key, None)
+            policy.pop(key, None)
+            time.pop(key, None)
+            updateDatabase("update data set data = '" + json.dumps(data) + "' where ssn = " + request.GET['ssn'], './ministry_of_health/datas.db')
+            updateDatabase("update data set policy = '" + json.dumps(policy) + "' where ssn = " + request.GET['ssn'], './ministry_of_health/datas.db')
+            updateDatabase("update data set received_at = '" + json.dumps(time) + "' where ssn = " + request.GET['ssn'], './ministry_of_health/datas.db')
 
     return HttpResponse(200)
