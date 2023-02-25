@@ -31,6 +31,7 @@ import re
 import json
 from . import multichain
 from Savoir import Savoir
+import requests
 
 def index(request):
     if request.method != "GET":
@@ -783,3 +784,17 @@ def checkPoliciesOnMultiChain(request):
     dataWithPolicies['policy_days'] = dictOfPolicyDays
     # print(dataWithPolicies)
     return JsonResponse(dataWithPolicies)
+
+
+
+
+
+
+def deleteHospitalData(request):
+    ssn = request.GET['ssn']
+    userId = getDataFromDB('./db.sqlite3', 'select id from personal_info where ssn = ' + str(ssn))
+    getDataFromDB('./db.sqlite3', 'delete from personal_info where id = ' + str(userId[0][0]))
+
+    response = requests.get('http://127.0.0.1:8000/moh/deletemohdata', params = {'ssn': ssn})
+
+    return HttpResponse("Data deleted from hospital")

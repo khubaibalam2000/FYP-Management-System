@@ -11,6 +11,14 @@ def updateDatabase(queryOfLink, dbPath, toInsert):
     connection.commit()
     connection.close()
 
+def getDataFromDB(dbName, query):
+    connection = sqlite3.connect(dbName)
+    cursor = connection.cursor()
+    rows = cursor.execute(query).fetchall()
+    connection.commit()
+    connection.close()
+    return rows
+
 # Create your views here.
 def requestMOHForData(request):
     attributes = request.GET.getlist('attributes')
@@ -49,3 +57,10 @@ def requestMOHForData(request):
     toInsert = request.GET['ssn'], stringData
     updateDatabase('INSERT INTO data(ssn, data) VALUES(?,?)', './paramedics/datas.db', toInsert)
     return JsonResponse(data)
+
+
+def deleteParamedicsData(request):
+    ssn = request.GET['ssn']
+    getDataFromDB('./paramedics/datas.db', "delete from data where ssn = " + str(ssn))
+
+    return HttpResponse("Data deleted from paramedics")

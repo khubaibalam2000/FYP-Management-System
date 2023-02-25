@@ -52,7 +52,8 @@ def getDataFromDB(dbName, query):
 # 30076841161403
 # getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', "delete from linking where userId = 30076841161403")
 # getDataFromDB('./Hospital System/main_system/ministry_of_health/datas.db', "drop table data")
-getDataFromDB('./Hospital System/main_system/ministry_of_health/datas.db', "delete from data where ssn = 4903773748744614")
+# getDataFromDB('./Hospital System/main_system/ministry_of_health/datas.db', "delete from data where ssn = 4903773748744614")
+getDataFromDB('./Hospital System/main_system/db.sqlite3', "insert into personal_info (id, name, DOB, city, province, gender, email, phone, ssn) values (22, 'wasif khan', '2/3/1992', 'karachi', 'SI', 'Male', 'wasifkh456@gmail.com', '0320 122 6090', '30076841161403')")
 
 def drawExternalPDGWithConnections():
     ssn = 30076841161403
