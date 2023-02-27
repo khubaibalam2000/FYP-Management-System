@@ -86,6 +86,7 @@ def requestForData(request):
     tos = request.GET.getlist('tos')
     ssn = request.GET['ssn']
     person = PersonalInfo.objects.filter(ssn=request.GET['ssn'])
+    if not person: return HttpResponse("We do not have that data")
     id = person.values_list('id')[0][0]
 
     vitalSigns = VitalSigns.objects.filter(id = id)
@@ -741,12 +742,47 @@ def storePoliciesOnMultiChain(request):
     # txid = mc.create('stream', 'stream21', True)
     ssn = policy_json['ssn']
     txid = mc.publish("stream21", "key1", {"json" : policy_json})
-    print(txid)
+    # print(txid)
     mc.subscribe('stream21')
-    print(mc.liststreamtxitems('stream21', txid))
+    # print(mc.liststreamtxitems('stream21', txid))
 
     if getDataFromDB('./hospital_api/policy.db', 'select * from policy where ssn = ' + str(ssn)):
         updateDatabase("update policy set txid = '" + txid + "' where ssn = " + str(ssn), './hospital_api/policy.db')
+        pdg = getDataFromDB('./hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
+
+        chainData = mc.liststreamtxitems('stream21', txid)[0]['data']['json']['attributes']
+
+        # print(pdg)
+        dictForData = {}
+        for i in pdg:
+            if (i[3], i[4]) in dictForData and i[3] == 'Hospital' and i[4] == 'MinistryOfHealth':
+                a = dictForData[(i[3], i[4])]
+                a += i[2]
+                dictForData[(i[3], i[4])] = a
+                continue
+            dictForData[(i[3], i[4])] = i[2]
+        # print(dictForData)
+        E = []
+        pos = {}
+        for key, values in dictForData.items():
+            inList = []
+            inList.extend(re.findall(r"'(.*?)'", values))
+            inList = list(set(inList))
+            E.append((key[0], key[1], inList))
+        print(E)
+
+        # print(chainData)
+        policy_duration = {}
+        for i in inList:
+            for j in chainData:
+                if j['entity'] == i:
+                    policy_duration[i] = j['duration']
+        response = requests.get('http://127.0.0.1:8000/moh/updatepolicy', params = {'ssn': ssn, 'policy_duration': json.dumps(policy_duration)})
+        # check link db which to organizations data of this ssn sent before
+
+        # sent notification to those entities
+
+
     else:
         toInsert = (ssn, txid)
         updateDatabase('insert into policy(ssn, txid) VALUES(?,?)', './hospital_api/policy.db', toInsert)
@@ -755,6 +791,8 @@ def storePoliciesOnMultiChain(request):
 
 def checkPoliciesOnMultiChain(request):
     ssn = request.GET['ssn']
+    if not PersonalInfo.objects.filter(ssn=request.GET['ssn']): 
+        return HttpResponse("We do not have that person's data")
     attributes = request.GET.getlist('attributes')
 
     txid = getDataFromDB('./hospital_api/policy.db', 'select txid from policy where ssn = ' + str(ssn))[0][0]
@@ -785,16 +823,16 @@ def checkPoliciesOnMultiChain(request):
     # print(dataWithPolicies)
     return JsonResponse(dataWithPolicies)
 
-
-
-
-
-
 def deleteHospitalData(request):
     ssn = request.GET['ssn']
     userId = getDataFromDB('./db.sqlite3', 'select id from personal_info where ssn = ' + str(ssn))
-    getDataFromDB('./db.sqlite3', 'delete from personal_info where id = ' + str(userId[0][0]))
 
-    response = requests.get('http://127.0.0.1:8000/moh/deletemohdata', params = {'ssn': ssn})
+    if userId:
+        getDataFromDB('./db.sqlite3', 'delete from personal_info where id = ' + str(userId[0][0]))
+        getDataFromDB('./hospital_api/Links.db', 'delete from linking where ssn = ' + str(ssn))
 
-    return HttpResponse("Data deleted from hospital")
+        response = requests.get('http://127.0.0.1:8000/moh/deletemohdata', params = {'ssn': ssn})
+
+        return HttpResponse("Data deleted from hospital")
+    else:
+        return HttpResponse("We do not have this person's data to delete")

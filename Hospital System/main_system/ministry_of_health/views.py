@@ -40,8 +40,10 @@ def requestData(request):
                 policyFilters['attributes'].append(i)
                 continue
             policyFilters['attributes'] = [i]
-
+    print(policyFilters)
     response = requests.get('http://127.0.0.1:8000/datadetails/personal/checkpolicy', params = policyFilters)
+    if response.content == b"We do not have that person's data": return HttpResponse("Hospital do not have that person's data")
+
     data = response.json()
     attributes = data['attributes']
     policies = data['policy_days']
@@ -194,3 +196,11 @@ def deleteMOHData(request):
     response = requests.get('http://127.0.0.1:8000/pm/deleteparadata', params = {'ssn': ssn})
 
     return HttpResponse("Data deleted from ministry of health")
+
+def updatePolicy(request):
+    policy_duration = request.GET['policy_duration']
+    ssn = request.GET['ssn']
+
+    updateDatabase("update data set policy = '" + policy_duration + "' where ssn = " + request.GET['ssn'], './ministry_of_health/datas.db')
+    
+    return HttpResponse(200)
