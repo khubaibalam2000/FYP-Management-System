@@ -836,3 +836,26 @@ def deleteHospitalData(request):
         return HttpResponse("Data deleted from hospital")
     else:
         return HttpResponse("We do not have this person's data to delete")
+    
+def getPoliciesBasedOnAttributes(request):
+    attributes = request.GET.getlist('attributes')
+    ssn = request.GET['ssn']
+    txid = getDataFromDB('./hospital_api/policy.db', 'select txid from policy where ssn = ' + str(ssn))[0][0]
+
+    rpchost = '127.0.0.1'
+    rpcport = '6446'
+    rpcuser = 'multichainrpc'
+    rpcpassword = 'GJcB9QzPEMzpKb6j4L6SmPCX1Y62jjeXHGXS2xCVpiVF'
+    chainname = 'chain1'
+    mc = Savoir(rpcuser, rpcpassword, rpchost, rpcport, chainname)
+
+    chainData = mc.liststreamtxitems('stream21', txid)[0]['data']['json']['attributes']
+
+    policy_duration = {}
+    for i in attributes:
+        for j in chainData:
+            if j['entity'] == i:
+                policy_duration[i] = j['duration']
+
+    print(attributes, policy_duration)
+    return JsonResponse(policy_duration, safe = False)

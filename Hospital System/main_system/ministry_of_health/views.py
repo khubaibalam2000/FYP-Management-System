@@ -7,6 +7,12 @@ import json
 from datetime import datetime
 from jsonmerge import merge
 from datetime import timedelta
+import re
+import random as rn
+import networkx as nx
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
 def updateDatabase(queryOfLink, dbPath, toInsert=None):
     connection = sqlite3.connect(dbPath)
@@ -25,6 +31,13 @@ def getDataFromDB(dbName, query):
     connection.commit()
     connection.close()
     return rows
+
+def updateLinkingDatabase(queryOfLink, dbPath, toInsert):
+    connection = sqlite3.connect(dbPath)
+    cursor = connection.cursor()
+    cursor.execute(queryOfLink, toInsert)
+    connection.commit()
+    connection.close()
 
 # Create your views here.
 def requestData(request):
@@ -168,9 +181,16 @@ def sendToParamedics(request):
         dictForInformHospital['attributes'] = [i]
     if checkAttributes:
         response = requests.get('http://127.0.0.1:8000/datadetails/personal/inform', params = dictForInformHospital)
+
+    ssn = request.GET['ssn']
+    froms = request.GET.getlist('froms')
+    tos = request.GET.getlist('tos')
+    toInsert = int(ssn), str(attributes), froms[0], tos[0]
+    updateLinkingDatabase('INSERT INTO linking(userId, attributes, froms, tos) VALUES(?,?,?,?)', './ministry_of_health/Linksmoh.db', toInsert)
+    
     return JsonResponse(dataToSend)
 
-def deleteDataBasedOnPolicy(request):
+def deleteDataBasedOnPolicyMOH(request):
     result = getDataFromDB('./ministry_of_health/datas.db', 'select data, policy, received_at from data where ssn = ' + str(request.GET['ssn']))
     print(result)
     data = json.loads(result[0][0])
@@ -190,6 +210,41 @@ def deleteDataBasedOnPolicy(request):
 
     return HttpResponse(200)
 
+def generatePDGMOH(request):
+    ssn = request.GET['ssn']
+
+    linkData = getDataFromDB('./ministry_of_health/Linksmoh.db', 'select * from linking where userId = ' + str(ssn))
+
+    dictForData = {}
+    for i in linkData:
+        if (i[3], i[4]) in dictForData:
+            a = dictForData[(i[3], i[4])]
+            a += i[2]
+            dictForData[(i[3], i[4])] = a
+            continue
+        dictForData[(i[3], i[4])] = i[2]
+
+    E = []
+    pos = {}
+    for key, values in dictForData.items():
+        inList = []
+        inList.extend(re.findall(r"'(.*?)'", values))
+        inList = list(set(inList))
+        E.append((key[0], key[1], inList))
+        pos[key[0]] = [rn.randint(0,10), rn.randint(0,10)]
+        pos[key[1]] = [rn.randint(0,10), rn.randint(0,10)]
+    G = nx.DiGraph()
+    G.add_weighted_edges_from(E)
+    weight = nx.get_edge_attributes(G, 'weight')
+    nx.draw(G, pos=pos, with_labels=True, node_size=1000, node_color='b', edge_color='g', arrowsize=35)
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=weight)
+    
+    response = HttpResponse(content_type='image/png')
+    plt.gcf().set_size_inches(20, 10)
+    plt.savefig(response, format='png')
+    plt.clf()
+    return response
+
 def deleteMOHData(request):
     ssn = request.GET['ssn']
     getDataFromDB('./ministry_of_health/datas.db', "delete from data where ssn = " + str(ssn))
@@ -203,4 +258,31 @@ def updatePolicy(request):
 
     updateDatabase("update data set policy = '" + policy_duration + "' where ssn = " + request.GET['ssn'], './ministry_of_health/datas.db')
     
+    linkData = getDataFromDB('./ministry_of_health/Linksmoh.db', 'select * from linking where userId = ' + str(ssn))
+
+    if linkData:
+        dictForData = {}
+        for i in linkData:
+            if (i[3], i[4]) in dictForData:
+                a = dictForData[(i[3], i[4])]
+                a += i[2]
+                dictForData[(i[3], i[4])] = a
+                continue
+            dictForData[(i[3], i[4])] = i[2]
+
+        E = []
+        pos = {}
+        for key, values in dictForData.items():
+            inList = []
+            inList.extend(re.findall(r"'(.*?)'", values))
+            inList = list(set(inList))
+            E.append((key[0], key[1], inList))
+            pos[key[0]] = [rn.randint(0,10), rn.randint(0,10)]
+            pos[key[1]] = [rn.randint(0,10), rn.randint(0,10)]
+        
+        print(inList)
+        
+        response = requests.get('http://127.0.0.1:8000/datadetails/personal/policyattrs', params = {'ssn': ssn, 'attributes': inList})
+        response = requests.get('http://127.0.0.1:8000/pm/updatepolicypara/', data = response.json(), params = {'ssn': ssn})
+
     return HttpResponse(200)

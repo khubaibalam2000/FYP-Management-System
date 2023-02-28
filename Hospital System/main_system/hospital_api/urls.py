@@ -19,6 +19,7 @@ urlpatterns = [
     path('personal/policies/', personaldataview.storePoliciesOnMultiChain, name='personal.storePoliciesOnMultiChain'),
     path('personal/checkpolicy/', personaldataview.checkPoliciesOnMultiChain, name='personal.checkPoliciesOnMultiChain'),
     path('personal/deletehospitaldata/', personaldataview.deleteHospitalData, name='personal.deleteHospitalData'),
+    path('personal/policyattrs/', personaldataview.getPoliciesBasedOnAttributes, name='personal.getPoliciesBasedOnAttributes'),
 
     path('vitalsigns/', vitalsignsview.index, name='vitalsign.index'),
     path('vitalsigns/get/', vitalsignsview.get, name='vitalsign.get'),

@@ -18,7 +18,7 @@ def createLinkingDatabase(queryCreation, dbPath):
 #                 attributes TEXT,
 #                 froms TEXT,
 #                 tos TEXT);
-#                 ''', './Hospital System/main_system/ministry_of_health/Linksmoh.db')
+#                 ''', './Hospital System/main_system/paramedics/Linkspara.db')
 
 
 # createLinkingDatabase('''CREATE TABLE data(
@@ -27,7 +27,7 @@ def createLinkingDatabase(queryCreation, dbPath):
 #                 data TEXT,
 #                 policy TEXT,
 #                 received_at TEXT);
-#                 ''', './Hospital System/main_system/ministry_of_health/datas.db')
+#                 ''', './Hospital System/main_system/paramedics/datas.db')
 
 # createLinkingDatabase('''CREATE TABLE data(
 #                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -51,7 +51,7 @@ def getDataFromDB(dbName, query):
 
 # 30076841161403
 # getDataFromDB('./Hospital System/main_system/hospital_api/Links.db', "delete from linking where userId = 30076841161403")
-# getDataFromDB('./Hospital System/main_system/ministry_of_health/datas.db', "drop table data")
+# getDataFromDB('./Hospital System/main_system/paramedics/datas.db', "drop table data")
 # getDataFromDB('./Hospital System/main_system/ministry_of_health/datas.db', "delete from data where ssn = 4903773748744614")
 # getDataFromDB('./Hospital System/main_system/db.sqlite3', "insert into personal_info (id, name, DOB, city, province, gender, email, phone, ssn) values (18, 'abeer hussain', '2/3/1992', 'karachi', 'SI', 'Male', 'disoc.kutta@gmail.com', '0317 232 2323', '4903773748744614')")
 
