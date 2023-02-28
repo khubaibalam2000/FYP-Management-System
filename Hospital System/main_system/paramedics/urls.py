@@ -6,4 +6,5 @@ urlpatterns = [
     path('deleteparadata/', views.deleteParamedicsData, name='para.deleteParamedicsData'),
     path('automateddeletionpara/', views.deleteDataBasedOnPolicyParamedics, name='para.deleteDataBasedOnPolicyParamedics'),
     path('updatepolicypara/', views.updatePolicyPara, name='para.updatePolicyPara'),
+    path('pdgpara/', views.generatePDGPara, name='para.generatePDGPara'),
 ]

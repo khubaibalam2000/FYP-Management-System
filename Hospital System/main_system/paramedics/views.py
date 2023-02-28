@@ -158,7 +158,6 @@ def updatePolicyPara(request):
 
     return HttpResponse(200)
 
-
 def generatePDGPara(request):
     ssn = request.GET['ssn']
 
