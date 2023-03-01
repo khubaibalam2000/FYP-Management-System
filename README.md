@@ -87,6 +87,13 @@ cd "Hospital System/main_system"
     Example Link:
     http://127.0.0.1:8000/datadetails/personal/databreach/?id=400&departments=hospital&departments=diagnosis&departments=prescriptions
 
+## 12. /datadetails/personal/deletehospitaldata (return HTTP Response of deletion confirmation)
+    Function: Delete the given user data through out the system (Hospital, MOH, Paramedics)
+    parameters: SSN
+    Example Link:
+    http://127.0.0.1:8000/datadetails/personal/deletehospitaldata/?ssn=30076841161403
+    
+
 ## Request Body for Policies:
 ```
 {
