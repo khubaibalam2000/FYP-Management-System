@@ -202,6 +202,8 @@ def deleteDataBasedOnPolicyMOH(request):
         when_to_delete = datetime.strptime(time[key], '%Y-%m-%d %H:%M:%S.%f') + timedelta(days = int(policy[key]))
         print(when_to_delete)
         if when_to_delete < datetime.now():
+
+            
             data.pop(key, None)
             policy.pop(key, None)
             time.pop(key, None)
@@ -216,6 +218,8 @@ def generatePDGMOH(request):
 
     linkData = getDataFromDB('./ministry_of_health/Linksmoh.db', 'select * from linking where userId = ' + str(ssn))
 
+
+
     dictForData = {}
     for i in linkData:
         if (i[3], i[4]) in dictForData:
@@ -229,6 +233,8 @@ def generatePDGMOH(request):
     pos = {}
     for key, values in dictForData.items():
         inList = []
+
+
         inList.extend(re.findall(r"'(.*?)'", values))
         inList = list(set(inList))
         E.append((key[0], key[1], inList))
@@ -246,6 +252,9 @@ def generatePDGMOH(request):
     plt.clf()
     return response
 
+
+
+
 def deleteMOHData(request):
     ssn = request.GET['ssn']
     getDataFromDB('./ministry_of_health/datas.db', "delete from data where ssn = " + str(ssn))
@@ -253,6 +262,10 @@ def deleteMOHData(request):
     response = requests.get('http://127.0.0.1:8000/pm/deleteparadata', params = {'ssn': ssn})
 
     return HttpResponse("Data deleted from ministry of health")
+
+
+
+
 
 def updatePolicy(request):
     policy_duration = request.GET['policy_duration']

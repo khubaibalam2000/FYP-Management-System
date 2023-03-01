@@ -402,6 +402,9 @@ def eHdataReport(request):
         inList = list(set(inList))
         fAtt.append(inList)
 
+
+
+
     for i in fAtt:
             if not i:
                 idx = fAtt.index(i)
@@ -685,6 +688,9 @@ def dataBreachReport(request):
         elems2.append(Spacer(20,10))
         generateReportSummaryForDataBreach(listVs)
 
+
+
+
     if diagnosisAttributes:
         p = Paragraph('Diagnose Department', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
@@ -731,7 +737,13 @@ def dataBreachReport(request):
     response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
     return response
 
+
+
+
 def storePoliciesOnMultiChain(request):
+
+
+
     rpchost = '127.0.0.1'
     rpcport = '6446'
     rpcuser = 'multichainrpc'
@@ -842,6 +854,10 @@ def deleteHospitalData(request):
     else:
         return HttpResponse("We do not have this person's data to delete")
     
+
+
+
+
 def getPoliciesBasedOnAttributes(request):
     attributes = request.GET.getlist('attributes')
     ssn = request.GET['ssn']
@@ -864,6 +880,10 @@ def getPoliciesBasedOnAttributes(request):
 
     print(attributes, policy_duration)
     return JsonResponse(policy_duration, safe = False)
+
+
+
+
 
 def definingDefaultPolicies(request):
     rpchost = '127.0.0.1'

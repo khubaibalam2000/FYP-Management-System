@@ -59,11 +59,16 @@ def requestMOHForData(request):
     dataToGet['froms'] = 'MinistryOfHealth'
     dataToGet['tos'] = 'Paramedics'
 
+
+
     for i in attributes:
         if 'attributes' in dataToGet.keys():
             dataToGet['attributes'].append(i)
             continue
         dataToGet['attributes'] = [i]
+
+
+
     response = requests.get('http://127.0.0.1:8000/moh/sendToParamedics', params = dataToGet)
     data = response.json()
 
@@ -71,8 +76,14 @@ def requestMOHForData(request):
     time = {}
     for i in attributes:
         time[i] = datetime.now()
+
+
+
+
     # print(str(time))
     if getDataFromDB('./paramedics/datas.db', 'select data from data where ssn = ' + str(request.GET['ssn'])):
+
+
 
         # update data
         old_data = getDataFromDB('./paramedics/datas.db', 'select data from data where ssn = ' + str(request.GET['ssn']))
@@ -82,6 +93,10 @@ def requestMOHForData(request):
         # print(result)
         stringifyResultData = json.dumps(result).replace("'", "")
         updateDatabase("update data set data = '" + stringifyResultData + "' where ssn = " + request.GET['ssn'], './paramedics/datas.db')
+
+
+
+
 
         # update policies
         old_policy = getDataFromDB('./paramedics/datas.db', 'select policy from data where ssn = ' + str(request.GET['ssn']))
@@ -107,10 +122,14 @@ def requestMOHForData(request):
         updateDatabase('INSERT INTO data(ssn, data, policy, received_at) VALUES(?,?,?,?)', './paramedics/datas.db', toInsert)
     return JsonResponse(data)
 
+
+
 def deleteParamedicsData(request):
     ssn = request.GET['ssn']
     getDataFromDB('./paramedics/datas.db', "delete from data where ssn = " + str(ssn))
     return HttpResponse("Data deleted from paramedics")
+
+
 
 def deleteDataBasedOnPolicyParamedics(request):
     result = getDataFromDB('./paramedics/datas.db', 'select data, policy, received_at from data where ssn = ' + str(request.GET['ssn']))
