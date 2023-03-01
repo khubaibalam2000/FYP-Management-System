@@ -59,6 +59,7 @@ def requestData(request):
 
     data = response.json()
     attributes = data['attributes']
+    if not attributes: return HttpResponse("User don't allowed to share the data")
     policies = data['policy_days']
     # print(policies)
 

@@ -50,6 +50,7 @@ def requestMOHForData(request):
     data = response.json()
     print(data)
     attributes = data['attributes']
+    if not attributes: return HttpResponse("User don't allowed to share the data")
     policies = data['policy_days']
     print(policies)
 
@@ -113,6 +114,9 @@ def deleteParamedicsData(request):
 
 def deleteDataBasedOnPolicyParamedics(request):
     result = getDataFromDB('./paramedics/datas.db', 'select data, policy, received_at from data where ssn = ' + str(request.GET['ssn']))
+
+    if not result: return HttpResponse("We do not have that person's data")
+
     data = json.loads(result[0][0])
     policy = json.loads(result[0][1])
     time = json.loads(result[0][2])
