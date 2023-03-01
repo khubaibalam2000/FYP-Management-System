@@ -6,8 +6,17 @@ from rest_framework.response import Response
 
 from .serializers import *
 from .models import *
+import sqlite3
 
 USE_DB = 'db_diagnosis'
+
+def getDataFromDB(dbName, query):
+    connection = sqlite3.connect(dbName)
+    cursor = connection.cursor()
+    rows = cursor.execute(query).fetchall()
+    connection.commit()
+    connection.close()
+    return rows
 
 def index(request):
     if request.method != "GET":
@@ -38,3 +47,9 @@ def add(request):
         return Response(serializer.data)
     else:
         return HttpResponse("Bad Data", status=status.HTTP_400_BAD_REQUEST)
+    
+def deleteDataDiagnosis(request):
+    id = request.GET['id']
+    getDataFromDB('./diagnosis/diagnosisDb.sqlite3', 'delete from diagnosis where id = ' + str(id))
+
+    return HttpResponse("Data Deleted from Diagnosis")

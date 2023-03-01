@@ -248,6 +248,7 @@ def generatePDGMOH(request):
 def deleteMOHData(request):
     ssn = request.GET['ssn']
     getDataFromDB('./ministry_of_health/datas.db', "delete from data where ssn = " + str(ssn))
+    getDataFromDB('./ministry_of_health/Linksmoh.db', "delete from linking where userId = " + str(ssn))
     response = requests.get('http://127.0.0.1:8000/pm/deleteparadata', params = {'ssn': ssn})
 
     return HttpResponse("Data deleted from ministry of health")

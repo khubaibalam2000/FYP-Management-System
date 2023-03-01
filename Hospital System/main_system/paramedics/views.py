@@ -66,10 +66,6 @@ def requestMOHForData(request):
     response = requests.get('http://127.0.0.1:8000/moh/sendToParamedics', params = dataToGet)
     data = response.json()
 
-
-
-
-
     # time json
     time = {}
     for i in attributes:
@@ -109,15 +105,6 @@ def requestMOHForData(request):
         toInsert = request.GET['ssn'], stringData, json.dumps(policies), json.dumps(time, default=str)
         updateDatabase('INSERT INTO data(ssn, data, policy, received_at) VALUES(?,?,?,?)', './paramedics/datas.db', toInsert)
     return JsonResponse(data)
-
-
-
-
-
-    # stringData = json.dumps(data)
-    # toInsert = request.GET['ssn'], stringData
-    # updateDatabase('INSERT INTO data(ssn, data) VALUES(?,?)', './paramedics/datas.db', toInsert)
-    # return JsonResponse(data)
 
 def deleteParamedicsData(request):
     ssn = request.GET['ssn']

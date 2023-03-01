@@ -751,36 +751,36 @@ def storePoliciesOnMultiChain(request):
         pdg = getDataFromDB('./hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
 
         chainData = mc.liststreamtxitems('stream21', txid)[0]['data']['json']['attributes']
+        if pdg:
+            # print(pdg)
+            dictForData = {}
+            for i in pdg:
+                if (i[3], i[4]) in dictForData and i[3] == 'Hospital' and i[4] == 'MinistryOfHealth':
+                    a = dictForData[(i[3], i[4])]
+                    a += i[2]
+                    dictForData[(i[3], i[4])] = a
+                    continue
+                dictForData[(i[3], i[4])] = i[2]
+            # print(dictForData)
+            E = []
+            pos = {}
+            for key, values in dictForData.items():
+                inList = []
+                inList.extend(re.findall(r"'(.*?)'", values))
+                inList = list(set(inList))
+                E.append((key[0], key[1], inList))
+            print(E)
 
-        # print(pdg)
-        dictForData = {}
-        for i in pdg:
-            if (i[3], i[4]) in dictForData and i[3] == 'Hospital' and i[4] == 'MinistryOfHealth':
-                a = dictForData[(i[3], i[4])]
-                a += i[2]
-                dictForData[(i[3], i[4])] = a
-                continue
-            dictForData[(i[3], i[4])] = i[2]
-        # print(dictForData)
-        E = []
-        pos = {}
-        for key, values in dictForData.items():
-            inList = []
-            inList.extend(re.findall(r"'(.*?)'", values))
-            inList = list(set(inList))
-            E.append((key[0], key[1], inList))
-        print(E)
+            # print(chainData)
+            policy_duration = {}
+            for i in inList:
+                for j in chainData:
+                    if j['entity'] == i:
+                        policy_duration[i] = j['duration']
+            response = requests.get('http://127.0.0.1:8000/moh/updatepolicy', params = {'ssn': ssn, 'policy_duration': json.dumps(policy_duration)})
+            # check link db which to organizations data of this ssn sent before
 
-        # print(chainData)
-        policy_duration = {}
-        for i in inList:
-            for j in chainData:
-                if j['entity'] == i:
-                    policy_duration[i] = j['duration']
-        response = requests.get('http://127.0.0.1:8000/moh/updatepolicy', params = {'ssn': ssn, 'policy_duration': json.dumps(policy_duration)})
-        # check link db which to organizations data of this ssn sent before
-
-        # sent notification to those entities
+            # sent notification to those entities
 
 
     else:
@@ -829,7 +829,12 @@ def deleteHospitalData(request):
 
     if userId:
         getDataFromDB('./db.sqlite3', 'delete from personal_info where id = ' + str(userId[0][0]))
-        getDataFromDB('./hospital_api/Links.db', 'delete from linking where ssn = ' + str(ssn))
+        getDataFromDB('./hospital_api/Links.db', 'delete from linking where userId = ' + str(ssn))
+        getDataFromDB('./hospital_api/policy.db', 'delete from policy where ssn = ' + str(ssn))
+
+        response = requests.get('http://127.0.0.1:8000/diagnosis/deletedg', params = {'id': str(userId[0][0])})
+        response = requests.get('http://127.0.0.1:8000/prescription/deletepresc', params = {'id': str(userId[0][0])})
+        response = requests.get('http://127.0.0.1:8000/treatment/deletetreatment', params = {'id': str(userId[0][0])})
 
         response = requests.get('http://127.0.0.1:8000/moh/deletemohdata', params = {'ssn': ssn})
 
@@ -859,3 +864,25 @@ def getPoliciesBasedOnAttributes(request):
 
     print(attributes, policy_duration)
     return JsonResponse(policy_duration, safe = False)
+
+def definingDefaultPolicies(request):
+    rpchost = '127.0.0.1'
+    rpcport = '6446'
+    rpcuser = 'multichainrpc'
+    rpcpassword = 'GJcB9QzPEMzpKb6j4L6SmPCX1Y62jjeXHGXS2xCVpiVF'
+    chainname = 'chain1'
+    mc = Savoir(rpcuser, rpcpassword, rpchost, rpcport, chainname)
+
+    ssns = getDataFromDB('./db.sqlite3', 'select ssn from personal_info')
+    ssns.pop(0)
+
+    f = open('./policy.json')
+    data = json.load(f)
+    for ssn in ssns:
+        data['ssn'] = ssn[0]
+        policyToSend = json.loads(json.dumps(data))
+        txid = mc.publish("stream21", "key1", {"json" : policyToSend})
+        toInsert = (ssn[0], txid)
+        updateDatabase('insert into policy(ssn, txid) VALUES(?,?)', './hospital_api/policy.db', toInsert)
+
+    return HttpResponse(200)

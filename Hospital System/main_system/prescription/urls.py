@@ -6,4 +6,5 @@ urlpatterns = [
     path('', view.index, name='prescription.index'),
     path('get/', view.get, name='prescription.get'),
     path('add/', view.add, name='prescription.add'),
+    path('deletepresc/', view.deleteDataPrescription, name='diagnosis.deleteDataPrescription'),
 ]

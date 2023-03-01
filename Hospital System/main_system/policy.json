@@ -1,0 +1,140 @@
+{
+    "ssn": 4903773748744614,
+    "attributes": [
+        {
+            "entity": "name",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "dob",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "city",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "province",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "no",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "gender",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "email",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "phone",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "heart_rate",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "blood_pressure",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "respiration_rate",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "oxygen_saturation",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "temperature",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "diagnose",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "medicine",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        },
+        {
+            "entity": "treatment",
+            "sharing": "yes",
+            "duration": "10",
+            "sharing_entities": {
+                "moh": "yes",
+                "paramedics": "yes"
+            }
+        }
+    ]
+}

@@ -21,6 +21,9 @@ urlpatterns = [
     path('personal/deletehospitaldata/', personaldataview.deleteHospitalData, name='personal.deleteHospitalData'),
     path('personal/policyattrs/', personaldataview.getPoliciesBasedOnAttributes, name='personal.getPoliciesBasedOnAttributes'),
 
+    # very risky api - dont call it
+    # path('personal/defaultpolicy/', personaldataview.definingDefaultPolicies, name='personal.definingDefaultPolicies'),
+
     path('vitalsigns/', vitalsignsview.index, name='vitalsign.index'),
     path('vitalsigns/get/', vitalsignsview.get, name='vitalsign.get'),
     path('vitalsigns/add/', vitalsignsview.add, name='vitalsign.add'),
