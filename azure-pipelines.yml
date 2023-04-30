@@ -1,0 +1,27 @@
+# Starter pipeline
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool: default
+
+steps:
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
+      replaceExistingArchive: true
+
+  - task: AzureWebApp@1
+    inputs:
+      azureSubscription: 'Azure for Students(1)(853d1aa0-ea8c-4e31-91b0-ef652f4946c2)'
+      appType: 'webApp'
+      appName: 'fypwebapp'
+      package: '$(System.DefaultWorkingDirectory)/*.zip'
+      deploymentMethod: 'auto'
