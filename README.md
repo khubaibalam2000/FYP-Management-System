@@ -93,6 +93,11 @@ cd "Hospital System/main_system"
     Example Link:
     http://127.0.0.1:8000/datadetails/personal/deletehospitaldata/?ssn=30076841161403
     
+## 13. /datadetails/personal/policies/
+    Function: Push Policies to the multichain
+    Body: Below JSON
+    Example Link:
+    http://127.0.0.1:8000/datadetails/personal/policies/
 
 ## Request Body for Policies:
 ```
