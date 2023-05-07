@@ -13,6 +13,8 @@ import networkx as nx
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import time
+from datetime import datetime
 
 def updateDatabase(queryOfLink, dbPath, toInsert=None):
     connection = sqlite3.connect(dbPath)
@@ -49,11 +51,11 @@ def requestData(request):
     policyFilters['ssn'] = str(request.GET['ssn'])
     policyFilters['entity'] = 'moh'
     for i in attributes:
-            if 'attributes' in policyFilters.keys():
-                policyFilters['attributes'].append(i)
-                continue
-            policyFilters['attributes'] = [i]
-    print(policyFilters)
+        if 'attributes' in policyFilters.keys():
+            policyFilters['attributes'].append(i)
+            continue
+        policyFilters['attributes'] = [i]
+    # print(policyFilters)
     response = requests.get('http://127.0.0.1:8000/datadetails/personal/checkpolicy', params = policyFilters)
     if response.content == b"We do not have that person's data": return HttpResponse("Hospital do not have that person's data")
 
@@ -94,7 +96,7 @@ def requestData(request):
 
         # update policies
         old_policy = getDataFromDB('./ministry_of_health/datas.db', 'select policy from data where ssn = ' + str(request.GET['ssn']))
-        print(old_policy[0][0])
+        # print(old_policy[0][0])
         old_policy_json = json.loads(old_policy[0][0])
         resultPolicy = merge(policies, old_policy_json)
         # print(resultPolicy)
@@ -103,7 +105,7 @@ def requestData(request):
 
         # update times
         old_time = getDataFromDB('./ministry_of_health/datas.db', 'select received_at from data where ssn = ' + str(request.GET['ssn']))
-        print(old_time[0][0])
+        # print(old_time[0][0])
         old_time_json = json.loads(old_time[0][0])
         resultTime = merge(time, old_time_json)
         # print(resultPolicy)
@@ -215,11 +217,7 @@ def deleteDataBasedOnPolicyMOH(request):
 
 def generatePDGMOH(request):
     ssn = request.GET['ssn']
-
     linkData = getDataFromDB('./ministry_of_health/Linksmoh.db', 'select * from linking where userId = ' + str(ssn))
-
-
-
     dictForData = {}
     for i in linkData:
         if (i[3], i[4]) in dictForData:
@@ -233,8 +231,6 @@ def generatePDGMOH(request):
     pos = {}
     for key, values in dictForData.items():
         inList = []
-
-
         inList.extend(re.findall(r"'(.*?)'", values))
         inList = list(set(inList))
         E.append((key[0], key[1], inList))
@@ -252,9 +248,6 @@ def generatePDGMOH(request):
     plt.clf()
     return response
 
-
-
-
 def deleteMOHData(request):
     ssn = request.GET['ssn']
     getDataFromDB('./ministry_of_health/datas.db', "delete from data where ssn = " + str(ssn))
@@ -262,10 +255,6 @@ def deleteMOHData(request):
     response = requests.get('http://127.0.0.1:8000/pm/deleteparadata', params = {'ssn': ssn})
 
     return HttpResponse("Data deleted from ministry of health")
-
-
-
-
 
 def updatePolicy(request):
     policy_duration = request.GET['policy_duration']
@@ -299,5 +288,49 @@ def updatePolicy(request):
         
         response = requests.get('http://127.0.0.1:8000/datadetails/personal/policyattrs', params = {'ssn': ssn, 'attributes': inList})
         response = requests.get('http://127.0.0.1:8000/pm/updatepolicypara/', data = response.json(), params = {'ssn': ssn})
+
+    return HttpResponse(200)
+
+def experimentRequestData(request):
+    delay = float(request.GET['delay'])
+    barTp = {}
+    barRad = {}
+    noOfRequests = [10, 20, 30, 40, 50, 75, 100]
+    for i in noOfRequests:
+        tpFirstRequestTime = datetime.now()
+        radDifference = 0
+        for j in range(i):
+        # RAD - req
+            radRequestTime = datetime.now()
+            time.sleep(delay)
+            response = requests.get('http://127.0.0.1:8000/moh/requestData/?ssn=4026261309698538&attributes=city&attributes=province&attributes=treatment&attributes=diagnose')
+            radResponseTime = datetime.now()
+            radDifference += (radResponseTime - radRequestTime).total_seconds()
+        barRad[i] = radDifference / i
+        tpLastRequestTime = datetime.now()
+        tpDifference = (tpLastRequestTime - tpFirstRequestTime).total_seconds()
+        barTp[i] = i / tpDifference
+    
+    print(barRad, barTp)
+    radY = list(barRad.values())
+    tpY = list(barTp.values())
+    fig = plt.figure(figsize = (10, 5))
+
+    plt.bar(['10', '20', '30', '40', '50', '75', '100'], radY, color ='green', width = 0.2)
+    
+    plt.xlabel("No of Requests")
+    plt.ylabel("Resource Access Delay (seconds)")
+    plt.title("Resource Access Delay of Getting Data From Hospital by MOH with " + str(delay) + "s delay")
+    plt.savefig("RAD Getting Data From Hospital by MOH with " + str(delay) + "s delay" + ".png")
+    plt.clf()
+
+    fig = plt.figure(figsize = (10, 5))
+
+    plt.bar(['10', '20', '30', '40', '50', '75', '100'], tpY, color ='blue', width = 0.2)
+    
+    plt.xlabel("No of Requests")
+    plt.ylabel("Throughput (seconds)")
+    plt.title("Throughput of Getting Data From Hospital by MOH with " + str(delay) + "s delay")
+    plt.savefig("TP Getting Data From Hospital by MOH with " + str(delay) + "s delay" + ".png")
 
     return HttpResponse(200)

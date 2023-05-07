@@ -12,6 +12,8 @@ import re
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import time
+from datetime import datetime
 
 def updateDatabase(queryOfLink, dbPath, toInsert=None):
     connection = sqlite3.connect(dbPath)
@@ -48,11 +50,11 @@ def requestMOHForData(request):
     response = requests.get('http://127.0.0.1:8000/datadetails/personal/checkpolicy', params = policyFilters)
     if response.content == b"We do not have that person's data": return HttpResponse("Hospital do not have that person's data")
     data = response.json()
-    print(data)
+    # print(data)
     attributes = data['attributes']
     if not attributes: return HttpResponse("User don't allowed to share the data")
     policies = data['policy_days']
-    print(policies)
+    # print(policies)
 
     dataToGet = {}
     dataToGet['ssn'] = str(request.GET['ssn'])
@@ -100,7 +102,7 @@ def requestMOHForData(request):
 
         # update policies
         old_policy = getDataFromDB('./paramedics/datas.db', 'select policy from data where ssn = ' + str(request.GET['ssn']))
-        print(old_policy[0][0])
+        # print(old_policy[0][0])
         old_policy_json = json.loads(old_policy[0][0])
         resultPolicy = merge(policies, old_policy_json)
         # print(resultPolicy)
@@ -109,7 +111,7 @@ def requestMOHForData(request):
 
         # update times
         old_time = getDataFromDB('./paramedics/datas.db', 'select received_at from data where ssn = ' + str(request.GET['ssn']))
-        print(old_time[0][0])
+        # print(old_time[0][0])
         old_time_json = json.loads(old_time[0][0])
         resultTime = merge(time, old_time_json)
         # print(resultPolicy)
@@ -139,10 +141,10 @@ def deleteDataBasedOnPolicyParamedics(request):
     data = json.loads(result[0][0])
     policy = json.loads(result[0][1])
     time = json.loads(result[0][2])
-    print(data, policy, time)
+    # print(data, policy, time)
     for key, value in list(data.items()):
         when_to_delete = datetime.strptime(time[key], '%Y-%m-%d %H:%M:%S.%f') + timedelta(days = int(policy[key]))
-        print(when_to_delete)
+        # print(when_to_delete)
         if when_to_delete < datetime.now():
             data.pop(key, None)
             policy.pop(key, None)
@@ -163,7 +165,7 @@ def updatePolicyPara(request):
     for i in policy_atts:
         equal_divide = i.split('=')
         policy_duration[equal_divide[0]] = equal_divide[1]
-    print(policy_duration)
+    # print(policy_duration)
     updateDatabase("update data set policy = '" + json.dumps(policy_duration) + "' where ssn = " + ssn, './paramedics/datas.db')
 
     return HttpResponse(200)
@@ -202,3 +204,47 @@ def generatePDGPara(request):
     plt.savefig(response, format='png')
     plt.clf()
     return response
+
+def experimentRequestData(request):
+    delay = float(request.GET['delay'])
+    barTp = {}
+    barRad = {}
+    noOfRequests = [10, 20, 30, 40, 50, 75, 100]
+    for i in noOfRequests:
+        tpFirstRequestTime = datetime.now()
+        radDifference = 0
+        for j in range(i):
+        # RAD - req
+            radRequestTime = datetime.now()
+            time.sleep(delay)
+            response = requests.get('http://127.0.0.1:8000/pm/requestMOHForData/?ssn=4026261309698538&attributes=city&attributes=province&attributes=name&attributes=diagnose')
+            radResponseTime = datetime.now()
+            radDifference += (radResponseTime - radRequestTime).total_seconds()
+        barRad[i] = radDifference / i
+        tpLastRequestTime = datetime.now()
+        tpDifference = (tpLastRequestTime - tpFirstRequestTime).total_seconds()
+        barTp[i] = i / tpDifference
+    
+    print(barRad, barTp)
+    radY = list(barRad.values())
+    tpY = list(barTp.values())
+    fig = plt.figure(figsize = (10, 5))
+
+    plt.bar(['10', '20', '30', '40', '50', '75', '100'], radY, color ='green', width = 0.2)
+    
+    plt.xlabel("No of Requests")
+    plt.ylabel("Resource Access Delay (seconds)")
+    plt.title("Resource Access Delay of Getting Data From MOH by Paramedics with " + str(delay) + "s delay")
+    plt.savefig("RAD Getting Data From MOH by Paramedics with " + str(delay) + "s delay" + ".png")
+    plt.clf()
+
+    fig = plt.figure(figsize = (10, 5))
+
+    plt.bar(['10', '20', '30', '40', '50', '75', '100'], tpY, color ='blue', width = 0.2)
+    
+    plt.xlabel("No of Requests")
+    plt.ylabel("Throughput (seconds)")
+    plt.title("Throughput of Getting Data From MOH by Paramedics with " + str(delay) + "s delay")
+    plt.savefig("TP Getting Data From MOH by Paramedics with " + str(delay) + "s delay" + ".png")
+
+    return HttpResponse(200)

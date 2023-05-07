@@ -8,4 +8,5 @@ urlpatterns = [
     path('deletemohdata/', views.deleteMOHData, name='moh.deleteMOHData'),
     path('updatepolicy/', views.updatePolicy, name='moh.updatePolicy'),
     path('pdgmoh/', views.generatePDGMOH, name='moh.generatePDGMOH'),
+    path('expreqdatamoh/', views.experimentRequestData, name='moh.experimentRequestData'),
 ]

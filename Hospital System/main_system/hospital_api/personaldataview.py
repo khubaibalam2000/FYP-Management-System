@@ -32,6 +32,10 @@ import json
 from . import multichain
 from Savoir import Savoir
 import requests
+from datetime import datetime
+import time
+import threading
+import os
 
 def index(request):
     if request.method != "GET":
@@ -134,7 +138,7 @@ def inform(request):
 
 
 def updateDatabase(queryOfLink, dbPath, toInsert=None):
-    connection = sqlite3.connect(dbPath)
+    connection = sqlite3.connect(dbPath, timeout=10)
     cursor = connection.cursor()
     if toInsert:
         cursor.execute(queryOfLink, toInsert)
@@ -142,6 +146,7 @@ def updateDatabase(queryOfLink, dbPath, toInsert=None):
         cursor.execute(queryOfLink)
     connection.commit()
     connection.close()
+    # cursor.close()
 
 def getDataFromDB(dbName, query):
     connection = sqlite3.connect(dbName)
@@ -149,6 +154,7 @@ def getDataFromDB(dbName, query):
     rows = cursor.execute(query).fetchall()
     connection.commit()
     connection.close()
+    # cursor.close()
     return rows
 
 def generateExternalPDGWithConnections(request):
@@ -232,6 +238,7 @@ def generateExternalPDGWithoutConnections(request):
             fAtt[idx] = ['name', 'dob', 'city', 'province', 'gender', 'email', 'phone', 'ssn', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'temperature', 'diagnose', 'medicine', 'treatment']
 
     frame = {'x': x, 'y': y, 'External Entity': externalEntities, 'Attributes': fAtt}
+    print(len(x), len(y), len(externalEntities), len(fAtt), '============================')
     df = pd.DataFrame(frame)
     fig = px.scatter(df, x="x", y="y", color="External Entity", hover_data={'x': False, 'y': False, 'External Entity':True, 'Attributes':True})
     fig.update_traces(marker=dict(size=12,
@@ -688,9 +695,6 @@ def dataBreachReport(request):
         elems2.append(Spacer(20,10))
         generateReportSummaryForDataBreach(listVs)
 
-
-
-
     if diagnosisAttributes:
         p = Paragraph('Diagnose Department', 
             ParagraphStyle('okay', fontName='Helvetica', fontSize=22)
@@ -737,13 +741,7 @@ def dataBreachReport(request):
     response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
     return response
 
-
-
-
 def storePoliciesOnMultiChain(request):
-
-
-
     rpchost = '127.0.0.1'
     rpcport = '6446'
     rpcuser = 'multichainrpc'
@@ -854,10 +852,6 @@ def deleteHospitalData(request):
     else:
         return HttpResponse("We do not have this person's data to delete")
     
-
-
-
-
 def getPoliciesBasedOnAttributes(request):
     attributes = request.GET.getlist('attributes')
     ssn = request.GET['ssn']
@@ -881,10 +875,6 @@ def getPoliciesBasedOnAttributes(request):
     print(attributes, policy_duration)
     return JsonResponse(policy_duration, safe = False)
 
-
-
-
-
 def definingDefaultPolicies(request):
     rpchost = '127.0.0.1'
     rpcport = '6446'
@@ -905,4 +895,108 @@ def definingDefaultPolicies(request):
         toInsert = (ssn[0], txid)
         updateDatabase('insert into policy(ssn, txid) VALUES(?,?)', './hospital_api/policy.db', toInsert)
 
+    return HttpResponse(200)
+
+def threadifyExStorePolicyOnMultichain(min, max, delay, mc, data, ssns, results, idx):
+    radDifference = 0
+    for j in range(min, max):
+        data['ssn'] = ssns[j][0]
+        policyToSend = json.loads(json.dumps(data))
+        # RAD - req
+        radRequestTime = datetime.now()
+        time.sleep(delay)
+        txid = mc.publish("stream21", "key1", {"json" : policyToSend})
+        # RAD - res
+        radResponseTime = datetime.now()
+        radDifference += (radResponseTime - radRequestTime).total_seconds()
+        toInsert = (ssns[j][0], txid)
+        updateDatabase('insert into policy(ssn, txid) VALUES(?,?)', './hospital_api/policy.db', toInsert)
+    results[idx] = radDifference
+
+def experimentForStorePoliciesOnMultiChain(request):
+
+    rpchost = '127.0.0.1'
+    rpcport = '6446'
+    rpcuser = 'multichainrpc'
+    rpcpassword = 'GJcB9QzPEMzpKb6j4L6SmPCX1Y62jjeXHGXS2xCVpiVF'
+    chainname = 'chain1'
+    mc = Savoir(rpcuser, rpcpassword, rpchost, rpcport, chainname)
+
+    delay = float(request.GET['delay'])
+    noOfRequests = [100, 500, 1000, 2000, 3000, 5000, 7500]
+    f = open('./policy.json')
+    data = json.load(f)
+
+    ssns = getDataFromDB('./db.sqlite3', 'select ssn from personal_info')
+    ssns.pop(0)
+
+    # Tp = Throughput
+    # RAD = Resource Access Delay
+    barTp = {}
+    barRAD = {}
+    for i in noOfRequests:
+        # TP FRT
+        tpFirstRequestTime = datetime.now()
+        results = [None] * os.cpu_count()
+        # threads
+        perRequest = i // os.cpu_count()
+        t1 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*0, perRequest*1, delay, mc, data, ssns, results, 0, ))
+        t2 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*1, perRequest*2, delay, mc, data, ssns, results, 1, ))
+        t3 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*2, perRequest*3, delay, mc, data, ssns, results, 2, ))
+        t4 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*3, perRequest*4, delay, mc, data, ssns, results, 3, ))
+        t5 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*4, perRequest*5, delay, mc, data, ssns, results, 4, ))
+        t6 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*5, perRequest*6, delay, mc, data, ssns, results, 5, ))
+        t7 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*6, perRequest*7, delay, mc, data, ssns, results, 6, ))
+        t8 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*7, perRequest*8, delay, mc, data, ssns, results, 7, ))
+
+        t1.start()
+        t2.start()
+        t3.start()
+        t4.start()
+        t5.start()
+        t6.start()
+        t7.start()
+        t8.start()
+
+        t1.join()
+        t2.join()
+        t3.join()
+        t4.join()
+        t5.join()
+        t6.join()
+        t7.join()
+        t8.join()
+
+        # TP LRT
+        # radDifference /= i
+
+        print(sum(results), i)
+        barRAD[i] = sum(results) / i
+        # barRAD[i] = radDifference
+        tpLastRequestTime = datetime.now()
+        tpDifference = (tpLastRequestTime - tpFirstRequestTime).total_seconds()
+        barTp[i] = i / tpDifference
+        
+    radY = list(barRAD.values())
+    tpY = list(barTp.values())
+    print(barRAD, barTp)
+
+    fig = plt.figure(figsize = (10, 5))
+
+    plt.bar(['100', '500', '1000', '2000', '3000', '5000', '7500'], radY, color ='green', width = 0.2)
+    
+    plt.xlabel("No of Requests")
+    plt.ylabel("Resource Access Delay (seconds)")
+    plt.title("Resource Access Delay of Storing Policy with " + str(delay) + "s delay")
+    plt.savefig("RAD Store Policy with " + str(delay) + "s delay" + ".png")
+    plt.clf()
+
+    fig = plt.figure(figsize = (10, 5))
+
+    plt.bar(['100', '500', '1000', '2000', '3000', '5000', '7500'], tpY, color ='blue', width = 0.2)
+    
+    plt.xlabel("No of Requests")
+    plt.ylabel("Throughput (seconds)")
+    plt.title("Throughput of Storing Policy with " + str(delay) + "s delay")
+    plt.savefig("TP Store Policy with " + str(delay) + "s delay" + ".png")
     return HttpResponse(200)
