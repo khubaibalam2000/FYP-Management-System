@@ -8,4 +8,5 @@ urlpatterns = [
     path('updatepolicypara/', views.updatePolicyPara, name='para.updatePolicyPara'),
     path('pdgpara/', views.generatePDGPara, name='para.generatePDGPara'),
     path('expreqdatapm/', views.experimentRequestData, name='para.experimentRequestData'),
+    path('callex/', views.callExperiments, name='para.callExperiments'),
 ]

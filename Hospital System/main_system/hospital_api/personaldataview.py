@@ -897,22 +897,6 @@ def definingDefaultPolicies(request):
 
     return HttpResponse(200)
 
-def threadifyExStorePolicyOnMultichain(min, max, delay, mc, data, ssns, results, idx):
-    radDifference = 0
-    for j in range(min, max):
-        data['ssn'] = ssns[j][0]
-        policyToSend = json.loads(json.dumps(data))
-        # RAD - req
-        radRequestTime = datetime.now()
-        time.sleep(delay)
-        txid = mc.publish("stream21", "key1", {"json" : policyToSend})
-        # RAD - res
-        radResponseTime = datetime.now()
-        radDifference += (radResponseTime - radRequestTime).total_seconds()
-        toInsert = (ssns[j][0], txid)
-        updateDatabase('insert into policy(ssn, txid) VALUES(?,?)', './hospital_api/policy.db', toInsert)
-    results[idx] = radDifference
-
 def experimentForStorePoliciesOnMultiChain(request):
 
     rpchost = '127.0.0.1'
@@ -923,67 +907,45 @@ def experimentForStorePoliciesOnMultiChain(request):
     mc = Savoir(rpcuser, rpcpassword, rpchost, rpcport, chainname)
 
     delay = float(request.GET['delay'])
-    noOfRequests = [100, 500, 1000, 2000, 3000, 5000, 7500]
+    noOfRequests = [10, 20, 30, 40, 50, 75, 100]
     f = open('./policy.json')
     data = json.load(f)
 
     ssns = getDataFromDB('./db.sqlite3', 'select ssn from personal_info')
     ssns.pop(0)
 
-    # Tp = Throughput
-    # RAD = Resource Access Delay
     barTp = {}
     barRAD = {}
     for i in noOfRequests:
         # TP FRT
         tpFirstRequestTime = datetime.now()
-        results = [None] * os.cpu_count()
-        # threads
-        perRequest = i // os.cpu_count()
-        t1 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*0, perRequest*1, delay, mc, data, ssns, results, 0, ))
-        t2 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*1, perRequest*2, delay, mc, data, ssns, results, 1, ))
-        t3 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*2, perRequest*3, delay, mc, data, ssns, results, 2, ))
-        t4 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*3, perRequest*4, delay, mc, data, ssns, results, 3, ))
-        t5 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*4, perRequest*5, delay, mc, data, ssns, results, 4, ))
-        t6 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*5, perRequest*6, delay, mc, data, ssns, results, 5, ))
-        t7 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*6, perRequest*7, delay, mc, data, ssns, results, 6, ))
-        t8 = threading.Thread(target = threadifyExStorePolicyOnMultichain, args = (perRequest*7, perRequest*8, delay, mc, data, ssns, results, 7, ))
-
-        t1.start()
-        t2.start()
-        t3.start()
-        t4.start()
-        t5.start()
-        t6.start()
-        t7.start()
-        t8.start()
-
-        t1.join()
-        t2.join()
-        t3.join()
-        t4.join()
-        t5.join()
-        t6.join()
-        t7.join()
-        t8.join()
-
+        radDifference = 0
+        for j in range(i):
+            data['ssn'] = ssns[j][0]
+            policyToSend = json.loads(json.dumps(data))
+            # RAD - req
+            radRequestTime = datetime.now()
+            time.sleep(delay)
+            txid = mc.publish("stream21", "key1", {"json" : policyToSend})
+            # RAD - res
+            radResponseTime = datetime.now()
+            radDifference += (radResponseTime - radRequestTime).total_seconds()
+            toInsert = (ssns[j][0], txid)
+            updateDatabase('insert into policy(ssn, txid) VALUES(?,?)', './hospital_api/policy.db', toInsert)
         # TP LRT
-        # radDifference /= i
-
-        print(sum(results), i)
-        barRAD[i] = sum(results) / i
-        # barRAD[i] = radDifference
+        radDifference /= i
+        print(radDifference)
+        barRAD[i] = radDifference
         tpLastRequestTime = datetime.now()
         tpDifference = (tpLastRequestTime - tpFirstRequestTime).total_seconds()
         barTp[i] = i / tpDifference
         
     radY = list(barRAD.values())
     tpY = list(barTp.values())
-    print(barRAD, barTp)
 
     fig = plt.figure(figsize = (10, 5))
 
-    plt.bar(['100', '500', '1000', '2000', '3000', '5000', '7500'], radY, color ='green', width = 0.2)
+    plt.bar(['10', '20', '30', '40', '50', '75', '100'], radY, color ='green', width = 0.2)
     
     plt.xlabel("No of Requests")
     plt.ylabel("Resource Access Delay (seconds)")
@@ -993,10 +955,21 @@ def experimentForStorePoliciesOnMultiChain(request):
 
     fig = plt.figure(figsize = (10, 5))
 
-    plt.bar(['100', '500', '1000', '2000', '3000', '5000', '7500'], tpY, color ='blue', width = 0.2)
+    plt.bar(['10', '20', '30', '40', '50', '75', '100'], tpY, color ='blue', width = 0.2)
     
     plt.xlabel("No of Requests")
     plt.ylabel("Throughput (seconds)")
     plt.title("Throughput of Storing Policy with " + str(delay) + "s delay")
     plt.savefig("TP Store Policy with " + str(delay) + "s delay" + ".png")
+
+    data = {'No of requests': noOfRequests, 'Resource Access Delay': barRAD.values(),'Throughput': barTp.values() }
+    df = pd.DataFrame(data)
+    df.to_csv("Storing Policy with " + str(delay) + "s delay.csv", index=False)
+    return HttpResponse(200)
+
+def callExperiments(request):
+    delays = [0, 0.5, 1, 2.5, 5]
+    for i in range(5):
+        response = requests.get('http://127.0.0.1:8000/datadetails/personal/expolicy', params = {'delay': delays[i]})
+
     return HttpResponse(200)

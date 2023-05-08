@@ -15,6 +15,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import time
 from datetime import datetime
+import pandas as pd
 
 def updateDatabase(queryOfLink, dbPath, toInsert=None):
     connection = sqlite3.connect(dbPath)
@@ -332,5 +333,16 @@ def experimentRequestData(request):
     plt.ylabel("Throughput (seconds)")
     plt.title("Throughput of Getting Data From Hospital by MOH with " + str(delay) + "s delay")
     plt.savefig("TP Getting Data From Hospital by MOH with " + str(delay) + "s delay" + ".png")
+
+    data = {'No of requests': noOfRequests, 'Resource Access Delay': barRad.values(),'Throughput': barTp.values() }
+    df = pd.DataFrame(data)
+    df.to_csv("Getting data from Hospital by MOH with " + str(delay) + "s delay.csv", index=False)
+
+    return HttpResponse(200)
+
+def callExperiments(request):
+    delays = [0, 0.5, 1, 2.5, 5]
+    for i in range(5):
+        response = requests.get('http://127.0.0.1:8000/moh/expreqdatamoh', params = {'delay': delays[i]})
 
     return HttpResponse(200)

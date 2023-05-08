@@ -9,4 +9,5 @@ urlpatterns = [
     path('updatepolicy/', views.updatePolicy, name='moh.updatePolicy'),
     path('pdgmoh/', views.generatePDGMOH, name='moh.generatePDGMOH'),
     path('expreqdatamoh/', views.experimentRequestData, name='moh.experimentRequestData'),
+    path('callex/', views.callExperiments, name='moh.callExperiments'),
 ]

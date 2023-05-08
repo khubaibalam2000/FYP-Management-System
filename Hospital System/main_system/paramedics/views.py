@@ -14,6 +14,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import time
 from datetime import datetime
+import pandas as pd
 
 def updateDatabase(queryOfLink, dbPath, toInsert=None):
     connection = sqlite3.connect(dbPath)
@@ -217,7 +218,7 @@ def experimentRequestData(request):
         # RAD - req
             radRequestTime = datetime.now()
             time.sleep(delay)
-            response = requests.get('http://127.0.0.1:8000/pm/requestMOHForData/?ssn=4026261309698538&attributes=city&attributes=province&attributes=name&attributes=diagnose')
+            response = requests.get('http://127.0.0.1:8000/pm/requestMOHForData/?ssn=6011366448054931&attributes=city&attributes=name')
             radResponseTime = datetime.now()
             radDifference += (radResponseTime - radRequestTime).total_seconds()
         barRad[i] = radDifference / i
@@ -235,7 +236,7 @@ def experimentRequestData(request):
     plt.xlabel("No of Requests")
     plt.ylabel("Resource Access Delay (seconds)")
     plt.title("Resource Access Delay of Getting Data From MOH by Paramedics with " + str(delay) + "s delay")
-    plt.savefig("RAD Getting Data From MOH by Paramedics with " + str(delay) + "s delay" + ".png")
+    plt.savefig("RAD Getting Data From MOH by Paramedics (single) with " + str(delay) + "s delay" + ".png")
     plt.clf()
 
     fig = plt.figure(figsize = (10, 5))
@@ -245,6 +246,20 @@ def experimentRequestData(request):
     plt.xlabel("No of Requests")
     plt.ylabel("Throughput (seconds)")
     plt.title("Throughput of Getting Data From MOH by Paramedics with " + str(delay) + "s delay")
-    plt.savefig("TP Getting Data From MOH by Paramedics with " + str(delay) + "s delay" + ".png")
+    plt.savefig("TP Getting Data From MOH by Paramedics (single) with " + str(delay) + "s delay" + ".png")
+
+    
+    data = {'No of requests': noOfRequests, 'Resource Access Delay': barRad.values(),'Throughput': barTp.values() }
+    df = pd.DataFrame(data)
+    df.to_csv("Getting data from MOH by PM (single) with " + str(delay) + "s delay.csv", index=False)
+
+    return HttpResponse(200)
+
+
+
+def callExperiments(request):
+    delays = [0, 0.5, 1, 2.5, 5]
+    for i in range(5):
+        response = requests.get('http://127.0.0.1:8000/pm/expreqdatapm', params = {'delay': delays[i]})
 
     return HttpResponse(200)
