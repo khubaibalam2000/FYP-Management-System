@@ -98,6 +98,12 @@ cd "Hospital System/main_system"
     Body: Below JSON
     Example Link:
     http://127.0.0.1:8000/datadetails/personal/policies/
+    
+## 14. /moh/pdgmoh/
+    Function: Generate PDG in MOH
+    Parameter: SSN
+    Example Link:
+    http://127.0.0.1:8000/moh/pdgmoh/?ssn=4026261309698538
 
 ## Request Body for Policies:
 ```
