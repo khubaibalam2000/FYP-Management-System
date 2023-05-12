@@ -93,6 +93,17 @@ cd "Hospital System/main_system"
     Example Link:
     http://127.0.0.1:8000/datadetails/personal/deletehospitaldata/?ssn=30076841161403
     
+## 13. /datadetails/personal/policies/
+    Function: Push Policies to the multichain
+    Body: Below JSON
+    Example Link:
+    http://127.0.0.1:8000/datadetails/personal/policies/
+    
+## 14. /moh/pdgmoh/
+    Function: Generate PDG in MOH
+    Parameter: SSN
+    Example Link:
+    http://127.0.0.1:8000/moh/pdgmoh/?ssn=4026261309698538
 
 ## Request Body for Policies:
 ```
