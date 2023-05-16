@@ -325,7 +325,29 @@ def eXdataReport(request):
 def eHdataReport(request):
     ssn = request.GET['ssn']
 
+    checkData = getDataFromDB('./db.sqlite3', 'select * from personal_info where ssn = ' + str(ssn))
+    if not checkData: return HttpResponse("Hospital Do not contain that person's data", status = 401)
     linkData = getDataFromDB('./hospital_api/Links.db', 'select * from linking where userId = ' + str(ssn))
+
+
+    if not linkData: 
+        frame = {'External Entity': ['Hospital'], 'Attribute': [['name', 'dob', 'city', 'province', 'gender', 'email', 'phone', 'ssn', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'temperature', 'diagnose', 'medicine', 'treatment']]}
+        df = pd.DataFrame(frame)
+        fig, ax = plt.subplots(figsize=(25, 4))
+        ax.axis('tight')
+        ax.axis('off')
+        the_table = ax.table(cellText=df.values, colLabels=df.columns, loc='center', cellLoc='center', colColours=['green', 'green'], colWidths=[0.1, 1])
+
+        pp = PdfPages("HoldingDataEntities.pdf")
+        pp.savefig(fig, bbox_inches='tight')
+        pp.close()
+
+        short_report = open("HoldingDataEntities.pdf", 'rb')
+        response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
+        return response
+
+
+
     x = []
     y = []
 
@@ -402,21 +424,18 @@ def eHdataReport(request):
         inList = list(set(inList))
         fAtt.append(inList)
 
-
-
-
     for i in fAtt:
-            if not i:
-                idx = fAtt.index(i)
-                fAtt[idx] = listForHospital
+        if not i:
+            idx = fAtt.index(i)
+            fAtt[idx] = listForHospital
 
     frame = {'External Entity': externalEntities, 'Attribute': fAtt}
     df = pd.DataFrame(frame)
-    
+    print(df, attributesData, listForHospital)
     fig, ax = plt.subplots(figsize=(25, 4))
     ax.axis('tight')
     ax.axis('off')
-    the_table = ax.table(cellText=df.values,colLabels=df.columns,loc='center', cellLoc='center', colColours=['green', 'green'], colWidths=[0.1, 1])
+    the_table = ax.table(cellText=df.values, colLabels=df.columns, loc='center', cellLoc='center', colColours=['green', 'green'], colWidths=[0.1, 1])
     the_table[(2,0)].set_facecolor('#D3D3D3')
     the_table[(2,1)].set_facecolor('#D3D3D3')
 
@@ -507,7 +526,7 @@ def iReport(request):
 
     userId = request.GET['id']
     if int(userId) < 1 or int(userId) > 999:
-        return HttpResponse("We do not have that person data")
+        return HttpResponse("We do not have that person data", status = 401)
     BASE_DIR = Path(__file__).resolve().parent.parent
     path = str(BASE_DIR)
     path = path[0:len(path)-27]
@@ -643,7 +662,8 @@ def generateReportSummaryForDataBreach(data):
 def dataBreachReport(request):
     userId = request.GET['id']
     if int(userId) < 1 or int(userId) > 999:
-        return HttpResponse("We do not have that person data")
+        return HttpResponse("We do not have that person data", status = 401)
+    print("We do not have that person data in breach")
     departments = request.GET.getlist('departments')
 
     hospitalPiiAttributes, hospitalVsAttributes, diagnosisAttributes, prescriptionsAttributes, treatmentsAttributes = [], [], [], [], []
@@ -906,3 +926,16 @@ def definingDefaultPolicies(request):
         updateDatabase('insert into policy(ssn, txid) VALUES(?,?)', './hospital_api/policy.db', toInsert)
 
     return HttpResponse(200)
+
+def definingGetPolicy(request):
+    rpchost = '127.0.0.1'
+    rpcport = '6446'
+    rpcuser = 'multichainrpc'
+    rpcpassword = 'GJcB9QzPEMzpKb6j4L6SmPCX1Y62jjeXHGXS2xCVpiVF'
+    chainname = 'chain1'
+    ssn = request.GET['ssn']
+    mc = Savoir(rpcuser, rpcpassword, rpchost, rpcport, chainname)
+    txid = getDataFromDB('./hospital_api/policy.db', 'select txid from policy where ssn = ' + str(ssn))[0][0]    
+    mc.subscribe('stream21')
+    chainData = mc.liststreamtxitems('stream21', txid)[0]['data']['json']['attributes']
+    return JsonResponse(chainData,safe=False)
